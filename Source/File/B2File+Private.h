@@ -8,6 +8,8 @@
 
 #import "B2File.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface B2File (Private)
 
 + (nullable NSArray<B2File *> *)filesFromArray:(NSArray<NSDictionary<NSString *, id> *> *)array
@@ -19,3 +21,5 @@
                                 error:(out NSError **)error;
 
 @end
+
+NS_ASSUME_NONNULL_END

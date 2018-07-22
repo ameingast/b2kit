@@ -8,6 +8,8 @@
 
 #import "B2Parts.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface B2Part (Private)
 
 - (nullable B2Part *)initWithDictionary:(NSDictionary<NSString *, id> *)dictionary
@@ -23,3 +25,5 @@
                                    error:(out NSError **)error;
 
 @end
+
+NS_ASSUME_NONNULL_END

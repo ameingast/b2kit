@@ -56,16 +56,6 @@ Before submitting please be sure to run the unit and integration test suite and 
 * Endpoints
 * Blocking nature of B2Kit
 
-### Platform Schemes
-
-* iOS
-* watchOS
-* tvOS
-
-### CI
-
-* Travis
-
 ### Missing end-points
 
 * b2_get_download_authorization
