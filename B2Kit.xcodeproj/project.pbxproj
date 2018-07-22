@@ -37,6 +37,363 @@
 		CA3885F42077A113004F2158 /* B2Endpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3885F32077A113004F2158 /* B2Endpoint.m */; };
 		CA41B0D1207A775C00B05AFD /* B2BucketLifeCycleRule+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CA41B0CF207A775C00B05AFD /* B2BucketLifeCycleRule+Private.h */; };
 		CA41B0D2207A775C00B05AFD /* B2BucketLifeCycleRule+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CA41B0D0207A775C00B05AFD /* B2BucketLifeCycleRule+Private.m */; };
+		CA48558E2104D42B00F09656 /* B2KitAccountIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474E32076319D0064052F /* B2KitAccountIntegrationTests.m */; };
+		CA48558F2104D42B00F09656 /* B2KitTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474DE207630C50064052F /* B2KitTestCase.m */; };
+		CA4855902104D42B00F09656 /* B2KitFileIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474E12076317D0064052F /* B2KitFileIntegrationTests.m */; };
+		CA4855912104D42B00F09656 /* B2KitBucketIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474DC207630B50064052F /* B2KitBucketIntegrationTests.m */; };
+		CA4855952104D42B00F09656 /* Blib.bin in Resources */ = {isa = PBXBuildFile; fileRef = CABA9C8F20F3E6C100506C5B /* Blib.bin */; };
+		CA4855962104D42B00F09656 /* Blob.bin in Resources */ = {isa = PBXBuildFile; fileRef = CAC00D0F2082335B00958DB7 /* Blob.bin */; };
+		CA4855972104D42B00F09656 /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = CAAF8DE120F0F26E0071F8C3 /* Secrets.json */; };
+		CA48559E2104D4B500F09656 /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4C4D8F2104746900209D0C /* B2Kit.framework */; };
+		CA4855A32104D6F700F09656 /* B2FileManager+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21581720FB343F0003078C /* B2FileManager+NSObject.m */; };
+		CA4855A42104D6F700F09656 /* B2BucketLifeCycleRule+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157FB20FB321B0003078C /* B2BucketLifeCycleRule+NSObject.m */; };
+		CA4855A52104D6F700F09656 /* B2+Versions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA07839420F87DEB00DF0CE2 /* B2+Versions.m */; };
+		CA4855A62104D6F700F09656 /* B2Endpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3885F32077A113004F2158 /* B2Endpoint.m */; };
+		CA4855A72104D6F700F09656 /* B2BucketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD111A120793CE700E62C41 /* B2BucketManager.m */; };
+		CA4855A82104D6F700F09656 /* B2+LargeFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = CA78D93620F3BCEE00F2A4A3 /* B2+LargeFiles.m */; };
+		CA4855A92104D6F700F09656 /* B2FileInfoAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE126E207A505A0012BBE5 /* B2FileInfoAction.m */; };
+		CA4855AA2104D6F700F09656 /* B2Parts+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157E720FB31020003078C /* B2Parts+NSObject.m */; };
+		CA4855AB2104D6F700F09656 /* B2BucketLifeCycleRule.m in Sources */ = {isa = PBXBuildFile; fileRef = CA702CC6207600620094FDED /* B2BucketLifeCycleRule.m */; };
+		CA4855AC2104D6F700F09656 /* B2JSONValidator+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580F20FB33E40003078C /* B2JSONValidator+NSObject.m */; };
+		CA4855AD2104D6F700F09656 /* B2AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD1119D20793BF000E62C41 /* B2AccountManager.m */; };
+		CA4855AE2104D6F700F09656 /* B2Error.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF229E02079031100B3E540 /* B2Error.m */; };
+		CA4855AF2104D6F700F09656 /* B2+Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = CA07839020F87DCB00DF0CE2 /* B2+Keys.m */; };
+		CA4855B02104D6F700F09656 /* B2BucketLifeCycleRule+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CA41B0D0207A775C00B05AFD /* B2BucketLifeCycleRule+Private.m */; };
+		CA4855B12104D6F700F09656 /* B2AccountCapability.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7309772078E11A00289799 /* B2AccountCapability.m */; };
+		CA4855B22104D6F700F09656 /* B2Range.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0B93E52075F48E0000D914 /* B2Range.m */; };
+		CA4855B32104D6F700F09656 /* B2UnfinishedLargeFiles+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7152420FA525E00F8E8AB /* B2UnfinishedLargeFiles+Private.m */; };
+		CA4855B42104D6F700F09656 /* B2UnfinishedLargeFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = CA187CB220F4985700170CA7 /* B2UnfinishedLargeFiles.m */; };
+		CA4855B52104D6F700F09656 /* B2JSONValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = CADAA3422079EDDB00B470E6 /* B2JSONValidator.m */; };
+		CA4855B62104D6F700F09656 /* B2FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE126A207A4ECC0012BBE5 /* B2FileManager.m */; };
+		CA4855B72104D6F700F09656 /* B2Bucket+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7151420FA4A2F00F8E8AB /* B2Bucket+Private.m */; };
+		CA4855B82104D6F700F09656 /* B2Key+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157F720FB31E00003078C /* B2Key+NSObject.m */; };
+		CA4855B92104D6F700F09656 /* B2DefaultClient+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580B20FB33C50003078C /* B2DefaultClient+NSObject.m */; };
+		CA4855BA2104D6F700F09656 /* B2File.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474F3207633ED0064052F /* B2File.m */; };
+		CA4855BB2104D6F700F09656 /* B2Parts.m in Sources */ = {isa = PBXBuildFile; fileRef = CACD604320F63BB400B37322 /* B2Parts.m */; };
+		CA4855BC2104D6F700F09656 /* B2ClientDataResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CADAA3462079EEEE00B470E6 /* B2ClientDataResult.m */; };
+		CA4855BD2104D6F700F09656 /* B2MockClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEAF62092F5C000A3B70E /* B2MockClient.m */; };
+		CA4855BE2104D6F700F09656 /* B2+Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474F0207632F20064052F /* B2+Accounts.m */; };
+		CA4855BF2104D6F700F09656 /* B2Account+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FD920FB293700AD0FDC /* B2Account+NSObject.m */; };
+		CA4855C02104D6F700F09656 /* B2File+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7151C20FA508500F8E8AB /* B2File+Private.m */; };
+		CA4855C12104D6F700F09656 /* B2+Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474E8207632A00064052F /* B2+Buckets.m */; };
+		CA4855C22104D6F700F09656 /* B2UploadURL.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2FB9B8207B45B300A9515D /* B2UploadURL.m */; };
+		CA4855C32104D6F700F09656 /* B2ClientDataResult+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FE520FB29F700AD0FDC /* B2ClientDataResult+NSObject.m */; };
+		CA4855C42104D6F700F09656 /* B2File+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157E320FB30C30003078C /* B2File+NSObject.m */; };
+		CA4855C52104D6F700F09656 /* B2+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580320FB32D90003078C /* B2+NSObject.m */; };
+		CA4855C62104D6F700F09656 /* B2Account.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422C3207555B20039854F /* B2Account.m */; };
+		CA4855C72104D6F700F09656 /* B2+Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = CA071CC020EF67640049D00A /* B2+Logging.m */; };
+		CA4855C82104D6F700F09656 /* B2MockClient+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21581320FB34090003078C /* B2MockClient+NSObject.m */; };
+		CA4855C92104D6F700F09656 /* B2BucketType.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA7A12F2078D2AD002B405E /* B2BucketType.m */; };
+		CA4855CA2104D6F700F09656 /* B2Error+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FE920FB2A7400AD0FDC /* B2Error+NSObject.m */; };
+		CA4855CB2104D6F700F09656 /* B2Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2F314020936E0A00249557 /* B2Logger.m */; };
+		CA4855CC2104D6F700F09656 /* B2Account+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7151820FA4AF100F8E8AB /* B2Account+Private.m */; };
+		CA4855CD2104D6F700F09656 /* B2DefaultClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFEB2EE20924DE800A0C017 /* B2DefaultClient.m */; };
+		CA4855CE2104D6F700F09656 /* B2AccountManager+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157FF20FB32B00003078C /* B2AccountManager+NSObject.m */; };
+		CA4855CF2104D6F700F09656 /* B2Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422BB2075545E0039854F /* B2Bucket.m */; };
+		CA4855D02104D6F700F09656 /* B2Range+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157EB20FB31470003078C /* B2Range+NSObject.m */; };
+		CA4855D12104D6F700F09656 /* B2Bucket+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FDD20FB299800AD0FDC /* B2Bucket+NSObject.m */; };
+		CA4855D22104D6F700F09656 /* B2BucketManager+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580720FB33150003078C /* B2BucketManager+NSObject.m */; };
+		CA4855D32104D6F700F09656 /* B2Logger+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FED20FB2ABE00AD0FDC /* B2Logger+NSObject.m */; };
+		CA4855D42104D6F700F09656 /* B2UploadURL+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157F320FB31B70003078C /* B2UploadURL+NSObject.m */; };
+		CA4855D52104D6F700F09656 /* B2Parts+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7152020FA51CB00F8E8AB /* B2Parts+Private.m */; };
+		CA4855D62104D6F700F09656 /* B2Key.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422CB20755EA70039854F /* B2Key.m */; };
+		CA4855D72104D6F700F09656 /* B2UnfinishedLargeFiles+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157EF20FB31710003078C /* B2UnfinishedLargeFiles+NSObject.m */; };
+		CA4855D82104D6F700F09656 /* B2.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422BF207555420039854F /* B2.m */; };
+		CA4855D92104D6F700F09656 /* B2+Files.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474EC207632A90064052F /* B2+Files.m */; };
+		CA4855DC2104D6F700F09656 /* B2JSONValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = CADAA3412079EDDB00B470E6 /* B2JSONValidator.h */; };
+		CA4855DD2104D6F700F09656 /* B2DefaultClient.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFEB2ED20924DE800A0C017 /* B2DefaultClient.h */; };
+		CA4855DE2104D6F700F09656 /* B2UnfinishedLargeFiles+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7152320FA525E00F8E8AB /* B2UnfinishedLargeFiles+Private.h */; };
+		CA4855DF2104D6F700F09656 /* B2ClientDataResult.h in Headers */ = {isa = PBXBuildFile; fileRef = CADAA3452079EEEE00B470E6 /* B2ClientDataResult.h */; };
+		CA4855E02104D6F700F09656 /* B2Account+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151720FA4AF100F8E8AB /* B2Account+Private.h */; };
+		CA4855E12104D6F700F09656 /* B2File+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151B20FA508500F8E8AB /* B2File+Private.h */; };
+		CA4855E22104D6F700F09656 /* B2Logger.h in Headers */ = {isa = PBXBuildFile; fileRef = CA2F313F20936E0A00249557 /* B2Logger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855E32104D6F700F09656 /* B2UnfinishedLargeFiles.h in Headers */ = {isa = PBXBuildFile; fileRef = CA187CB120F4985700170CA7 /* B2UnfinishedLargeFiles.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855E42104D6F700F09656 /* B2Range.h in Headers */ = {isa = PBXBuildFile; fileRef = CA0B93E42075F48E0000D914 /* B2Range.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855E52104D6F700F09656 /* B2BucketManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CAD111A020793CE700E62C41 /* B2BucketManager.h */; };
+		CA4855E62104D6F700F09656 /* B2Key.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422CA20755EA70039854F /* B2Key.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855E72104D6F700F09656 /* B2UploadURL.h in Headers */ = {isa = PBXBuildFile; fileRef = CA2FB9B7207B45B300A9515D /* B2UploadURL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855E82104D6F700F09656 /* B2File.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7474F4207633ED0064052F /* B2File.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855E92104D6F700F09656 /* B2.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422BE207555420039854F /* B2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855EA2104D6F700F09656 /* B2FileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFE1269207A4ECC0012BBE5 /* B2FileManager.h */; };
+		CA4855EB2104D6F700F09656 /* B2BucketType.h in Headers */ = {isa = PBXBuildFile; fileRef = CAA7A12E2078D2AD002B405E /* B2BucketType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855EC2104D6F700F09656 /* B2Bucket.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422BA2075545E0039854F /* B2Bucket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855ED2104D6F700F09656 /* B2Parts.h in Headers */ = {isa = PBXBuildFile; fileRef = CACD604220F63BB400B37322 /* B2Parts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855EE2104D6F700F09656 /* B2Account.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422C2207555B20039854F /* B2Account.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855EF2104D6F700F09656 /* B2Error.h in Headers */ = {isa = PBXBuildFile; fileRef = CAF229DF2079031100B3E540 /* B2Error.h */; };
+		CA4855F02104D6F700F09656 /* B2BucketLifeCycleRule.h in Headers */ = {isa = PBXBuildFile; fileRef = CA702CC5207600620094FDED /* B2BucketLifeCycleRule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855F12104D6F700F09656 /* B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA1CAAA22075524E00354FD4 /* B2Kit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855F22104D6F700F09656 /* B2Endpoint.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC731B2207659A000EF615C /* B2Endpoint.h */; };
+		CA4855F32104D6F700F09656 /* B2AccountCapability.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7309762078E11A00289799 /* B2AccountCapability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855F42104D6F700F09656 /* B2AccountManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CAD1119C20793BF000E62C41 /* B2AccountManager.h */; };
+		CA4855F52104D6F700F09656 /* B2FileInfoAction.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFE126D207A505A0012BBE5 /* B2FileInfoAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4855F62104D6F700F09656 /* B2BucketLifeCycleRule+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CA41B0CF207A775C00B05AFD /* B2BucketLifeCycleRule+Private.h */; };
+		CA4855F72104D6F700F09656 /* B2Parts+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151F20FA51CB00F8E8AB /* B2Parts+Private.h */; };
+		CA4855F82104D6F700F09656 /* B2Client.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422C620755DF30039854F /* B2Client.h */; };
+		CA4855F92104D6F700F09656 /* B2Bucket+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151320FA4A2F00F8E8AB /* B2Bucket+Private.h */; };
+		CA4856042104D76C00F09656 /* B2UploadURLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB152092F87D00A3B70E /* B2UploadURLTests.m */; };
+		CA4856052104D76C00F09656 /* B2FileManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB112092F87000A3B70E /* B2FileManagerTests.m */; };
+		CA4856062104D76C00F09656 /* B2AccountManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB002092F78900A3B70E /* B2AccountManagerTests.m */; };
+		CA4856072104D76C00F09656 /* B2ClientDataResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62AB20F72C0A00B21A37 /* B2ClientDataResultTests.m */; };
+		CA4856082104D76C00F09656 /* B2KitTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474DE207630C50064052F /* B2KitTestCase.m */; };
+		CA4856092104D76C00F09656 /* B2AccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEAFC2092F77500A3B70E /* B2AccountTests.m */; };
+		CA48560A2104D76C00F09656 /* B2AccountCapabilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEAFE2092F78100A3B70E /* B2AccountCapabilityTests.m */; };
+		CA48560B2104D76C00F09656 /* B2UnfinishedLargeFilesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62B820F72CB100B21A37 /* B2UnfinishedLargeFilesTests.m */; };
+		CA48560C2104D76C00F09656 /* B2EndpointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62B220F72C6900B21A37 /* B2EndpointTests.m */; };
+		CA48560D2104D76C00F09656 /* B2RangeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB132092F87600A3B70E /* B2RangeTests.m */; };
+		CA48560E2104D76C00F09656 /* B2LoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62BB20F72D7C00B21A37 /* B2LoggerTests.m */; };
+		CA48560F2104D76C00F09656 /* B2BucketManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB062092F80400A3B70E /* B2BucketManagerTests.m */; };
+		CA4856102104D76C00F09656 /* B2FileInfoActionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB0F2092F86A00A3B70E /* B2FileInfoActionTests.m */; };
+		CA4856112104D76C00F09656 /* B2BucketTypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB082092F80900A3B70E /* B2BucketTypeTests.m */; };
+		CA4856122104D76C00F09656 /* B2KeyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB172092F8B700A3B70E /* B2KeyTests.m */; };
+		CA4856132104D76C00F09656 /* B2PartsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62B620F72C9B00B21A37 /* B2PartsTests.m */; };
+		CA4856142104D76C00F09656 /* B2BucketLifeCycleRuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB042092F7FB00A3B70E /* B2BucketLifeCycleRuleTests.m */; };
+		CA4856152104D76C00F09656 /* B2FileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB0D2092F86300A3B70E /* B2FileTests.m */; };
+		CA4856162104D76C00F09656 /* B2JSONValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62AF20F72C2F00B21A37 /* B2JSONValidatorTests.m */; };
+		CA4856172104D76C00F09656 /* B2ErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB0B2092F84E00A3B70E /* B2ErrorTests.m */; };
+		CA4856182104D76C00F09656 /* B2DefaultClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62AD20F72C1F00B21A37 /* B2DefaultClientTests.m */; };
+		CA4856192104D76C00F09656 /* B2BucketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB022092F7EE00A3B70E /* B2BucketTests.m */; };
+		CA48561D2104D76C00F09656 /* Blib.bin in Resources */ = {isa = PBXBuildFile; fileRef = CABA9C8F20F3E6C100506C5B /* Blib.bin */; };
+		CA48561E2104D76C00F09656 /* Blob.bin in Resources */ = {isa = PBXBuildFile; fileRef = CAC00D0F2082335B00958DB7 /* Blob.bin */; };
+		CA48561F2104D76C00F09656 /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = CAAF8DE120F0F26E0071F8C3 /* Secrets.json */; };
+		CA4856272104D7A900F09656 /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4855FE2104D6F700F09656 /* B2Kit.framework */; };
+		CA48562C2104D83800F09656 /* B2KitAccountIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474E32076319D0064052F /* B2KitAccountIntegrationTests.m */; };
+		CA48562D2104D83800F09656 /* B2KitTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474DE207630C50064052F /* B2KitTestCase.m */; };
+		CA48562E2104D83800F09656 /* B2KitFileIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474E12076317D0064052F /* B2KitFileIntegrationTests.m */; };
+		CA48562F2104D83800F09656 /* B2KitBucketIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474DC207630B50064052F /* B2KitBucketIntegrationTests.m */; };
+		CA4856332104D83800F09656 /* Blib.bin in Resources */ = {isa = PBXBuildFile; fileRef = CABA9C8F20F3E6C100506C5B /* Blib.bin */; };
+		CA4856342104D83800F09656 /* Blob.bin in Resources */ = {isa = PBXBuildFile; fileRef = CAC00D0F2082335B00958DB7 /* Blob.bin */; };
+		CA4856352104D83800F09656 /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = CAAF8DE120F0F26E0071F8C3 /* Secrets.json */; };
+		CA48563D2104D88600F09656 /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4855FE2104D6F700F09656 /* B2Kit.framework */; };
+		CA4856402104D8E400F09656 /* B2FileManager+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21581720FB343F0003078C /* B2FileManager+NSObject.m */; };
+		CA4856412104D8E400F09656 /* B2BucketLifeCycleRule+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157FB20FB321B0003078C /* B2BucketLifeCycleRule+NSObject.m */; };
+		CA4856422104D8E400F09656 /* B2+Versions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA07839420F87DEB00DF0CE2 /* B2+Versions.m */; };
+		CA4856432104D8E400F09656 /* B2Endpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3885F32077A113004F2158 /* B2Endpoint.m */; };
+		CA4856442104D8E400F09656 /* B2BucketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD111A120793CE700E62C41 /* B2BucketManager.m */; };
+		CA4856452104D8E400F09656 /* B2+LargeFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = CA78D93620F3BCEE00F2A4A3 /* B2+LargeFiles.m */; };
+		CA4856462104D8E400F09656 /* B2FileInfoAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE126E207A505A0012BBE5 /* B2FileInfoAction.m */; };
+		CA4856472104D8E400F09656 /* B2Parts+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157E720FB31020003078C /* B2Parts+NSObject.m */; };
+		CA4856482104D8E400F09656 /* B2BucketLifeCycleRule.m in Sources */ = {isa = PBXBuildFile; fileRef = CA702CC6207600620094FDED /* B2BucketLifeCycleRule.m */; };
+		CA4856492104D8E400F09656 /* B2JSONValidator+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580F20FB33E40003078C /* B2JSONValidator+NSObject.m */; };
+		CA48564A2104D8E400F09656 /* B2AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD1119D20793BF000E62C41 /* B2AccountManager.m */; };
+		CA48564B2104D8E400F09656 /* B2Error.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF229E02079031100B3E540 /* B2Error.m */; };
+		CA48564C2104D8E400F09656 /* B2+Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = CA07839020F87DCB00DF0CE2 /* B2+Keys.m */; };
+		CA48564D2104D8E400F09656 /* B2BucketLifeCycleRule+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CA41B0D0207A775C00B05AFD /* B2BucketLifeCycleRule+Private.m */; };
+		CA48564E2104D8E400F09656 /* B2AccountCapability.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7309772078E11A00289799 /* B2AccountCapability.m */; };
+		CA48564F2104D8E400F09656 /* B2Range.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0B93E52075F48E0000D914 /* B2Range.m */; };
+		CA4856502104D8E400F09656 /* B2UnfinishedLargeFiles+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7152420FA525E00F8E8AB /* B2UnfinishedLargeFiles+Private.m */; };
+		CA4856512104D8E400F09656 /* B2UnfinishedLargeFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = CA187CB220F4985700170CA7 /* B2UnfinishedLargeFiles.m */; };
+		CA4856522104D8E400F09656 /* B2JSONValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = CADAA3422079EDDB00B470E6 /* B2JSONValidator.m */; };
+		CA4856532104D8E400F09656 /* B2FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE126A207A4ECC0012BBE5 /* B2FileManager.m */; };
+		CA4856542104D8E400F09656 /* B2Bucket+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7151420FA4A2F00F8E8AB /* B2Bucket+Private.m */; };
+		CA4856552104D8E400F09656 /* B2Key+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157F720FB31E00003078C /* B2Key+NSObject.m */; };
+		CA4856562104D8E400F09656 /* B2DefaultClient+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580B20FB33C50003078C /* B2DefaultClient+NSObject.m */; };
+		CA4856572104D8E400F09656 /* B2File.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474F3207633ED0064052F /* B2File.m */; };
+		CA4856582104D8E400F09656 /* B2Parts.m in Sources */ = {isa = PBXBuildFile; fileRef = CACD604320F63BB400B37322 /* B2Parts.m */; };
+		CA4856592104D8E400F09656 /* B2ClientDataResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CADAA3462079EEEE00B470E6 /* B2ClientDataResult.m */; };
+		CA48565A2104D8E400F09656 /* B2MockClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEAF62092F5C000A3B70E /* B2MockClient.m */; };
+		CA48565B2104D8E400F09656 /* B2+Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474F0207632F20064052F /* B2+Accounts.m */; };
+		CA48565C2104D8E400F09656 /* B2Account+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FD920FB293700AD0FDC /* B2Account+NSObject.m */; };
+		CA48565D2104D8E400F09656 /* B2File+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7151C20FA508500F8E8AB /* B2File+Private.m */; };
+		CA48565E2104D8E400F09656 /* B2+Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474E8207632A00064052F /* B2+Buckets.m */; };
+		CA48565F2104D8E400F09656 /* B2UploadURL.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2FB9B8207B45B300A9515D /* B2UploadURL.m */; };
+		CA4856602104D8E400F09656 /* B2ClientDataResult+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FE520FB29F700AD0FDC /* B2ClientDataResult+NSObject.m */; };
+		CA4856612104D8E400F09656 /* B2File+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157E320FB30C30003078C /* B2File+NSObject.m */; };
+		CA4856622104D8E400F09656 /* B2+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580320FB32D90003078C /* B2+NSObject.m */; };
+		CA4856632104D8E400F09656 /* B2Account.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422C3207555B20039854F /* B2Account.m */; };
+		CA4856642104D8E400F09656 /* B2+Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = CA071CC020EF67640049D00A /* B2+Logging.m */; };
+		CA4856652104D8E400F09656 /* B2MockClient+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21581320FB34090003078C /* B2MockClient+NSObject.m */; };
+		CA4856662104D8E400F09656 /* B2BucketType.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA7A12F2078D2AD002B405E /* B2BucketType.m */; };
+		CA4856672104D8E400F09656 /* B2Error+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FE920FB2A7400AD0FDC /* B2Error+NSObject.m */; };
+		CA4856682104D8E400F09656 /* B2Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2F314020936E0A00249557 /* B2Logger.m */; };
+		CA4856692104D8E400F09656 /* B2Account+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7151820FA4AF100F8E8AB /* B2Account+Private.m */; };
+		CA48566A2104D8E400F09656 /* B2DefaultClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFEB2EE20924DE800A0C017 /* B2DefaultClient.m */; };
+		CA48566B2104D8E400F09656 /* B2AccountManager+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157FF20FB32B00003078C /* B2AccountManager+NSObject.m */; };
+		CA48566C2104D8E400F09656 /* B2Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422BB2075545E0039854F /* B2Bucket.m */; };
+		CA48566D2104D8E400F09656 /* B2Range+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157EB20FB31470003078C /* B2Range+NSObject.m */; };
+		CA48566E2104D8E400F09656 /* B2Bucket+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FDD20FB299800AD0FDC /* B2Bucket+NSObject.m */; };
+		CA48566F2104D8E400F09656 /* B2BucketManager+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580720FB33150003078C /* B2BucketManager+NSObject.m */; };
+		CA4856702104D8E400F09656 /* B2Logger+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FED20FB2ABE00AD0FDC /* B2Logger+NSObject.m */; };
+		CA4856712104D8E400F09656 /* B2UploadURL+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157F320FB31B70003078C /* B2UploadURL+NSObject.m */; };
+		CA4856722104D8E400F09656 /* B2Parts+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7152020FA51CB00F8E8AB /* B2Parts+Private.m */; };
+		CA4856732104D8E400F09656 /* B2Key.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422CB20755EA70039854F /* B2Key.m */; };
+		CA4856742104D8E400F09656 /* B2UnfinishedLargeFiles+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157EF20FB31710003078C /* B2UnfinishedLargeFiles+NSObject.m */; };
+		CA4856752104D8E400F09656 /* B2.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422BF207555420039854F /* B2.m */; };
+		CA4856762104D8E400F09656 /* B2+Files.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474EC207632A90064052F /* B2+Files.m */; };
+		CA4856792104D8E400F09656 /* B2JSONValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = CADAA3412079EDDB00B470E6 /* B2JSONValidator.h */; };
+		CA48567A2104D8E400F09656 /* B2DefaultClient.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFEB2ED20924DE800A0C017 /* B2DefaultClient.h */; };
+		CA48567B2104D8E400F09656 /* B2UnfinishedLargeFiles+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7152320FA525E00F8E8AB /* B2UnfinishedLargeFiles+Private.h */; };
+		CA48567C2104D8E400F09656 /* B2ClientDataResult.h in Headers */ = {isa = PBXBuildFile; fileRef = CADAA3452079EEEE00B470E6 /* B2ClientDataResult.h */; };
+		CA48567D2104D8E400F09656 /* B2Account+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151720FA4AF100F8E8AB /* B2Account+Private.h */; };
+		CA48567E2104D8E400F09656 /* B2File+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151B20FA508500F8E8AB /* B2File+Private.h */; };
+		CA48567F2104D8E400F09656 /* B2Logger.h in Headers */ = {isa = PBXBuildFile; fileRef = CA2F313F20936E0A00249557 /* B2Logger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4856802104D8E400F09656 /* B2UnfinishedLargeFiles.h in Headers */ = {isa = PBXBuildFile; fileRef = CA187CB120F4985700170CA7 /* B2UnfinishedLargeFiles.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4856812104D8E400F09656 /* B2Range.h in Headers */ = {isa = PBXBuildFile; fileRef = CA0B93E42075F48E0000D914 /* B2Range.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4856822104D8E400F09656 /* B2BucketManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CAD111A020793CE700E62C41 /* B2BucketManager.h */; };
+		CA4856832104D8E400F09656 /* B2Key.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422CA20755EA70039854F /* B2Key.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4856842104D8E400F09656 /* B2UploadURL.h in Headers */ = {isa = PBXBuildFile; fileRef = CA2FB9B7207B45B300A9515D /* B2UploadURL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4856852104D8E400F09656 /* B2File.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7474F4207633ED0064052F /* B2File.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4856862104D8E400F09656 /* B2.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422BE207555420039854F /* B2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4856872104D8E400F09656 /* B2FileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFE1269207A4ECC0012BBE5 /* B2FileManager.h */; };
+		CA4856882104D8E400F09656 /* B2BucketType.h in Headers */ = {isa = PBXBuildFile; fileRef = CAA7A12E2078D2AD002B405E /* B2BucketType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4856892104D8E400F09656 /* B2Bucket.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422BA2075545E0039854F /* B2Bucket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA48568A2104D8E400F09656 /* B2Parts.h in Headers */ = {isa = PBXBuildFile; fileRef = CACD604220F63BB400B37322 /* B2Parts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA48568B2104D8E400F09656 /* B2Account.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422C2207555B20039854F /* B2Account.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA48568C2104D8E400F09656 /* B2Error.h in Headers */ = {isa = PBXBuildFile; fileRef = CAF229DF2079031100B3E540 /* B2Error.h */; };
+		CA48568D2104D8E400F09656 /* B2BucketLifeCycleRule.h in Headers */ = {isa = PBXBuildFile; fileRef = CA702CC5207600620094FDED /* B2BucketLifeCycleRule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA48568E2104D8E400F09656 /* B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA1CAAA22075524E00354FD4 /* B2Kit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA48568F2104D8E400F09656 /* B2Endpoint.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC731B2207659A000EF615C /* B2Endpoint.h */; };
+		CA4856902104D8E400F09656 /* B2AccountCapability.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7309762078E11A00289799 /* B2AccountCapability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4856912104D8E400F09656 /* B2AccountManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CAD1119C20793BF000E62C41 /* B2AccountManager.h */; };
+		CA4856922104D8E400F09656 /* B2FileInfoAction.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFE126D207A505A0012BBE5 /* B2FileInfoAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4856932104D8E400F09656 /* B2BucketLifeCycleRule+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CA41B0CF207A775C00B05AFD /* B2BucketLifeCycleRule+Private.h */; };
+		CA4856942104D8E400F09656 /* B2Parts+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151F20FA51CB00F8E8AB /* B2Parts+Private.h */; };
+		CA4856952104D8E400F09656 /* B2Client.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422C620755DF30039854F /* B2Client.h */; };
+		CA4856962104D8E400F09656 /* B2Bucket+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151320FA4A2F00F8E8AB /* B2Bucket+Private.h */; };
+		CA4856A12104D92B00F09656 /* B2UploadURLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB152092F87D00A3B70E /* B2UploadURLTests.m */; };
+		CA4856A22104D92B00F09656 /* B2FileManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB112092F87000A3B70E /* B2FileManagerTests.m */; };
+		CA4856A32104D92B00F09656 /* B2AccountManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB002092F78900A3B70E /* B2AccountManagerTests.m */; };
+		CA4856A42104D92B00F09656 /* B2ClientDataResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62AB20F72C0A00B21A37 /* B2ClientDataResultTests.m */; };
+		CA4856A52104D92B00F09656 /* B2KitTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474DE207630C50064052F /* B2KitTestCase.m */; };
+		CA4856A62104D92B00F09656 /* B2AccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEAFC2092F77500A3B70E /* B2AccountTests.m */; };
+		CA4856A72104D92B00F09656 /* B2AccountCapabilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEAFE2092F78100A3B70E /* B2AccountCapabilityTests.m */; };
+		CA4856A82104D92B00F09656 /* B2UnfinishedLargeFilesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62B820F72CB100B21A37 /* B2UnfinishedLargeFilesTests.m */; };
+		CA4856A92104D92B00F09656 /* B2EndpointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62B220F72C6900B21A37 /* B2EndpointTests.m */; };
+		CA4856AA2104D92B00F09656 /* B2RangeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB132092F87600A3B70E /* B2RangeTests.m */; };
+		CA4856AB2104D92B00F09656 /* B2LoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62BB20F72D7C00B21A37 /* B2LoggerTests.m */; };
+		CA4856AC2104D92B00F09656 /* B2BucketManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB062092F80400A3B70E /* B2BucketManagerTests.m */; };
+		CA4856AD2104D92B00F09656 /* B2FileInfoActionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB0F2092F86A00A3B70E /* B2FileInfoActionTests.m */; };
+		CA4856AE2104D92B00F09656 /* B2BucketTypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB082092F80900A3B70E /* B2BucketTypeTests.m */; };
+		CA4856AF2104D92B00F09656 /* B2KeyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB172092F8B700A3B70E /* B2KeyTests.m */; };
+		CA4856B02104D92B00F09656 /* B2PartsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62B620F72C9B00B21A37 /* B2PartsTests.m */; };
+		CA4856B12104D92B00F09656 /* B2BucketLifeCycleRuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB042092F7FB00A3B70E /* B2BucketLifeCycleRuleTests.m */; };
+		CA4856B22104D92B00F09656 /* B2FileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB0D2092F86300A3B70E /* B2FileTests.m */; };
+		CA4856B32104D92B00F09656 /* B2JSONValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62AF20F72C2F00B21A37 /* B2JSONValidatorTests.m */; };
+		CA4856B42104D92B00F09656 /* B2ErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB0B2092F84E00A3B70E /* B2ErrorTests.m */; };
+		CA4856B52104D92B00F09656 /* B2DefaultClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62AD20F72C1F00B21A37 /* B2DefaultClientTests.m */; };
+		CA4856B62104D92B00F09656 /* B2BucketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB022092F7EE00A3B70E /* B2BucketTests.m */; };
+		CA4856BA2104D92B00F09656 /* Blib.bin in Resources */ = {isa = PBXBuildFile; fileRef = CABA9C8F20F3E6C100506C5B /* Blib.bin */; };
+		CA4856BB2104D92B00F09656 /* Blob.bin in Resources */ = {isa = PBXBuildFile; fileRef = CAC00D0F2082335B00958DB7 /* Blob.bin */; };
+		CA4856BC2104D92B00F09656 /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = CAAF8DE120F0F26E0071F8C3 /* Secrets.json */; };
+		CA4856C42104D95800F09656 /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA48569B2104D8E400F09656 /* B2Kit.framework */; };
+		CA4856C92104D9B500F09656 /* B2KitAccountIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474E32076319D0064052F /* B2KitAccountIntegrationTests.m */; };
+		CA4856CA2104D9B500F09656 /* B2KitTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474DE207630C50064052F /* B2KitTestCase.m */; };
+		CA4856CB2104D9B500F09656 /* B2KitFileIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474E12076317D0064052F /* B2KitFileIntegrationTests.m */; };
+		CA4856CC2104D9B500F09656 /* B2KitBucketIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474DC207630B50064052F /* B2KitBucketIntegrationTests.m */; };
+		CA4856D02104D9B500F09656 /* Blib.bin in Resources */ = {isa = PBXBuildFile; fileRef = CABA9C8F20F3E6C100506C5B /* Blib.bin */; };
+		CA4856D12104D9B500F09656 /* Blob.bin in Resources */ = {isa = PBXBuildFile; fileRef = CAC00D0F2082335B00958DB7 /* Blob.bin */; };
+		CA4856D22104D9B500F09656 /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = CAAF8DE120F0F26E0071F8C3 /* Secrets.json */; };
+		CA4856DA2104D9C700F09656 /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA48569B2104D8E400F09656 /* B2Kit.framework */; };
+		CA4C4D342104746900209D0C /* B2FileManager+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21581720FB343F0003078C /* B2FileManager+NSObject.m */; };
+		CA4C4D352104746900209D0C /* B2BucketLifeCycleRule+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157FB20FB321B0003078C /* B2BucketLifeCycleRule+NSObject.m */; };
+		CA4C4D362104746900209D0C /* B2+Versions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA07839420F87DEB00DF0CE2 /* B2+Versions.m */; };
+		CA4C4D372104746900209D0C /* B2Endpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3885F32077A113004F2158 /* B2Endpoint.m */; };
+		CA4C4D382104746900209D0C /* B2BucketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD111A120793CE700E62C41 /* B2BucketManager.m */; };
+		CA4C4D392104746900209D0C /* B2+LargeFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = CA78D93620F3BCEE00F2A4A3 /* B2+LargeFiles.m */; };
+		CA4C4D3A2104746900209D0C /* B2FileInfoAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE126E207A505A0012BBE5 /* B2FileInfoAction.m */; };
+		CA4C4D3B2104746900209D0C /* B2Parts+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157E720FB31020003078C /* B2Parts+NSObject.m */; };
+		CA4C4D3C2104746900209D0C /* B2BucketLifeCycleRule.m in Sources */ = {isa = PBXBuildFile; fileRef = CA702CC6207600620094FDED /* B2BucketLifeCycleRule.m */; };
+		CA4C4D3D2104746900209D0C /* B2JSONValidator+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580F20FB33E40003078C /* B2JSONValidator+NSObject.m */; };
+		CA4C4D3E2104746900209D0C /* B2AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD1119D20793BF000E62C41 /* B2AccountManager.m */; };
+		CA4C4D3F2104746900209D0C /* B2Error.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF229E02079031100B3E540 /* B2Error.m */; };
+		CA4C4D402104746900209D0C /* B2+Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = CA07839020F87DCB00DF0CE2 /* B2+Keys.m */; };
+		CA4C4D412104746900209D0C /* B2BucketLifeCycleRule+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CA41B0D0207A775C00B05AFD /* B2BucketLifeCycleRule+Private.m */; };
+		CA4C4D422104746900209D0C /* B2AccountCapability.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7309772078E11A00289799 /* B2AccountCapability.m */; };
+		CA4C4D432104746900209D0C /* B2Range.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0B93E52075F48E0000D914 /* B2Range.m */; };
+		CA4C4D442104746900209D0C /* B2UnfinishedLargeFiles+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7152420FA525E00F8E8AB /* B2UnfinishedLargeFiles+Private.m */; };
+		CA4C4D452104746900209D0C /* B2UnfinishedLargeFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = CA187CB220F4985700170CA7 /* B2UnfinishedLargeFiles.m */; };
+		CA4C4D462104746900209D0C /* B2JSONValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = CADAA3422079EDDB00B470E6 /* B2JSONValidator.m */; };
+		CA4C4D472104746900209D0C /* B2FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE126A207A4ECC0012BBE5 /* B2FileManager.m */; };
+		CA4C4D482104746900209D0C /* B2Bucket+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7151420FA4A2F00F8E8AB /* B2Bucket+Private.m */; };
+		CA4C4D492104746900209D0C /* B2Key+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157F720FB31E00003078C /* B2Key+NSObject.m */; };
+		CA4C4D4A2104746900209D0C /* B2DefaultClient+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580B20FB33C50003078C /* B2DefaultClient+NSObject.m */; };
+		CA4C4D4B2104746900209D0C /* B2File.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474F3207633ED0064052F /* B2File.m */; };
+		CA4C4D4C2104746900209D0C /* B2Parts.m in Sources */ = {isa = PBXBuildFile; fileRef = CACD604320F63BB400B37322 /* B2Parts.m */; };
+		CA4C4D4D2104746900209D0C /* B2ClientDataResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CADAA3462079EEEE00B470E6 /* B2ClientDataResult.m */; };
+		CA4C4D4E2104746900209D0C /* B2MockClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEAF62092F5C000A3B70E /* B2MockClient.m */; };
+		CA4C4D4F2104746900209D0C /* B2+Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474F0207632F20064052F /* B2+Accounts.m */; };
+		CA4C4D502104746900209D0C /* B2Account+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FD920FB293700AD0FDC /* B2Account+NSObject.m */; };
+		CA4C4D512104746900209D0C /* B2File+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7151C20FA508500F8E8AB /* B2File+Private.m */; };
+		CA4C4D522104746900209D0C /* B2+Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474E8207632A00064052F /* B2+Buckets.m */; };
+		CA4C4D532104746900209D0C /* B2UploadURL.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2FB9B8207B45B300A9515D /* B2UploadURL.m */; };
+		CA4C4D542104746900209D0C /* B2ClientDataResult+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FE520FB29F700AD0FDC /* B2ClientDataResult+NSObject.m */; };
+		CA4C4D552104746900209D0C /* B2File+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157E320FB30C30003078C /* B2File+NSObject.m */; };
+		CA4C4D562104746900209D0C /* B2+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580320FB32D90003078C /* B2+NSObject.m */; };
+		CA4C4D572104746900209D0C /* B2Account.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422C3207555B20039854F /* B2Account.m */; };
+		CA4C4D582104746900209D0C /* B2+Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = CA071CC020EF67640049D00A /* B2+Logging.m */; };
+		CA4C4D592104746900209D0C /* B2MockClient+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21581320FB34090003078C /* B2MockClient+NSObject.m */; };
+		CA4C4D5A2104746900209D0C /* B2BucketType.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA7A12F2078D2AD002B405E /* B2BucketType.m */; };
+		CA4C4D5B2104746900209D0C /* B2Error+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FE920FB2A7400AD0FDC /* B2Error+NSObject.m */; };
+		CA4C4D5C2104746900209D0C /* B2Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2F314020936E0A00249557 /* B2Logger.m */; };
+		CA4C4D5D2104746900209D0C /* B2Account+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7151820FA4AF100F8E8AB /* B2Account+Private.m */; };
+		CA4C4D5E2104746900209D0C /* B2DefaultClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFEB2EE20924DE800A0C017 /* B2DefaultClient.m */; };
+		CA4C4D5F2104746900209D0C /* B2AccountManager+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157FF20FB32B00003078C /* B2AccountManager+NSObject.m */; };
+		CA4C4D602104746900209D0C /* B2Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422BB2075545E0039854F /* B2Bucket.m */; };
+		CA4C4D612104746900209D0C /* B2Range+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157EB20FB31470003078C /* B2Range+NSObject.m */; };
+		CA4C4D622104746900209D0C /* B2Bucket+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FDD20FB299800AD0FDC /* B2Bucket+NSObject.m */; };
+		CA4C4D632104746900209D0C /* B2BucketManager+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580720FB33150003078C /* B2BucketManager+NSObject.m */; };
+		CA4C4D642104746900209D0C /* B2Logger+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FED20FB2ABE00AD0FDC /* B2Logger+NSObject.m */; };
+		CA4C4D652104746900209D0C /* B2UploadURL+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157F320FB31B70003078C /* B2UploadURL+NSObject.m */; };
+		CA4C4D662104746900209D0C /* B2Parts+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7152020FA51CB00F8E8AB /* B2Parts+Private.m */; };
+		CA4C4D672104746900209D0C /* B2Key.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422CB20755EA70039854F /* B2Key.m */; };
+		CA4C4D682104746900209D0C /* B2UnfinishedLargeFiles+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2157EF20FB31710003078C /* B2UnfinishedLargeFiles+NSObject.m */; };
+		CA4C4D692104746900209D0C /* B2.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422BF207555420039854F /* B2.m */; };
+		CA4C4D6A2104746900209D0C /* B2+Files.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474EC207632A90064052F /* B2+Files.m */; };
+		CA4C4D6D2104746900209D0C /* B2JSONValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = CADAA3412079EDDB00B470E6 /* B2JSONValidator.h */; };
+		CA4C4D6E2104746900209D0C /* B2DefaultClient.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFEB2ED20924DE800A0C017 /* B2DefaultClient.h */; };
+		CA4C4D6F2104746900209D0C /* B2UnfinishedLargeFiles+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7152320FA525E00F8E8AB /* B2UnfinishedLargeFiles+Private.h */; };
+		CA4C4D702104746900209D0C /* B2ClientDataResult.h in Headers */ = {isa = PBXBuildFile; fileRef = CADAA3452079EEEE00B470E6 /* B2ClientDataResult.h */; };
+		CA4C4D712104746900209D0C /* B2Account+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151720FA4AF100F8E8AB /* B2Account+Private.h */; };
+		CA4C4D722104746900209D0C /* B2File+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151B20FA508500F8E8AB /* B2File+Private.h */; };
+		CA4C4D732104746900209D0C /* B2Logger.h in Headers */ = {isa = PBXBuildFile; fileRef = CA2F313F20936E0A00249557 /* B2Logger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D742104746900209D0C /* B2UnfinishedLargeFiles.h in Headers */ = {isa = PBXBuildFile; fileRef = CA187CB120F4985700170CA7 /* B2UnfinishedLargeFiles.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D752104746900209D0C /* B2Range.h in Headers */ = {isa = PBXBuildFile; fileRef = CA0B93E42075F48E0000D914 /* B2Range.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D762104746900209D0C /* B2BucketManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CAD111A020793CE700E62C41 /* B2BucketManager.h */; };
+		CA4C4D772104746900209D0C /* B2Key.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422CA20755EA70039854F /* B2Key.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D782104746900209D0C /* B2UploadURL.h in Headers */ = {isa = PBXBuildFile; fileRef = CA2FB9B7207B45B300A9515D /* B2UploadURL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D792104746900209D0C /* B2File.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7474F4207633ED0064052F /* B2File.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D7A2104746900209D0C /* B2.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422BE207555420039854F /* B2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D7B2104746900209D0C /* B2FileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFE1269207A4ECC0012BBE5 /* B2FileManager.h */; };
+		CA4C4D7C2104746900209D0C /* B2BucketType.h in Headers */ = {isa = PBXBuildFile; fileRef = CAA7A12E2078D2AD002B405E /* B2BucketType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D7D2104746900209D0C /* B2Bucket.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422BA2075545E0039854F /* B2Bucket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D7E2104746900209D0C /* B2Parts.h in Headers */ = {isa = PBXBuildFile; fileRef = CACD604220F63BB400B37322 /* B2Parts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D7F2104746900209D0C /* B2Account.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422C2207555B20039854F /* B2Account.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D802104746900209D0C /* B2Error.h in Headers */ = {isa = PBXBuildFile; fileRef = CAF229DF2079031100B3E540 /* B2Error.h */; };
+		CA4C4D812104746900209D0C /* B2BucketLifeCycleRule.h in Headers */ = {isa = PBXBuildFile; fileRef = CA702CC5207600620094FDED /* B2BucketLifeCycleRule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D822104746900209D0C /* B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA1CAAA22075524E00354FD4 /* B2Kit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D832104746900209D0C /* B2Endpoint.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC731B2207659A000EF615C /* B2Endpoint.h */; };
+		CA4C4D842104746900209D0C /* B2AccountCapability.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7309762078E11A00289799 /* B2AccountCapability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D852104746900209D0C /* B2AccountManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CAD1119C20793BF000E62C41 /* B2AccountManager.h */; };
+		CA4C4D862104746900209D0C /* B2FileInfoAction.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFE126D207A505A0012BBE5 /* B2FileInfoAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA4C4D872104746900209D0C /* B2BucketLifeCycleRule+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CA41B0CF207A775C00B05AFD /* B2BucketLifeCycleRule+Private.h */; };
+		CA4C4D882104746900209D0C /* B2Parts+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151F20FA51CB00F8E8AB /* B2Parts+Private.h */; };
+		CA4C4D892104746900209D0C /* B2Client.h in Headers */ = {isa = PBXBuildFile; fileRef = CAC422C620755DF30039854F /* B2Client.h */; };
+		CA4C4D8A2104746900209D0C /* B2Bucket+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151320FA4A2F00F8E8AB /* B2Bucket+Private.h */; };
+		CA4C4D952104753C00209D0C /* B2UploadURLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB152092F87D00A3B70E /* B2UploadURLTests.m */; };
+		CA4C4D962104753C00209D0C /* B2FileManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB112092F87000A3B70E /* B2FileManagerTests.m */; };
+		CA4C4D972104753C00209D0C /* B2AccountManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB002092F78900A3B70E /* B2AccountManagerTests.m */; };
+		CA4C4D982104753C00209D0C /* B2ClientDataResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62AB20F72C0A00B21A37 /* B2ClientDataResultTests.m */; };
+		CA4C4D992104753C00209D0C /* B2KitTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474DE207630C50064052F /* B2KitTestCase.m */; };
+		CA4C4D9A2104753C00209D0C /* B2AccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEAFC2092F77500A3B70E /* B2AccountTests.m */; };
+		CA4C4D9B2104753C00209D0C /* B2AccountCapabilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEAFE2092F78100A3B70E /* B2AccountCapabilityTests.m */; };
+		CA4C4D9C2104753C00209D0C /* B2UnfinishedLargeFilesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62B820F72CB100B21A37 /* B2UnfinishedLargeFilesTests.m */; };
+		CA4C4D9D2104753C00209D0C /* B2EndpointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62B220F72C6900B21A37 /* B2EndpointTests.m */; };
+		CA4C4D9E2104753C00209D0C /* B2RangeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB132092F87600A3B70E /* B2RangeTests.m */; };
+		CA4C4D9F2104753C00209D0C /* B2LoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62BB20F72D7C00B21A37 /* B2LoggerTests.m */; };
+		CA4C4DA02104753C00209D0C /* B2BucketManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB062092F80400A3B70E /* B2BucketManagerTests.m */; };
+		CA4C4DA12104753C00209D0C /* B2FileInfoActionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB0F2092F86A00A3B70E /* B2FileInfoActionTests.m */; };
+		CA4C4DA22104753C00209D0C /* B2BucketTypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB082092F80900A3B70E /* B2BucketTypeTests.m */; };
+		CA4C4DA32104753C00209D0C /* B2KeyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB172092F8B700A3B70E /* B2KeyTests.m */; };
+		CA4C4DA42104753C00209D0C /* B2PartsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62B620F72C9B00B21A37 /* B2PartsTests.m */; };
+		CA4C4DA52104753C00209D0C /* B2BucketLifeCycleRuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB042092F7FB00A3B70E /* B2BucketLifeCycleRuleTests.m */; };
+		CA4C4DA62104753C00209D0C /* B2FileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB0D2092F86300A3B70E /* B2FileTests.m */; };
+		CA4C4DA72104753C00209D0C /* B2JSONValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62AF20F72C2F00B21A37 /* B2JSONValidatorTests.m */; };
+		CA4C4DA82104753C00209D0C /* B2ErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB0B2092F84E00A3B70E /* B2ErrorTests.m */; };
+		CA4C4DA92104753C00209D0C /* B2DefaultClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7E62AD20F72C1F00B21A37 /* B2DefaultClientTests.m */; };
+		CA4C4DAA2104753C00209D0C /* B2BucketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9BEB022092F7EE00A3B70E /* B2BucketTests.m */; };
+		CA4C4DAE2104753C00209D0C /* Blib.bin in Resources */ = {isa = PBXBuildFile; fileRef = CABA9C8F20F3E6C100506C5B /* Blib.bin */; };
+		CA4C4DAF2104753C00209D0C /* Blob.bin in Resources */ = {isa = PBXBuildFile; fileRef = CAC00D0F2082335B00958DB7 /* Blob.bin */; };
+		CA4C4DB02104753C00209D0C /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = CAAF8DE120F0F26E0071F8C3 /* Secrets.json */; };
+		CA4C4DB8210477F900209D0C /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4C4D8F2104746900209D0C /* B2Kit.framework */; };
 		CA702CC7207600620094FDED /* B2BucketLifeCycleRule.h in Headers */ = {isa = PBXBuildFile; fileRef = CA702CC5207600620094FDED /* B2BucketLifeCycleRule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA702CC8207600620094FDED /* B2BucketLifeCycleRule.m in Sources */ = {isa = PBXBuildFile; fileRef = CA702CC6207600620094FDED /* B2BucketLifeCycleRule.m */; };
 		CA7309782078E11A00289799 /* B2AccountCapability.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7309762078E11A00289799 /* B2AccountCapability.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -136,6 +493,48 @@
 			remoteGlobalIDString = CA1CAA9E2075524E00354FD4;
 			remoteInfo = B2Kit;
 		};
+		CA48559F2104D4BB00F09656 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA4C4D322104746900209D0C;
+			remoteInfo = "B2Kit (iOS Framework)";
+		};
+		CA4856252104D7A200F09656 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA4855A12104D6F700F09656;
+			remoteInfo = "B2Kit (tvOS Framework)";
+		};
+		CA48563B2104D88000F09656 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA4855A12104D6F700F09656;
+			remoteInfo = "B2Kit (tvOS Framework)";
+		};
+		CA4856C22104D95200F09656 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA48563E2104D8E400F09656;
+			remoteInfo = "B2Kit (watchOS Framework)";
+		};
+		CA4856D82104D9C100F09656 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA48563E2104D8E400F09656;
+			remoteInfo = "B2Kit (watchOS Framework)";
+		};
+		CA4C4DB92104781600209D0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA4C4D322104746900209D0C;
+			remoteInfo = "B2Kit (iOS Framework)";
+		};
 		CA9BEB1B2092F95300A3B70E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
@@ -158,7 +557,7 @@
 		CA1CAA9F2075524E00354FD4 /* B2Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = B2Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1CAAA22075524E00354FD4 /* B2Kit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = B2Kit.h; sourceTree = "<group>"; };
 		CA1CAAA32075524E00354FD4 /* B2Kit.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = B2Kit.plist; sourceTree = "<group>"; };
-		CA1CAAA82075524F00354FD4 /* B2KitUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = B2KitUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA1CAAA82075524F00354FD4 /* B2KitUnitTests (macOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitUnitTests (macOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1CAAAF2075524F00354FD4 /* B2KitUnitTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = B2KitUnitTests.plist; sourceTree = "<group>"; };
 		CA2157E320FB30C30003078C /* B2File+NSObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "B2File+NSObject.m"; sourceTree = "<group>"; };
 		CA2157E720FB31020003078C /* B2Parts+NSObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "B2Parts+NSObject.m"; sourceTree = "<group>"; };
@@ -182,6 +581,15 @@
 		CA3885F32077A113004F2158 /* B2Endpoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B2Endpoint.m; sourceTree = "<group>"; };
 		CA41B0CF207A775C00B05AFD /* B2BucketLifeCycleRule+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "B2BucketLifeCycleRule+Private.h"; sourceTree = "<group>"; };
 		CA41B0D0207A775C00B05AFD /* B2BucketLifeCycleRule+Private.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "B2BucketLifeCycleRule+Private.m"; sourceTree = "<group>"; };
+		CA48559B2104D42B00F09656 /* B2KitIntegrationTests (iOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitIntegrationTests (iOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA4855FE2104D6F700F09656 /* B2Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = B2Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA4856232104D76C00F09656 /* B2KitUnitTests (tvOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitUnitTests (tvOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA4856392104D83800F09656 /* B2KitIntegrationTests (tvOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitIntegrationTests (tvOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA48569B2104D8E400F09656 /* B2Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = B2Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA4856C02104D92B00F09656 /* B2KitUnitTests (watchOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitUnitTests (watchOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA4856D62104D9B500F09656 /* B2KitIntegrationTests (watchOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitIntegrationTests (watchOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA4C4D8F2104746900209D0C /* B2Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = B2Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA4C4DB42104753C00209D0C /* B2KitUnitTests (iOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitUnitTests (iOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA702CC5207600620094FDED /* B2BucketLifeCycleRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = B2BucketLifeCycleRule.h; sourceTree = "<group>"; };
 		CA702CC6207600620094FDED /* B2BucketLifeCycleRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B2BucketLifeCycleRule.m; sourceTree = "<group>"; };
 		CA7309762078E11A00289799 /* B2AccountCapability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = B2AccountCapability.h; sourceTree = "<group>"; };
@@ -220,7 +628,7 @@
 		CA9BEB132092F87600A3B70E /* B2RangeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B2RangeTests.m; sourceTree = "<group>"; };
 		CA9BEB152092F87D00A3B70E /* B2UploadURLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B2UploadURLTests.m; sourceTree = "<group>"; };
 		CA9BEB172092F8B700A3B70E /* B2KeyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B2KeyTests.m; sourceTree = "<group>"; };
-		CA9BEB372092F95300A3B70E /* B2KitIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = B2KitIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA9BEB372092F95300A3B70E /* B2KitIntegrationTests (macOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitIntegrationTests (macOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9BEB382092F95300A3B70E /* B2KitIntegrationTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = B2KitIntegrationTests.plist; sourceTree = "<group>"; };
 		CAA7A12E2078D2AD002B405E /* B2BucketType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = B2BucketType.h; sourceTree = "<group>"; };
 		CAA7A12F2078D2AD002B405E /* B2BucketType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B2BucketType.m; sourceTree = "<group>"; };
@@ -290,6 +698,75 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CA4855922104D42B00F09656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA48559E2104D4B500F09656 /* B2Kit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4855DA2104D6F700F09656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA48561A2104D76C00F09656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4856272104D7A900F09656 /* B2Kit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4856302104D83800F09656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA48563D2104D88600F09656 /* B2Kit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4856772104D8E400F09656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4856B72104D92B00F09656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4856C42104D95800F09656 /* B2Kit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4856CD2104D9B500F09656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4856DA2104D9C700F09656 /* B2Kit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4C4D6B2104746900209D0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4C4DAB2104753C00209D0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4C4DB8210477F900209D0C /* B2Kit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA9BEB302092F95300A3B70E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -309,6 +786,7 @@
 				CA1CAAA02075524E00354FD4 /* Products */,
 				CA1CAAA12075524E00354FD4 /* Source */,
 				CA1CAAAC2075524F00354FD4 /* Tests */,
+				CA4C4DB6210477E100209D0C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -316,8 +794,17 @@
 			isa = PBXGroup;
 			children = (
 				CA1CAA9F2075524E00354FD4 /* B2Kit.framework */,
-				CA1CAAA82075524F00354FD4 /* B2KitUnitTests.xctest */,
-				CA9BEB372092F95300A3B70E /* B2KitIntegrationTests.xctest */,
+				CA1CAAA82075524F00354FD4 /* B2KitUnitTests (macOS Framework).xctest */,
+				CA9BEB372092F95300A3B70E /* B2KitIntegrationTests (macOS Framework).xctest */,
+				CA4C4D8F2104746900209D0C /* B2Kit.framework */,
+				CA4C4DB42104753C00209D0C /* B2KitUnitTests (iOS Framework).xctest */,
+				CA48559B2104D42B00F09656 /* B2KitIntegrationTests (iOS Framework).xctest */,
+				CA4855FE2104D6F700F09656 /* B2Kit.framework */,
+				CA4856232104D76C00F09656 /* B2KitUnitTests (tvOS Framework).xctest */,
+				CA4856392104D83800F09656 /* B2KitIntegrationTests (tvOS Framework).xctest */,
+				CA48569B2104D8E400F09656 /* B2Kit.framework */,
+				CA4856C02104D92B00F09656 /* B2KitUnitTests (watchOS Framework).xctest */,
+				CA4856D62104D9B500F09656 /* B2KitIntegrationTests (watchOS Framework).xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -358,6 +845,13 @@
 				CAE98FED20FB2ABE00AD0FDC /* B2Logger+NSObject.m */,
 			);
 			path = Logging;
+			sourceTree = "<group>";
+		};
+		CA4C4DB6210477E100209D0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CA702CC9207600930094FDED /* Bucket */ = {
@@ -657,6 +1151,117 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CA4855DB2104D6F700F09656 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4855DC2104D6F700F09656 /* B2JSONValidator.h in Headers */,
+				CA4855DD2104D6F700F09656 /* B2DefaultClient.h in Headers */,
+				CA4855DE2104D6F700F09656 /* B2UnfinishedLargeFiles+Private.h in Headers */,
+				CA4855DF2104D6F700F09656 /* B2ClientDataResult.h in Headers */,
+				CA4855E02104D6F700F09656 /* B2Account+Private.h in Headers */,
+				CA4855E12104D6F700F09656 /* B2File+Private.h in Headers */,
+				CA4855E22104D6F700F09656 /* B2Logger.h in Headers */,
+				CA4855E32104D6F700F09656 /* B2UnfinishedLargeFiles.h in Headers */,
+				CA4855E42104D6F700F09656 /* B2Range.h in Headers */,
+				CA4855E52104D6F700F09656 /* B2BucketManager.h in Headers */,
+				CA4855E62104D6F700F09656 /* B2Key.h in Headers */,
+				CA4855E72104D6F700F09656 /* B2UploadURL.h in Headers */,
+				CA4855E82104D6F700F09656 /* B2File.h in Headers */,
+				CA4855E92104D6F700F09656 /* B2.h in Headers */,
+				CA4855EA2104D6F700F09656 /* B2FileManager.h in Headers */,
+				CA4855EB2104D6F700F09656 /* B2BucketType.h in Headers */,
+				CA4855EC2104D6F700F09656 /* B2Bucket.h in Headers */,
+				CA4855ED2104D6F700F09656 /* B2Parts.h in Headers */,
+				CA4855EE2104D6F700F09656 /* B2Account.h in Headers */,
+				CA4855EF2104D6F700F09656 /* B2Error.h in Headers */,
+				CA4855F02104D6F700F09656 /* B2BucketLifeCycleRule.h in Headers */,
+				CA4855F12104D6F700F09656 /* B2Kit.h in Headers */,
+				CA4855F22104D6F700F09656 /* B2Endpoint.h in Headers */,
+				CA4855F32104D6F700F09656 /* B2AccountCapability.h in Headers */,
+				CA4855F42104D6F700F09656 /* B2AccountManager.h in Headers */,
+				CA4855F52104D6F700F09656 /* B2FileInfoAction.h in Headers */,
+				CA4855F62104D6F700F09656 /* B2BucketLifeCycleRule+Private.h in Headers */,
+				CA4855F72104D6F700F09656 /* B2Parts+Private.h in Headers */,
+				CA4855F82104D6F700F09656 /* B2Client.h in Headers */,
+				CA4855F92104D6F700F09656 /* B2Bucket+Private.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4856782104D8E400F09656 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4856792104D8E400F09656 /* B2JSONValidator.h in Headers */,
+				CA48567A2104D8E400F09656 /* B2DefaultClient.h in Headers */,
+				CA48567B2104D8E400F09656 /* B2UnfinishedLargeFiles+Private.h in Headers */,
+				CA48567C2104D8E400F09656 /* B2ClientDataResult.h in Headers */,
+				CA48567D2104D8E400F09656 /* B2Account+Private.h in Headers */,
+				CA48567E2104D8E400F09656 /* B2File+Private.h in Headers */,
+				CA48567F2104D8E400F09656 /* B2Logger.h in Headers */,
+				CA4856802104D8E400F09656 /* B2UnfinishedLargeFiles.h in Headers */,
+				CA4856812104D8E400F09656 /* B2Range.h in Headers */,
+				CA4856822104D8E400F09656 /* B2BucketManager.h in Headers */,
+				CA4856832104D8E400F09656 /* B2Key.h in Headers */,
+				CA4856842104D8E400F09656 /* B2UploadURL.h in Headers */,
+				CA4856852104D8E400F09656 /* B2File.h in Headers */,
+				CA4856862104D8E400F09656 /* B2.h in Headers */,
+				CA4856872104D8E400F09656 /* B2FileManager.h in Headers */,
+				CA4856882104D8E400F09656 /* B2BucketType.h in Headers */,
+				CA4856892104D8E400F09656 /* B2Bucket.h in Headers */,
+				CA48568A2104D8E400F09656 /* B2Parts.h in Headers */,
+				CA48568B2104D8E400F09656 /* B2Account.h in Headers */,
+				CA48568C2104D8E400F09656 /* B2Error.h in Headers */,
+				CA48568D2104D8E400F09656 /* B2BucketLifeCycleRule.h in Headers */,
+				CA48568E2104D8E400F09656 /* B2Kit.h in Headers */,
+				CA48568F2104D8E400F09656 /* B2Endpoint.h in Headers */,
+				CA4856902104D8E400F09656 /* B2AccountCapability.h in Headers */,
+				CA4856912104D8E400F09656 /* B2AccountManager.h in Headers */,
+				CA4856922104D8E400F09656 /* B2FileInfoAction.h in Headers */,
+				CA4856932104D8E400F09656 /* B2BucketLifeCycleRule+Private.h in Headers */,
+				CA4856942104D8E400F09656 /* B2Parts+Private.h in Headers */,
+				CA4856952104D8E400F09656 /* B2Client.h in Headers */,
+				CA4856962104D8E400F09656 /* B2Bucket+Private.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4C4D6C2104746900209D0C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4C4D6D2104746900209D0C /* B2JSONValidator.h in Headers */,
+				CA4C4D6E2104746900209D0C /* B2DefaultClient.h in Headers */,
+				CA4C4D6F2104746900209D0C /* B2UnfinishedLargeFiles+Private.h in Headers */,
+				CA4C4D702104746900209D0C /* B2ClientDataResult.h in Headers */,
+				CA4C4D712104746900209D0C /* B2Account+Private.h in Headers */,
+				CA4C4D722104746900209D0C /* B2File+Private.h in Headers */,
+				CA4C4D732104746900209D0C /* B2Logger.h in Headers */,
+				CA4C4D742104746900209D0C /* B2UnfinishedLargeFiles.h in Headers */,
+				CA4C4D752104746900209D0C /* B2Range.h in Headers */,
+				CA4C4D762104746900209D0C /* B2BucketManager.h in Headers */,
+				CA4C4D772104746900209D0C /* B2Key.h in Headers */,
+				CA4C4D782104746900209D0C /* B2UploadURL.h in Headers */,
+				CA4C4D792104746900209D0C /* B2File.h in Headers */,
+				CA4C4D7A2104746900209D0C /* B2.h in Headers */,
+				CA4C4D7B2104746900209D0C /* B2FileManager.h in Headers */,
+				CA4C4D7C2104746900209D0C /* B2BucketType.h in Headers */,
+				CA4C4D7D2104746900209D0C /* B2Bucket.h in Headers */,
+				CA4C4D7E2104746900209D0C /* B2Parts.h in Headers */,
+				CA4C4D7F2104746900209D0C /* B2Account.h in Headers */,
+				CA4C4D802104746900209D0C /* B2Error.h in Headers */,
+				CA4C4D812104746900209D0C /* B2BucketLifeCycleRule.h in Headers */,
+				CA4C4D822104746900209D0C /* B2Kit.h in Headers */,
+				CA4C4D832104746900209D0C /* B2Endpoint.h in Headers */,
+				CA4C4D842104746900209D0C /* B2AccountCapability.h in Headers */,
+				CA4C4D852104746900209D0C /* B2AccountManager.h in Headers */,
+				CA4C4D862104746900209D0C /* B2FileInfoAction.h in Headers */,
+				CA4C4D872104746900209D0C /* B2BucketLifeCycleRule+Private.h in Headers */,
+				CA4C4D882104746900209D0C /* B2Parts+Private.h in Headers */,
+				CA4C4D892104746900209D0C /* B2Client.h in Headers */,
+				CA4C4D8A2104746900209D0C /* B2Bucket+Private.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -678,9 +1283,9 @@
 			productReference = CA1CAA9F2075524E00354FD4 /* B2Kit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CA1CAAA72075524F00354FD4 /* B2KitUnitTests (macOS Framework Tests) */ = {
+		CA1CAAA72075524F00354FD4 /* B2KitUnitTests (macOS Framework) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CA1CAAB62075524F00354FD4 /* Build configuration list for PBXNativeTarget "B2KitUnitTests (macOS Framework Tests)" */;
+			buildConfigurationList = CA1CAAB62075524F00354FD4 /* Build configuration list for PBXNativeTarget "B2KitUnitTests (macOS Framework)" */;
 			buildPhases = (
 				CA1CAAA42075524F00354FD4 /* Sources */,
 				CA1CAAA52075524F00354FD4 /* Frameworks */,
@@ -691,9 +1296,171 @@
 			dependencies = (
 				CA1CAAAB2075524F00354FD4 /* PBXTargetDependency */,
 			);
-			name = "B2KitUnitTests (macOS Framework Tests)";
+			name = "B2KitUnitTests (macOS Framework)";
 			productName = B2KitTests;
-			productReference = CA1CAAA82075524F00354FD4 /* B2KitUnitTests.xctest */;
+			productReference = CA1CAAA82075524F00354FD4 /* B2KitUnitTests (macOS Framework).xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA48558A2104D42B00F09656 /* B2KitIntegrationTests (iOS Framework) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA4855982104D42B00F09656 /* Build configuration list for PBXNativeTarget "B2KitIntegrationTests (iOS Framework)" */;
+			buildPhases = (
+				CA48558D2104D42B00F09656 /* Sources */,
+				CA4855922104D42B00F09656 /* Frameworks */,
+				CA4855942104D42B00F09656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA4855A02104D4BB00F09656 /* PBXTargetDependency */,
+			);
+			name = "B2KitIntegrationTests (iOS Framework)";
+			productName = B2KitTests;
+			productReference = CA48559B2104D42B00F09656 /* B2KitIntegrationTests (iOS Framework).xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA4855A12104D6F700F09656 /* B2Kit (tvOS Framework) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA4855FB2104D6F700F09656 /* Build configuration list for PBXNativeTarget "B2Kit (tvOS Framework)" */;
+			buildPhases = (
+				CA4855A22104D6F700F09656 /* Sources */,
+				CA4855DA2104D6F700F09656 /* Frameworks */,
+				CA4855DB2104D6F700F09656 /* Headers */,
+				CA4855FA2104D6F700F09656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "B2Kit (tvOS Framework)";
+			productName = B2Kit;
+			productReference = CA4855FE2104D6F700F09656 /* B2Kit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CA4856002104D76C00F09656 /* B2KitUnitTests (tvOS Framework) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA4856202104D76C00F09656 /* Build configuration list for PBXNativeTarget "B2KitUnitTests (tvOS Framework)" */;
+			buildPhases = (
+				CA4856032104D76C00F09656 /* Sources */,
+				CA48561A2104D76C00F09656 /* Frameworks */,
+				CA48561C2104D76C00F09656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA4856262104D7A200F09656 /* PBXTargetDependency */,
+			);
+			name = "B2KitUnitTests (tvOS Framework)";
+			productName = B2KitTests;
+			productReference = CA4856232104D76C00F09656 /* B2KitUnitTests (tvOS Framework).xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA4856282104D83800F09656 /* B2KitIntegrationTests (tvOS Framework) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA4856362104D83800F09656 /* Build configuration list for PBXNativeTarget "B2KitIntegrationTests (tvOS Framework)" */;
+			buildPhases = (
+				CA48562B2104D83800F09656 /* Sources */,
+				CA4856302104D83800F09656 /* Frameworks */,
+				CA4856322104D83800F09656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA48563C2104D88000F09656 /* PBXTargetDependency */,
+			);
+			name = "B2KitIntegrationTests (tvOS Framework)";
+			productName = B2KitTests;
+			productReference = CA4856392104D83800F09656 /* B2KitIntegrationTests (tvOS Framework).xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA48563E2104D8E400F09656 /* B2Kit (watchOS Framework) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA4856982104D8E400F09656 /* Build configuration list for PBXNativeTarget "B2Kit (watchOS Framework)" */;
+			buildPhases = (
+				CA48563F2104D8E400F09656 /* Sources */,
+				CA4856772104D8E400F09656 /* Frameworks */,
+				CA4856782104D8E400F09656 /* Headers */,
+				CA4856972104D8E400F09656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "B2Kit (watchOS Framework)";
+			productName = B2Kit;
+			productReference = CA48569B2104D8E400F09656 /* B2Kit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CA48569D2104D92B00F09656 /* B2KitUnitTests (watchOS Framework) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA4856BD2104D92B00F09656 /* Build configuration list for PBXNativeTarget "B2KitUnitTests (watchOS Framework)" */;
+			buildPhases = (
+				CA4856A02104D92B00F09656 /* Sources */,
+				CA4856B72104D92B00F09656 /* Frameworks */,
+				CA4856B92104D92B00F09656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA4856C32104D95200F09656 /* PBXTargetDependency */,
+			);
+			name = "B2KitUnitTests (watchOS Framework)";
+			productName = B2KitTests;
+			productReference = CA4856C02104D92B00F09656 /* B2KitUnitTests (watchOS Framework).xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA4856C52104D9B500F09656 /* B2KitIntegrationTests (watchOS Framework) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA4856D32104D9B500F09656 /* Build configuration list for PBXNativeTarget "B2KitIntegrationTests (watchOS Framework)" */;
+			buildPhases = (
+				CA4856C82104D9B500F09656 /* Sources */,
+				CA4856CD2104D9B500F09656 /* Frameworks */,
+				CA4856CF2104D9B500F09656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA4856D92104D9C100F09656 /* PBXTargetDependency */,
+			);
+			name = "B2KitIntegrationTests (watchOS Framework)";
+			productName = B2KitTests;
+			productReference = CA4856D62104D9B500F09656 /* B2KitIntegrationTests (watchOS Framework).xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA4C4D322104746900209D0C /* B2Kit (iOS Framework) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA4C4D8C2104746900209D0C /* Build configuration list for PBXNativeTarget "B2Kit (iOS Framework)" */;
+			buildPhases = (
+				CA4C4D332104746900209D0C /* Sources */,
+				CA4C4D6B2104746900209D0C /* Frameworks */,
+				CA4C4D6C2104746900209D0C /* Headers */,
+				CA4C4D8B2104746900209D0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "B2Kit (iOS Framework)";
+			productName = B2Kit;
+			productReference = CA4C4D8F2104746900209D0C /* B2Kit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CA4C4D912104753C00209D0C /* B2KitUnitTests (iOS Framework) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA4C4DB12104753C00209D0C /* Build configuration list for PBXNativeTarget "B2KitUnitTests (iOS Framework)" */;
+			buildPhases = (
+				CA4C4D942104753C00209D0C /* Sources */,
+				CA4C4DAB2104753C00209D0C /* Frameworks */,
+				CA4C4DAD2104753C00209D0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA4C4DBA2104781600209D0C /* PBXTargetDependency */,
+			);
+			name = "B2KitUnitTests (iOS Framework)";
+			productName = B2KitTests;
+			productReference = CA4C4DB42104753C00209D0C /* B2KitUnitTests (iOS Framework).xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		CA9BEB192092F95300A3B70E /* B2KitIntegrationTests (macOS Framework) */ = {
@@ -711,7 +1478,7 @@
 			);
 			name = "B2KitIntegrationTests (macOS Framework)";
 			productName = B2KitTests;
-			productReference = CA9BEB372092F95300A3B70E /* B2KitIntegrationTests.xctest */;
+			productReference = CA9BEB372092F95300A3B70E /* B2KitIntegrationTests (macOS Framework).xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -745,8 +1512,17 @@
 			projectRoot = "";
 			targets = (
 				CA1CAA9E2075524E00354FD4 /* B2Kit (macOS Framework) */,
-				CA1CAAA72075524F00354FD4 /* B2KitUnitTests (macOS Framework Tests) */,
+				CA1CAAA72075524F00354FD4 /* B2KitUnitTests (macOS Framework) */,
 				CA9BEB192092F95300A3B70E /* B2KitIntegrationTests (macOS Framework) */,
+				CA4C4D322104746900209D0C /* B2Kit (iOS Framework) */,
+				CA4C4D912104753C00209D0C /* B2KitUnitTests (iOS Framework) */,
+				CA48558A2104D42B00F09656 /* B2KitIntegrationTests (iOS Framework) */,
+				CA4855A12104D6F700F09656 /* B2Kit (tvOS Framework) */,
+				CA4856002104D76C00F09656 /* B2KitUnitTests (tvOS Framework) */,
+				CA4856282104D83800F09656 /* B2KitIntegrationTests (tvOS Framework) */,
+				CA48563E2104D8E400F09656 /* B2Kit (watchOS Framework) */,
+				CA48569D2104D92B00F09656 /* B2KitUnitTests (watchOS Framework) */,
+				CA4856C52104D9B500F09656 /* B2KitIntegrationTests (watchOS Framework) */,
 			);
 		};
 /* End PBXProject section */
@@ -766,6 +1542,87 @@
 				CABA9C9020F3E6C100506C5B /* Blib.bin in Resources */,
 				CAC00D112082336000958DB7 /* Blob.bin in Resources */,
 				CAAF8DE220F0F26E0071F8C3 /* Secrets.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4855942104D42B00F09656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4855952104D42B00F09656 /* Blib.bin in Resources */,
+				CA4855962104D42B00F09656 /* Blob.bin in Resources */,
+				CA4855972104D42B00F09656 /* Secrets.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4855FA2104D6F700F09656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA48561C2104D76C00F09656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA48561D2104D76C00F09656 /* Blib.bin in Resources */,
+				CA48561E2104D76C00F09656 /* Blob.bin in Resources */,
+				CA48561F2104D76C00F09656 /* Secrets.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4856322104D83800F09656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4856332104D83800F09656 /* Blib.bin in Resources */,
+				CA4856342104D83800F09656 /* Blob.bin in Resources */,
+				CA4856352104D83800F09656 /* Secrets.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4856972104D8E400F09656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4856B92104D92B00F09656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4856BA2104D92B00F09656 /* Blib.bin in Resources */,
+				CA4856BB2104D92B00F09656 /* Blob.bin in Resources */,
+				CA4856BC2104D92B00F09656 /* Secrets.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4856CF2104D9B500F09656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4856D02104D9B500F09656 /* Blib.bin in Resources */,
+				CA4856D12104D9B500F09656 /* Blob.bin in Resources */,
+				CA4856D22104D9B500F09656 /* Secrets.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4C4D8B2104746900209D0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4C4DAD2104753C00209D0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4C4DAE2104753C00209D0C /* Blib.bin in Resources */,
+				CA4C4DAF2104753C00209D0C /* Blob.bin in Resources */,
+				CA4C4DB02104753C00209D0C /* Secrets.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,6 +1730,312 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CA48558D2104D42B00F09656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA48558E2104D42B00F09656 /* B2KitAccountIntegrationTests.m in Sources */,
+				CA48558F2104D42B00F09656 /* B2KitTestCase.m in Sources */,
+				CA4855902104D42B00F09656 /* B2KitFileIntegrationTests.m in Sources */,
+				CA4855912104D42B00F09656 /* B2KitBucketIntegrationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4855A22104D6F700F09656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4855A32104D6F700F09656 /* B2FileManager+NSObject.m in Sources */,
+				CA4855A42104D6F700F09656 /* B2BucketLifeCycleRule+NSObject.m in Sources */,
+				CA4855A52104D6F700F09656 /* B2+Versions.m in Sources */,
+				CA4855A62104D6F700F09656 /* B2Endpoint.m in Sources */,
+				CA4855A72104D6F700F09656 /* B2BucketManager.m in Sources */,
+				CA4855A82104D6F700F09656 /* B2+LargeFiles.m in Sources */,
+				CA4855A92104D6F700F09656 /* B2FileInfoAction.m in Sources */,
+				CA4855AA2104D6F700F09656 /* B2Parts+NSObject.m in Sources */,
+				CA4855AB2104D6F700F09656 /* B2BucketLifeCycleRule.m in Sources */,
+				CA4855AC2104D6F700F09656 /* B2JSONValidator+NSObject.m in Sources */,
+				CA4855AD2104D6F700F09656 /* B2AccountManager.m in Sources */,
+				CA4855AE2104D6F700F09656 /* B2Error.m in Sources */,
+				CA4855AF2104D6F700F09656 /* B2+Keys.m in Sources */,
+				CA4855B02104D6F700F09656 /* B2BucketLifeCycleRule+Private.m in Sources */,
+				CA4855B12104D6F700F09656 /* B2AccountCapability.m in Sources */,
+				CA4855B22104D6F700F09656 /* B2Range.m in Sources */,
+				CA4855B32104D6F700F09656 /* B2UnfinishedLargeFiles+Private.m in Sources */,
+				CA4855B42104D6F700F09656 /* B2UnfinishedLargeFiles.m in Sources */,
+				CA4855B52104D6F700F09656 /* B2JSONValidator.m in Sources */,
+				CA4855B62104D6F700F09656 /* B2FileManager.m in Sources */,
+				CA4855B72104D6F700F09656 /* B2Bucket+Private.m in Sources */,
+				CA4855B82104D6F700F09656 /* B2Key+NSObject.m in Sources */,
+				CA4855B92104D6F700F09656 /* B2DefaultClient+NSObject.m in Sources */,
+				CA4855BA2104D6F700F09656 /* B2File.m in Sources */,
+				CA4855BB2104D6F700F09656 /* B2Parts.m in Sources */,
+				CA4855BC2104D6F700F09656 /* B2ClientDataResult.m in Sources */,
+				CA4855BD2104D6F700F09656 /* B2MockClient.m in Sources */,
+				CA4855BE2104D6F700F09656 /* B2+Accounts.m in Sources */,
+				CA4855BF2104D6F700F09656 /* B2Account+NSObject.m in Sources */,
+				CA4855C02104D6F700F09656 /* B2File+Private.m in Sources */,
+				CA4855C12104D6F700F09656 /* B2+Buckets.m in Sources */,
+				CA4855C22104D6F700F09656 /* B2UploadURL.m in Sources */,
+				CA4855C32104D6F700F09656 /* B2ClientDataResult+NSObject.m in Sources */,
+				CA4855C42104D6F700F09656 /* B2File+NSObject.m in Sources */,
+				CA4855C52104D6F700F09656 /* B2+NSObject.m in Sources */,
+				CA4855C62104D6F700F09656 /* B2Account.m in Sources */,
+				CA4855C72104D6F700F09656 /* B2+Logging.m in Sources */,
+				CA4855C82104D6F700F09656 /* B2MockClient+NSObject.m in Sources */,
+				CA4855C92104D6F700F09656 /* B2BucketType.m in Sources */,
+				CA4855CA2104D6F700F09656 /* B2Error+NSObject.m in Sources */,
+				CA4855CB2104D6F700F09656 /* B2Logger.m in Sources */,
+				CA4855CC2104D6F700F09656 /* B2Account+Private.m in Sources */,
+				CA4855CD2104D6F700F09656 /* B2DefaultClient.m in Sources */,
+				CA4855CE2104D6F700F09656 /* B2AccountManager+NSObject.m in Sources */,
+				CA4855CF2104D6F700F09656 /* B2Bucket.m in Sources */,
+				CA4855D02104D6F700F09656 /* B2Range+NSObject.m in Sources */,
+				CA4855D12104D6F700F09656 /* B2Bucket+NSObject.m in Sources */,
+				CA4855D22104D6F700F09656 /* B2BucketManager+NSObject.m in Sources */,
+				CA4855D32104D6F700F09656 /* B2Logger+NSObject.m in Sources */,
+				CA4855D42104D6F700F09656 /* B2UploadURL+NSObject.m in Sources */,
+				CA4855D52104D6F700F09656 /* B2Parts+Private.m in Sources */,
+				CA4855D62104D6F700F09656 /* B2Key.m in Sources */,
+				CA4855D72104D6F700F09656 /* B2UnfinishedLargeFiles+NSObject.m in Sources */,
+				CA4855D82104D6F700F09656 /* B2.m in Sources */,
+				CA4855D92104D6F700F09656 /* B2+Files.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4856032104D76C00F09656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4856042104D76C00F09656 /* B2UploadURLTests.m in Sources */,
+				CA4856052104D76C00F09656 /* B2FileManagerTests.m in Sources */,
+				CA4856062104D76C00F09656 /* B2AccountManagerTests.m in Sources */,
+				CA4856072104D76C00F09656 /* B2ClientDataResultTests.m in Sources */,
+				CA4856082104D76C00F09656 /* B2KitTestCase.m in Sources */,
+				CA4856092104D76C00F09656 /* B2AccountTests.m in Sources */,
+				CA48560A2104D76C00F09656 /* B2AccountCapabilityTests.m in Sources */,
+				CA48560B2104D76C00F09656 /* B2UnfinishedLargeFilesTests.m in Sources */,
+				CA48560C2104D76C00F09656 /* B2EndpointTests.m in Sources */,
+				CA48560D2104D76C00F09656 /* B2RangeTests.m in Sources */,
+				CA48560E2104D76C00F09656 /* B2LoggerTests.m in Sources */,
+				CA48560F2104D76C00F09656 /* B2BucketManagerTests.m in Sources */,
+				CA4856102104D76C00F09656 /* B2FileInfoActionTests.m in Sources */,
+				CA4856112104D76C00F09656 /* B2BucketTypeTests.m in Sources */,
+				CA4856122104D76C00F09656 /* B2KeyTests.m in Sources */,
+				CA4856132104D76C00F09656 /* B2PartsTests.m in Sources */,
+				CA4856142104D76C00F09656 /* B2BucketLifeCycleRuleTests.m in Sources */,
+				CA4856152104D76C00F09656 /* B2FileTests.m in Sources */,
+				CA4856162104D76C00F09656 /* B2JSONValidatorTests.m in Sources */,
+				CA4856172104D76C00F09656 /* B2ErrorTests.m in Sources */,
+				CA4856182104D76C00F09656 /* B2DefaultClientTests.m in Sources */,
+				CA4856192104D76C00F09656 /* B2BucketTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA48562B2104D83800F09656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA48562C2104D83800F09656 /* B2KitAccountIntegrationTests.m in Sources */,
+				CA48562D2104D83800F09656 /* B2KitTestCase.m in Sources */,
+				CA48562E2104D83800F09656 /* B2KitFileIntegrationTests.m in Sources */,
+				CA48562F2104D83800F09656 /* B2KitBucketIntegrationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA48563F2104D8E400F09656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4856402104D8E400F09656 /* B2FileManager+NSObject.m in Sources */,
+				CA4856412104D8E400F09656 /* B2BucketLifeCycleRule+NSObject.m in Sources */,
+				CA4856422104D8E400F09656 /* B2+Versions.m in Sources */,
+				CA4856432104D8E400F09656 /* B2Endpoint.m in Sources */,
+				CA4856442104D8E400F09656 /* B2BucketManager.m in Sources */,
+				CA4856452104D8E400F09656 /* B2+LargeFiles.m in Sources */,
+				CA4856462104D8E400F09656 /* B2FileInfoAction.m in Sources */,
+				CA4856472104D8E400F09656 /* B2Parts+NSObject.m in Sources */,
+				CA4856482104D8E400F09656 /* B2BucketLifeCycleRule.m in Sources */,
+				CA4856492104D8E400F09656 /* B2JSONValidator+NSObject.m in Sources */,
+				CA48564A2104D8E400F09656 /* B2AccountManager.m in Sources */,
+				CA48564B2104D8E400F09656 /* B2Error.m in Sources */,
+				CA48564C2104D8E400F09656 /* B2+Keys.m in Sources */,
+				CA48564D2104D8E400F09656 /* B2BucketLifeCycleRule+Private.m in Sources */,
+				CA48564E2104D8E400F09656 /* B2AccountCapability.m in Sources */,
+				CA48564F2104D8E400F09656 /* B2Range.m in Sources */,
+				CA4856502104D8E400F09656 /* B2UnfinishedLargeFiles+Private.m in Sources */,
+				CA4856512104D8E400F09656 /* B2UnfinishedLargeFiles.m in Sources */,
+				CA4856522104D8E400F09656 /* B2JSONValidator.m in Sources */,
+				CA4856532104D8E400F09656 /* B2FileManager.m in Sources */,
+				CA4856542104D8E400F09656 /* B2Bucket+Private.m in Sources */,
+				CA4856552104D8E400F09656 /* B2Key+NSObject.m in Sources */,
+				CA4856562104D8E400F09656 /* B2DefaultClient+NSObject.m in Sources */,
+				CA4856572104D8E400F09656 /* B2File.m in Sources */,
+				CA4856582104D8E400F09656 /* B2Parts.m in Sources */,
+				CA4856592104D8E400F09656 /* B2ClientDataResult.m in Sources */,
+				CA48565A2104D8E400F09656 /* B2MockClient.m in Sources */,
+				CA48565B2104D8E400F09656 /* B2+Accounts.m in Sources */,
+				CA48565C2104D8E400F09656 /* B2Account+NSObject.m in Sources */,
+				CA48565D2104D8E400F09656 /* B2File+Private.m in Sources */,
+				CA48565E2104D8E400F09656 /* B2+Buckets.m in Sources */,
+				CA48565F2104D8E400F09656 /* B2UploadURL.m in Sources */,
+				CA4856602104D8E400F09656 /* B2ClientDataResult+NSObject.m in Sources */,
+				CA4856612104D8E400F09656 /* B2File+NSObject.m in Sources */,
+				CA4856622104D8E400F09656 /* B2+NSObject.m in Sources */,
+				CA4856632104D8E400F09656 /* B2Account.m in Sources */,
+				CA4856642104D8E400F09656 /* B2+Logging.m in Sources */,
+				CA4856652104D8E400F09656 /* B2MockClient+NSObject.m in Sources */,
+				CA4856662104D8E400F09656 /* B2BucketType.m in Sources */,
+				CA4856672104D8E400F09656 /* B2Error+NSObject.m in Sources */,
+				CA4856682104D8E400F09656 /* B2Logger.m in Sources */,
+				CA4856692104D8E400F09656 /* B2Account+Private.m in Sources */,
+				CA48566A2104D8E400F09656 /* B2DefaultClient.m in Sources */,
+				CA48566B2104D8E400F09656 /* B2AccountManager+NSObject.m in Sources */,
+				CA48566C2104D8E400F09656 /* B2Bucket.m in Sources */,
+				CA48566D2104D8E400F09656 /* B2Range+NSObject.m in Sources */,
+				CA48566E2104D8E400F09656 /* B2Bucket+NSObject.m in Sources */,
+				CA48566F2104D8E400F09656 /* B2BucketManager+NSObject.m in Sources */,
+				CA4856702104D8E400F09656 /* B2Logger+NSObject.m in Sources */,
+				CA4856712104D8E400F09656 /* B2UploadURL+NSObject.m in Sources */,
+				CA4856722104D8E400F09656 /* B2Parts+Private.m in Sources */,
+				CA4856732104D8E400F09656 /* B2Key.m in Sources */,
+				CA4856742104D8E400F09656 /* B2UnfinishedLargeFiles+NSObject.m in Sources */,
+				CA4856752104D8E400F09656 /* B2.m in Sources */,
+				CA4856762104D8E400F09656 /* B2+Files.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4856A02104D92B00F09656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4856A12104D92B00F09656 /* B2UploadURLTests.m in Sources */,
+				CA4856A22104D92B00F09656 /* B2FileManagerTests.m in Sources */,
+				CA4856A32104D92B00F09656 /* B2AccountManagerTests.m in Sources */,
+				CA4856A42104D92B00F09656 /* B2ClientDataResultTests.m in Sources */,
+				CA4856A52104D92B00F09656 /* B2KitTestCase.m in Sources */,
+				CA4856A62104D92B00F09656 /* B2AccountTests.m in Sources */,
+				CA4856A72104D92B00F09656 /* B2AccountCapabilityTests.m in Sources */,
+				CA4856A82104D92B00F09656 /* B2UnfinishedLargeFilesTests.m in Sources */,
+				CA4856A92104D92B00F09656 /* B2EndpointTests.m in Sources */,
+				CA4856AA2104D92B00F09656 /* B2RangeTests.m in Sources */,
+				CA4856AB2104D92B00F09656 /* B2LoggerTests.m in Sources */,
+				CA4856AC2104D92B00F09656 /* B2BucketManagerTests.m in Sources */,
+				CA4856AD2104D92B00F09656 /* B2FileInfoActionTests.m in Sources */,
+				CA4856AE2104D92B00F09656 /* B2BucketTypeTests.m in Sources */,
+				CA4856AF2104D92B00F09656 /* B2KeyTests.m in Sources */,
+				CA4856B02104D92B00F09656 /* B2PartsTests.m in Sources */,
+				CA4856B12104D92B00F09656 /* B2BucketLifeCycleRuleTests.m in Sources */,
+				CA4856B22104D92B00F09656 /* B2FileTests.m in Sources */,
+				CA4856B32104D92B00F09656 /* B2JSONValidatorTests.m in Sources */,
+				CA4856B42104D92B00F09656 /* B2ErrorTests.m in Sources */,
+				CA4856B52104D92B00F09656 /* B2DefaultClientTests.m in Sources */,
+				CA4856B62104D92B00F09656 /* B2BucketTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4856C82104D9B500F09656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4856C92104D9B500F09656 /* B2KitAccountIntegrationTests.m in Sources */,
+				CA4856CA2104D9B500F09656 /* B2KitTestCase.m in Sources */,
+				CA4856CB2104D9B500F09656 /* B2KitFileIntegrationTests.m in Sources */,
+				CA4856CC2104D9B500F09656 /* B2KitBucketIntegrationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4C4D332104746900209D0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4C4D342104746900209D0C /* B2FileManager+NSObject.m in Sources */,
+				CA4C4D352104746900209D0C /* B2BucketLifeCycleRule+NSObject.m in Sources */,
+				CA4C4D362104746900209D0C /* B2+Versions.m in Sources */,
+				CA4C4D372104746900209D0C /* B2Endpoint.m in Sources */,
+				CA4C4D382104746900209D0C /* B2BucketManager.m in Sources */,
+				CA4C4D392104746900209D0C /* B2+LargeFiles.m in Sources */,
+				CA4C4D3A2104746900209D0C /* B2FileInfoAction.m in Sources */,
+				CA4C4D3B2104746900209D0C /* B2Parts+NSObject.m in Sources */,
+				CA4C4D3C2104746900209D0C /* B2BucketLifeCycleRule.m in Sources */,
+				CA4C4D3D2104746900209D0C /* B2JSONValidator+NSObject.m in Sources */,
+				CA4C4D3E2104746900209D0C /* B2AccountManager.m in Sources */,
+				CA4C4D3F2104746900209D0C /* B2Error.m in Sources */,
+				CA4C4D402104746900209D0C /* B2+Keys.m in Sources */,
+				CA4C4D412104746900209D0C /* B2BucketLifeCycleRule+Private.m in Sources */,
+				CA4C4D422104746900209D0C /* B2AccountCapability.m in Sources */,
+				CA4C4D432104746900209D0C /* B2Range.m in Sources */,
+				CA4C4D442104746900209D0C /* B2UnfinishedLargeFiles+Private.m in Sources */,
+				CA4C4D452104746900209D0C /* B2UnfinishedLargeFiles.m in Sources */,
+				CA4C4D462104746900209D0C /* B2JSONValidator.m in Sources */,
+				CA4C4D472104746900209D0C /* B2FileManager.m in Sources */,
+				CA4C4D482104746900209D0C /* B2Bucket+Private.m in Sources */,
+				CA4C4D492104746900209D0C /* B2Key+NSObject.m in Sources */,
+				CA4C4D4A2104746900209D0C /* B2DefaultClient+NSObject.m in Sources */,
+				CA4C4D4B2104746900209D0C /* B2File.m in Sources */,
+				CA4C4D4C2104746900209D0C /* B2Parts.m in Sources */,
+				CA4C4D4D2104746900209D0C /* B2ClientDataResult.m in Sources */,
+				CA4C4D4E2104746900209D0C /* B2MockClient.m in Sources */,
+				CA4C4D4F2104746900209D0C /* B2+Accounts.m in Sources */,
+				CA4C4D502104746900209D0C /* B2Account+NSObject.m in Sources */,
+				CA4C4D512104746900209D0C /* B2File+Private.m in Sources */,
+				CA4C4D522104746900209D0C /* B2+Buckets.m in Sources */,
+				CA4C4D532104746900209D0C /* B2UploadURL.m in Sources */,
+				CA4C4D542104746900209D0C /* B2ClientDataResult+NSObject.m in Sources */,
+				CA4C4D552104746900209D0C /* B2File+NSObject.m in Sources */,
+				CA4C4D562104746900209D0C /* B2+NSObject.m in Sources */,
+				CA4C4D572104746900209D0C /* B2Account.m in Sources */,
+				CA4C4D582104746900209D0C /* B2+Logging.m in Sources */,
+				CA4C4D592104746900209D0C /* B2MockClient+NSObject.m in Sources */,
+				CA4C4D5A2104746900209D0C /* B2BucketType.m in Sources */,
+				CA4C4D5B2104746900209D0C /* B2Error+NSObject.m in Sources */,
+				CA4C4D5C2104746900209D0C /* B2Logger.m in Sources */,
+				CA4C4D5D2104746900209D0C /* B2Account+Private.m in Sources */,
+				CA4C4D5E2104746900209D0C /* B2DefaultClient.m in Sources */,
+				CA4C4D5F2104746900209D0C /* B2AccountManager+NSObject.m in Sources */,
+				CA4C4D602104746900209D0C /* B2Bucket.m in Sources */,
+				CA4C4D612104746900209D0C /* B2Range+NSObject.m in Sources */,
+				CA4C4D622104746900209D0C /* B2Bucket+NSObject.m in Sources */,
+				CA4C4D632104746900209D0C /* B2BucketManager+NSObject.m in Sources */,
+				CA4C4D642104746900209D0C /* B2Logger+NSObject.m in Sources */,
+				CA4C4D652104746900209D0C /* B2UploadURL+NSObject.m in Sources */,
+				CA4C4D662104746900209D0C /* B2Parts+Private.m in Sources */,
+				CA4C4D672104746900209D0C /* B2Key.m in Sources */,
+				CA4C4D682104746900209D0C /* B2UnfinishedLargeFiles+NSObject.m in Sources */,
+				CA4C4D692104746900209D0C /* B2.m in Sources */,
+				CA4C4D6A2104746900209D0C /* B2+Files.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4C4D942104753C00209D0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4C4D952104753C00209D0C /* B2UploadURLTests.m in Sources */,
+				CA4C4D962104753C00209D0C /* B2FileManagerTests.m in Sources */,
+				CA4C4D972104753C00209D0C /* B2AccountManagerTests.m in Sources */,
+				CA4C4D982104753C00209D0C /* B2ClientDataResultTests.m in Sources */,
+				CA4C4D992104753C00209D0C /* B2KitTestCase.m in Sources */,
+				CA4C4D9A2104753C00209D0C /* B2AccountTests.m in Sources */,
+				CA4C4D9B2104753C00209D0C /* B2AccountCapabilityTests.m in Sources */,
+				CA4C4D9C2104753C00209D0C /* B2UnfinishedLargeFilesTests.m in Sources */,
+				CA4C4D9D2104753C00209D0C /* B2EndpointTests.m in Sources */,
+				CA4C4D9E2104753C00209D0C /* B2RangeTests.m in Sources */,
+				CA4C4D9F2104753C00209D0C /* B2LoggerTests.m in Sources */,
+				CA4C4DA02104753C00209D0C /* B2BucketManagerTests.m in Sources */,
+				CA4C4DA12104753C00209D0C /* B2FileInfoActionTests.m in Sources */,
+				CA4C4DA22104753C00209D0C /* B2BucketTypeTests.m in Sources */,
+				CA4C4DA32104753C00209D0C /* B2KeyTests.m in Sources */,
+				CA4C4DA42104753C00209D0C /* B2PartsTests.m in Sources */,
+				CA4C4DA52104753C00209D0C /* B2BucketLifeCycleRuleTests.m in Sources */,
+				CA4C4DA62104753C00209D0C /* B2FileTests.m in Sources */,
+				CA4C4DA72104753C00209D0C /* B2JSONValidatorTests.m in Sources */,
+				CA4C4DA82104753C00209D0C /* B2ErrorTests.m in Sources */,
+				CA4C4DA92104753C00209D0C /* B2DefaultClientTests.m in Sources */,
+				CA4C4DAA2104753C00209D0C /* B2BucketTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA9BEB1C2092F95300A3B70E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -891,6 +2054,36 @@
 			isa = PBXTargetDependency;
 			target = CA1CAA9E2075524E00354FD4 /* B2Kit (macOS Framework) */;
 			targetProxy = CA1CAAAA2075524F00354FD4 /* PBXContainerItemProxy */;
+		};
+		CA4855A02104D4BB00F09656 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA4C4D322104746900209D0C /* B2Kit (iOS Framework) */;
+			targetProxy = CA48559F2104D4BB00F09656 /* PBXContainerItemProxy */;
+		};
+		CA4856262104D7A200F09656 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA4855A12104D6F700F09656 /* B2Kit (tvOS Framework) */;
+			targetProxy = CA4856252104D7A200F09656 /* PBXContainerItemProxy */;
+		};
+		CA48563C2104D88000F09656 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA4855A12104D6F700F09656 /* B2Kit (tvOS Framework) */;
+			targetProxy = CA48563B2104D88000F09656 /* PBXContainerItemProxy */;
+		};
+		CA4856C32104D95200F09656 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA48563E2104D8E400F09656 /* B2Kit (watchOS Framework) */;
+			targetProxy = CA4856C22104D95200F09656 /* PBXContainerItemProxy */;
+		};
+		CA4856D92104D9C100F09656 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA48563E2104D8E400F09656 /* B2Kit (watchOS Framework) */;
+			targetProxy = CA4856D82104D9C100F09656 /* PBXContainerItemProxy */;
+		};
+		CA4C4DBA2104781600209D0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA4C4D322104746900209D0C /* B2Kit (iOS Framework) */;
+			targetProxy = CA4C4DB92104781600209D0C /* PBXContainerItemProxy */;
 		};
 		CA9BEB1A2092F95300A3B70E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -947,6 +2140,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CLANG_WARN__EXIT_TIME_DESTRUCTORS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -980,6 +2174,9 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = /Library/Frameworks;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LLVM_LTO = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1046,6 +2243,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CLANG_WARN__EXIT_TIME_DESTRUCTORS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1075,6 +2273,9 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = /Library/Frameworks;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LLVM_LTO = YES_THIN;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1096,17 +2297,15 @@
 		CA1CAAB42075524F00354FD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2Kit.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2Kit;
 				PRODUCT_NAME = B2Kit;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1114,17 +2313,15 @@
 		CA1CAAB52075524F00354FD4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2Kit.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2Kit;
 				PRODUCT_NAME = B2Kit;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1134,13 +2331,12 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9MLD39WDQ7;
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitUnitTests.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitTests;
-				PRODUCT_NAME = B2KitUnitTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitUnitTests;
+				PRODUCT_NAME = "B2KitUnitTests (macOS Framework)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1149,13 +2345,284 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9MLD39WDQ7;
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitUnitTests.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitTests;
-				PRODUCT_NAME = B2KitUnitTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitUnitTests;
+				PRODUCT_NAME = "B2KitUnitTests (macOS Framework)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CA4855992104D42B00F09656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MLD39WDQ7;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitIntegrationTests.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CA48559A2104D42B00F09656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MLD39WDQ7;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitIntegrationTests.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		CA4855FC2104D6F700F09656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2Kit.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2Kit;
+				PRODUCT_NAME = B2Kit;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+			};
+			name = Debug;
+		};
+		CA4855FD2104D6F700F09656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2Kit.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2Kit;
+				PRODUCT_NAME = B2Kit;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+			};
+			name = Release;
+		};
+		CA4856212104D76C00F09656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MLD39WDQ7;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitUnitTests.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitUnitTests;
+				PRODUCT_NAME = "B2KitUnitTests (tvOS Framework)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+			};
+			name = Debug;
+		};
+		CA4856222104D76C00F09656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MLD39WDQ7;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitUnitTests.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitUnitTests;
+				PRODUCT_NAME = "B2KitUnitTests (tvOS Framework)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+			};
+			name = Release;
+		};
+		CA4856372104D83800F09656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MLD39WDQ7;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitIntegrationTests.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+			};
+			name = Debug;
+		};
+		CA4856382104D83800F09656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MLD39WDQ7;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitIntegrationTests.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+			};
+			name = Release;
+		};
+		CA4856992104D8E400F09656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2Kit.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2Kit;
+				PRODUCT_NAME = B2Kit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos";
+			};
+			name = Debug;
+		};
+		CA48569A2104D8E400F09656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2Kit.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2Kit;
+				PRODUCT_NAME = B2Kit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos";
+			};
+			name = Release;
+		};
+		CA4856BE2104D92B00F09656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MLD39WDQ7;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitUnitTests.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+			};
+			name = Debug;
+		};
+		CA4856BF2104D92B00F09656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MLD39WDQ7;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitUnitTests.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+			};
+			name = Release;
+		};
+		CA4856D42104D9B500F09656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MLD39WDQ7;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitIntegrationTests.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+			};
+			name = Debug;
+		};
+		CA4856D52104D9B500F09656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MLD39WDQ7;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitIntegrationTests.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+			};
+			name = Release;
+		};
+		CA4C4D8D2104746900209D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2Kit.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2Kit;
+				PRODUCT_NAME = B2Kit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA4C4D8E2104746900209D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2Kit.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2Kit;
+				PRODUCT_NAME = B2Kit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CA4C4DB22104753C00209D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MLD39WDQ7;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitUnitTests.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitUnitTests;
+				PRODUCT_NAME = "B2KitUnitTests (iOS Framework)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CA4C4DB32104753C00209D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MLD39WDQ7;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitUnitTests.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitUnitTests;
+				PRODUCT_NAME = "B2KitUnitTests (iOS Framework)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -1164,13 +2631,12 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9MLD39WDQ7;
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitIntegrationTests.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitTests;
-				PRODUCT_NAME = B2KitIntegrationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitIntegrationTests;
+				PRODUCT_NAME = "B2KitIntegrationTests (macOS Framework)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1179,13 +2645,12 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9MLD39WDQ7;
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/B2KitIntegrationTests.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitTests;
-				PRODUCT_NAME = B2KitIntegrationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitIntegrationTests;
+				PRODUCT_NAME = "B2KitIntegrationTests (macOS Framework)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1210,11 +2675,92 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CA1CAAB62075524F00354FD4 /* Build configuration list for PBXNativeTarget "B2KitUnitTests (macOS Framework Tests)" */ = {
+		CA1CAAB62075524F00354FD4 /* Build configuration list for PBXNativeTarget "B2KitUnitTests (macOS Framework)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA1CAAB72075524F00354FD4 /* Debug */,
 				CA1CAAB82075524F00354FD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA4855982104D42B00F09656 /* Build configuration list for PBXNativeTarget "B2KitIntegrationTests (iOS Framework)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA4855992104D42B00F09656 /* Debug */,
+				CA48559A2104D42B00F09656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA4855FB2104D6F700F09656 /* Build configuration list for PBXNativeTarget "B2Kit (tvOS Framework)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA4855FC2104D6F700F09656 /* Debug */,
+				CA4855FD2104D6F700F09656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA4856202104D76C00F09656 /* Build configuration list for PBXNativeTarget "B2KitUnitTests (tvOS Framework)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA4856212104D76C00F09656 /* Debug */,
+				CA4856222104D76C00F09656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA4856362104D83800F09656 /* Build configuration list for PBXNativeTarget "B2KitIntegrationTests (tvOS Framework)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA4856372104D83800F09656 /* Debug */,
+				CA4856382104D83800F09656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA4856982104D8E400F09656 /* Build configuration list for PBXNativeTarget "B2Kit (watchOS Framework)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA4856992104D8E400F09656 /* Debug */,
+				CA48569A2104D8E400F09656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA4856BD2104D92B00F09656 /* Build configuration list for PBXNativeTarget "B2KitUnitTests (watchOS Framework)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA4856BE2104D92B00F09656 /* Debug */,
+				CA4856BF2104D92B00F09656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA4856D32104D9B500F09656 /* Build configuration list for PBXNativeTarget "B2KitIntegrationTests (watchOS Framework)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA4856D42104D9B500F09656 /* Debug */,
+				CA4856D52104D9B500F09656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA4C4D8C2104746900209D0C /* Build configuration list for PBXNativeTarget "B2Kit (iOS Framework)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA4C4D8D2104746900209D0C /* Debug */,
+				CA4C4D8E2104746900209D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA4C4DB12104753C00209D0C /* Build configuration list for PBXNativeTarget "B2KitUnitTests (iOS Framework)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA4C4DB22104753C00209D0C /* Debug */,
+				CA4C4DB32104753C00209D0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

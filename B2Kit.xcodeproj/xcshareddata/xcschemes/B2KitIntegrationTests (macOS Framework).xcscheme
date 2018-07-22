@@ -18,7 +18,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CA9BEB192092F95300A3B70E"
-               BuildableName = "B2KitIntegrationTests.xctest"
+               BuildableName = "B2KitIntegrationTests (macOS Framework).xctest"
                BlueprintName = "B2KitIntegrationTests (macOS Framework)"
                ReferencedContainer = "container:B2Kit.xcodeproj">
             </BuildableReference>

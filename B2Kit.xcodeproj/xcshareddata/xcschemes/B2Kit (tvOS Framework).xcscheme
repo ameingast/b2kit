@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA1CAA9E2075524E00354FD4"
+               BlueprintIdentifier = "CA4855A12104D6F700F09656"
                BuildableName = "B2Kit.framework"
-               BlueprintName = "B2Kit (macOS Framework)"
+               BlueprintName = "B2Kit (tvOS Framework)"
+               ReferencedContainer = "container:B2Kit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CA4856002104D76C00F09656"
+               BuildableName = "B2KitUnitTests (tvOS Framework).xctest"
+               BlueprintName = "B2KitUnitTests (tvOS Framework)"
                ReferencedContainer = "container:B2Kit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,16 +40,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA1CAAA72075524F00354FD4"
-               BuildableName = "B2KitUnitTests (macOS Framework).xctest"
-               BlueprintName = "B2KitUnitTests (macOS Framework)"
+               BlueprintIdentifier = "CA4856002104D76C00F09656"
+               BuildableName = "B2KitUnitTests (tvOS Framework).xctest"
+               BlueprintName = "B2KitUnitTests (tvOS Framework)"
                ReferencedContainer = "container:B2Kit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CA1CAA9E2075524E00354FD4"
+            BlueprintIdentifier = "CA4855A12104D6F700F09656"
             BuildableName = "B2Kit.framework"
-            BlueprintName = "B2Kit (macOS Framework)"
+            BlueprintName = "B2Kit (tvOS Framework)"
             ReferencedContainer = "container:B2Kit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +78,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CA1CAA9E2075524E00354FD4"
+            BlueprintIdentifier = "CA4855A12104D6F700F09656"
             BuildableName = "B2Kit.framework"
-            BlueprintName = "B2Kit (macOS Framework)"
+            BlueprintName = "B2Kit (tvOS Framework)"
             ReferencedContainer = "container:B2Kit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +96,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CA1CAA9E2075524E00354FD4"
+            BlueprintIdentifier = "CA4855A12104D6F700F09656"
             BuildableName = "B2Kit.framework"
-            BlueprintName = "B2Kit (macOS Framework)"
+            BlueprintName = "B2Kit (tvOS Framework)"
             ReferencedContainer = "container:B2Kit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

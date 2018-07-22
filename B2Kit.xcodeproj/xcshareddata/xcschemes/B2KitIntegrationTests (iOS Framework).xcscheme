@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -10,16 +10,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA1CAAA72075524F00354FD4"
-               BuildableName = "B2KitUnitTests (macOS Framework).xctest"
-               BlueprintName = "B2KitUnitTests (macOS Framework)"
+               BlueprintIdentifier = "CA48558A2104D42B00F09656"
+               BuildableName = "B2KitIntegrationTests (iOS Framework).xctest"
+               BlueprintName = "B2KitIntegrationTests (iOS Framework)"
                ReferencedContainer = "container:B2Kit.xcodeproj">
             </BuildableReference>
          </TestableReference>

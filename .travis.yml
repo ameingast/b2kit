@@ -1,4 +1,7 @@
 osx_image: xcode9
 language: objective-c
 script:
-- xcodebuild -scheme B2Kit\ \(macOS\ Framework\) build
+  - xcodebuild -scheme B2Kit\ \(macOS\ Framework\) build
+  - xcodebuild -scheme B2Kit\ \(iOS\ Framework\) build
+  - xcodebuild -scheme B2Kit\ \(tvOS\ Framework\) build
+  - xcodebuild -scheme B2Kit\ \(watchOS\ Framework\) build

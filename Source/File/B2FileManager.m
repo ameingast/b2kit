@@ -213,7 +213,7 @@
     [mutableRequest addValue:sha1Checksum
           forHTTPHeaderField:@"X-Bz-Content-Sha1"];
     if (lastModifiedOn != 0) {
-        [mutableRequest addValue:[NSString stringWithFormat:@"%lu", lastModifiedOn]
+        [mutableRequest addValue:[NSString stringWithFormat:@"%lu", (unsigned long)lastModifiedOn]
               forHTTPHeaderField:@"X-Bz-Info-src_last_modified_millis"];
     }
     if (fileInfo) {

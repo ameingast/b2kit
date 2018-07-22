@@ -36,7 +36,7 @@
 {
     return [NSString stringWithFormat:@"<B2ClientDataResult %p> {data=<%ld bytes>, response=%@}",
             (__bridge void *)self,
-            [[self data] length],
+            (unsigned long)[[self data] length],
             [self response]];
 }
 
