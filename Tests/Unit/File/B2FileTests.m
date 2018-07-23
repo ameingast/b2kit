@@ -80,19 +80,19 @@
                                                  metadata:@{}
                                                    action:B2FileInfoActionUploaded
                                                uploadDate:[NSDate dateWithTimeIntervalSince1970:0]];
-    B2File *file = [[B2File alloc] initWithJSONData:[NSJSONSerialization dataWithJSONObject:@{ @"fileId": @"fileId",
-                                                                                               @"accountId": @"accountId",
-                                                                                               @"fileName": @"fileName",
-                                                                                               @"bucketId": @"bucketId",
-                                                                                               @"accountId": @"accountId",
-                                                                                               @"contentLength": @(1),
-                                                                                               @"contentType": @"contentType",
-                                                                                               @"contentSha1": @"contentSha1",
-                                                                                               @"fileInfo": @{},
-                                                                                               @"action": @"upload",
-                                                                                               @"uploadTimestamp": @(0) }
-                                                                                    options:0
-                                                                                      error:nil]
+    B2File *file = [[B2File alloc] initWithJSONData:(NSData *)[NSJSONSerialization dataWithJSONObject:@{ @"fileId": @"fileId",
+                                                                                                         @"accountId": @"accountId",
+                                                                                                         @"fileName": @"fileName",
+                                                                                                         @"bucketId": @"bucketId",
+                                                                                                         @"accountId": @"accountId",
+                                                                                                         @"contentLength": @(1),
+                                                                                                         @"contentType": @"contentType",
+                                                                                                         @"contentSha1": @"contentSha1",
+                                                                                                         @"fileInfo": @{},
+                                                                                                         @"action": @"upload",
+                                                                                                         @"uploadTimestamp": @(0) }
+                                                                                              options:0
+                                                                                                error:nil]
                                               error:nil];
     XCTAssertEqualObjects(file, expectedFile);
 }

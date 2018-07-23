@@ -22,7 +22,7 @@
                                                                        @"writeFiles", @"deleteFiles"]);
     XCTAssertFalse(capability & B2AccountCapabilityNone);
     for (NSUInteger i = 0; i <= 10; i++) {
-        B2AccountCapability capabilityToCheck = 1 << i;
+        B2AccountCapability capabilityToCheck = (NSInteger)(1 << i);
         XCTAssertTrue(capability & capabilityToCheck);
     }
     XCTAssertEqual(B2AccountCapabilityNone, B2AccountCapabilityFromNSArray(nil));

@@ -34,7 +34,7 @@
 {
     return [NSString stringWithFormat:@"<B2Logger %p> {logLevel=%ld}",
             (__bridge void *)self,
-            [self logLevel]];
+            (long)[self logLevel]];
 }
 
 @end
