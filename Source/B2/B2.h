@@ -137,11 +137,11 @@ NS_ASSUME_NONNULL_BEGIN
                                                         startFileId:(nullable NSString *)startFileId
                                                        maxFileCount:(nullable NSNumber *)maxFileCount
                                                               error:(out NSError **)error;
-- (nullable id)listPartsForFileId:(NSString *)fileId
-                          account:(B2Account *)account
-                  startPartNumber:(nullable NSNumber *)startPartNumber
-                     maxPartCount:(nullable NSNumber *)maxPartCount
-                            error:(out NSError **)error;
+- (nullable NSArray<B2File *> *)listPartsForFileId:(NSString *)fileId
+                                           account:(B2Account *)account
+                                   startPartNumber:(nullable NSNumber *)startPartNumber
+                                      maxPartCount:(nullable NSNumber *)maxPartCount
+                                             error:(out NSError **)error;
 
 @end
 
