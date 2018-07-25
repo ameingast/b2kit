@@ -786,7 +786,6 @@
 				CA1CAAA02075524E00354FD4 /* Products */,
 				CA1CAAA12075524E00354FD4 /* Source */,
 				CA1CAAAC2075524F00354FD4 /* Tests */,
-				CA4C4DB6210477E100209D0C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -845,13 +844,6 @@
 				CAE98FED20FB2ABE00AD0FDC /* B2Logger+NSObject.m */,
 			);
 			path = Logging;
-			sourceTree = "<group>";
-		};
-		CA4C4DB6210477E100209D0C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CA702CC9207600930094FDED /* Bucket */ = {
