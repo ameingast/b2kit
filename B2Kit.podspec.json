@@ -1,0 +1,20 @@
+{
+    "name": "B2Kit",
+    "version": "1.0.0",
+    "summary": "Source is a client library for Backblaze B2",
+    "description": "Source is a client framework for Objective-C/Swift providing convenience methods to access the Backblaze B2 API.",
+    "homepage": "https://github.com/ameingast/b2kit",
+    "license": { "type": "BSD3", "file": "LICENSE" },
+    "authors": { "Andreas Meingast": "ameingast@gmail.com" },
+    "source": { "git": "https://github.com/ameingast/b2kit.git", "tag": "1.0.0" },
+    "platforms": { "osx": "10.9", "ios": "8.0", "tvos": "9.0", "watchos": "2.0" },
+    "requires_arc": true,
+    "frameworks": [ "Foundation" ],
+    "source_files": "Source/**/*.{h,m}",
+    "public_header_files": ["Source/B2Kit.h", "Source/B2/B2.h", "Source/File/B2UnfinishedLargeFiles.h",
+                            "Source/Bucket/B2BucketLifeCycleRule.h", "Source/File/B2UploadURL.h",
+                            "Source/File/B2FileInfoAction.h", "Source/Logging/B2Logger.h", "Source/File/B2Parts.h",
+                            "Source/File/B2File.h", "Source/Bucket/B2Bucket.h", "Source/Key/B2Key.h",
+                            "Source/Account/B2AccountCapability.h", "Source/File/B2Range.h",
+                            "Source/Account/B2Account.h", "Source/Bucket/B2BucketType.h"]
+}

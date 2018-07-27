@@ -559,6 +559,7 @@
 		CA1CAAA32075524E00354FD4 /* B2Kit.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = B2Kit.plist; sourceTree = "<group>"; };
 		CA1CAAA82075524F00354FD4 /* B2KitUnitTests (macOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitUnitTests (macOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1CAAAF2075524F00354FD4 /* B2KitUnitTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = B2KitUnitTests.plist; sourceTree = "<group>"; };
+		CA205080210B43CF00D60A35 /* B2Kit.podspec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = B2Kit.podspec.json; sourceTree = SOURCE_ROOT; };
 		CA2157E320FB30C30003078C /* B2File+NSObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "B2File+NSObject.m"; sourceTree = "<group>"; };
 		CA2157E720FB31020003078C /* B2Parts+NSObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "B2Parts+NSObject.m"; sourceTree = "<group>"; };
 		CA2157EB20FB31470003078C /* B2Range+NSObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "B2Range+NSObject.m"; sourceTree = "<group>"; };
@@ -1082,6 +1083,7 @@
 				CA21C4D42103997B001518BC /* .travis.yml */,
 				CADD5120207DDE5D00A29C53 /* B2.png */,
 				CA1CAAA32075524E00354FD4 /* B2Kit.plist */,
+				CA205080210B43CF00D60A35 /* B2Kit.podspec.json */,
 				CA9BEB382092F95300A3B70E /* B2KitIntegrationTests.plist */,
 				CA1CAAAF2075524F00354FD4 /* B2KitUnitTests.plist */,
 				CABA9C8F20F3E6C100506C5B /* Blib.bin */,
@@ -1504,17 +1506,17 @@
 			projectRoot = "";
 			targets = (
 				CA1CAA9E2075524E00354FD4 /* B2Kit (macOS Framework) */,
-				CA1CAAA72075524F00354FD4 /* B2KitUnitTests (macOS Framework) */,
-				CA9BEB192092F95300A3B70E /* B2KitIntegrationTests (macOS Framework) */,
 				CA4C4D322104746900209D0C /* B2Kit (iOS Framework) */,
-				CA4C4D912104753C00209D0C /* B2KitUnitTests (iOS Framework) */,
-				CA48558A2104D42B00F09656 /* B2KitIntegrationTests (iOS Framework) */,
 				CA4855A12104D6F700F09656 /* B2Kit (tvOS Framework) */,
-				CA4856002104D76C00F09656 /* B2KitUnitTests (tvOS Framework) */,
-				CA4856282104D83800F09656 /* B2KitIntegrationTests (tvOS Framework) */,
 				CA48563E2104D8E400F09656 /* B2Kit (watchOS Framework) */,
+				CA1CAAA72075524F00354FD4 /* B2KitUnitTests (macOS Framework) */,
+				CA4C4D912104753C00209D0C /* B2KitUnitTests (iOS Framework) */,
 				CA48569D2104D92B00F09656 /* B2KitUnitTests (watchOS Framework) */,
+				CA4856002104D76C00F09656 /* B2KitUnitTests (tvOS Framework) */,
+				CA9BEB192092F95300A3B70E /* B2KitIntegrationTests (macOS Framework) */,
+				CA48558A2104D42B00F09656 /* B2KitIntegrationTests (iOS Framework) */,
 				CA4856C52104D9B500F09656 /* B2KitIntegrationTests (watchOS Framework) */,
+				CA4856282104D83800F09656 /* B2KitIntegrationTests (tvOS Framework) */,
 			);
 		};
 /* End PBXProject section */
