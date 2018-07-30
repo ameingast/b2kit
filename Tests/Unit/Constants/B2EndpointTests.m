@@ -30,7 +30,7 @@
     XCTAssertEqualObjects((NSURL *)[NSURL URLWithString:@"http://example.com/b2api/v1/b2_delete_file_version"],
                           B2EndpointDeleteFileVersion((NSURL *)[NSURL URLWithString:@"http://example.com"]));
     XCTAssertEqualObjects((NSURL *)[NSURL URLWithString:@"http://example.com/b2api/v1/b2_list_file_names"],
-                          B2EndpointListFiles((NSURL *)[NSURL URLWithString:@"http://example.com"]));
+                          B2EndpointListFileNames((NSURL *)[NSURL URLWithString:@"http://example.com"]));
     XCTAssertEqualObjects((NSURL *)[NSURL URLWithString:@"http://example.com/b2api/v1/b2_download_file_by_id"],
                           B2EndpointDownloadFileById((NSURL *)[NSURL URLWithString:@"http://example.com"]));
     XCTAssertEqualObjects((NSURL *)[NSURL URLWithString:@"http://example.com/file/bucketName/fileName"],

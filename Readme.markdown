@@ -65,7 +65,6 @@ If you like this library, please consider donating. Thank you!
 ### Missing end-points
 
 * b2_get_download_authorization
-* b2_list_file_versions
 * b2_create_key
 * b2_delete_key
 * b2_list_keys

@@ -91,12 +91,12 @@
                                                                                 error:error];
 }
 
-- (NSArray<B2File *> *)listFilesWithBucketId:(NSString *)bucketId
-                                     account:(B2Account *)account
-                               startFileName:(NSString *)startFileName
-                                maxFileCount:(NSNumber *)maxFileCount
-                                      prefix:(NSString *)prefix
-                                       error:(out NSError *__autoreleasing *)error
+- (B2FileNames *)listFilesWithBucketId:(NSString *)bucketId
+                               account:(B2Account *)account
+                         startFileName:(NSString *)startFileName
+                          maxFileCount:(NSNumber *)maxFileCount
+                                prefix:(NSString *)prefix
+                                 error:(out NSError *__autoreleasing *)error
 {
     return [[[B2FileManager alloc] initWithClient:[self client]] listFilesWithBucketId:bucketId
                                                                                account:account
@@ -104,6 +104,22 @@
                                                                           maxFileCount:maxFileCount
                                                                                 prefix:prefix
                                                                                  error:error];
+}
+
+- (nullable B2FileVersions *)listFileVersionsWithBucketId:(NSString *)bucketId
+                                                  account:(B2Account *)account
+                                              startFileId:(nullable NSString *)startFileId
+                                            startFileName:(nullable NSString *)startFileName
+                                             maxFileCount:(nullable NSNumber *)maxFileCount
+                                                   prefix:(nullable NSString *)prefix
+                                                    error:(out NSError *__autoreleasing *)error
+{
+    return [[[B2FileManager alloc] initWithClient:[self client]] listFileVersionsWithBucketId:bucketId
+                                                                                      account:account
+                                                                                  startFileId:startFileId
+                                                                                startFileName:startFileName
+                                                                                 maxFileCount:maxFileCount
+                                                                                       prefix:prefix error:error];
 }
 
 @end

@@ -97,4 +97,22 @@
     XCTAssertEqualObjects(file, expectedFile);
 }
 
+- (void)testInitWithNextFileName
+{
+    B2FileNames *fileNames = [[B2FileNames alloc] initWithNextFileName:@"nextFileName"
+                                                                 files:@[]];
+    XCTAssertEqualObjects(@"nextFileName", [fileNames nextFileName]);
+    XCTAssertEqualObjects(@[], [fileNames files]);
+}
+
+- (void)initWithNextFileId
+{
+    B2FileVersions *fileVersions = [[B2FileVersions alloc] initWithNextFileId:@"nextFileId"
+                                                                 nextFileName:@"nextFileName"
+                                                                        files:@[]];
+    XCTAssertEqualObjects(@"nextFileId", [fileVersions nextFileId]);
+    XCTAssertEqualObjects(@"nextFileName", [fileVersions nextFileName]);
+    XCTAssertEqualObjects(@[], [fileVersions files]);
+}
+
 @end

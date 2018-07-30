@@ -70,14 +70,25 @@
         XCTFail(@"File upload failed: %@", error);
         return;
     }
-    NSArray<B2File *> *files = [[self b2] listFilesWithBucketId:[[self bucket] bucketId]
-                                                        account:[self account]
-                                                  startFileName:nil
-                                                   maxFileCount:nil
-                                                         prefix:nil
-                                                          error:&error];
-    if (!files) {
-        XCTFail(@"File listing failed: %@", error);
+    B2FileNames *fileNames = [[self b2] listFilesWithBucketId:[[self bucket] bucketId]
+                                                      account:[self account]
+                                                startFileName:nil
+                                                 maxFileCount:nil
+                                                       prefix:nil
+                                                        error:&error];
+    if (!fileNames) {
+        XCTFail(@"File name listing failed: %@", error);
+        return;
+    }
+    B2FileVersions *fileVersions = [[self b2] listFileVersionsWithBucketId:[[self bucket] bucketId]
+                                                                   account:[self account]
+                                                               startFileId:nil
+                                                             startFileName:nil
+                                                              maxFileCount:nil
+                                                                    prefix:nil
+                                                                     error:&error];
+    if (!fileVersions) {
+        XCTFail(@"File version listing failed: %@", error);
         return;
     }
     BOOL downloadByIdResult = [[self b2] downloadFileWithFileId:[file fileId]

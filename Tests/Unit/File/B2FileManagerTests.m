@@ -142,36 +142,95 @@
                                                                                   @"prefix": @"prefix",
                                                                                   @"startFileName": @"startFileName" }
                                                                        headers:@{}];
-    B2File *expectedFile = [[B2File alloc] initWithFileId:@"fileId"
-                                                 filename:@"fileName"
-                                                accountId:@"accountId"
-                                                 bucketId:@"bucketId"
-                                            contentLength:@(1)
-                                              contentType:@"contentType"
-                                                 metadata:@{}
-                                                   action:B2FileInfoActionUploaded
-                                               uploadDate:[NSDate dateWithTimeIntervalSince1970:0]];
-    NSArray<B2File *> *files = [[self fileManager] listFilesWithBucketId:@"bucketId"
-                                                                 account:[self account]
-                                                           startFileName:@"startFileName"
-                                                            maxFileCount:@(1)
-                                                                  prefix:@"prefix"
-                                                                   error:&error];
+    B2FileNames *expectedFileNames = [[B2FileNames alloc] initWithNextFileName:@"nextFileName"
+                                                                         files:@[ [[B2File alloc] initWithFileId:@"fileId"
+                                                                                                        filename:@"fileName"
+                                                                                                       accountId:@"accountId"
+                                                                                                        bucketId:@"bucketId"
+                                                                                                   contentLength:@(1)
+                                                                                                     contentType:@"contentType"
+                                                                                                        metadata:@{}
+                                                                                                          action:B2FileInfoActionUploaded
+                                                                                                      uploadDate:[NSDate dateWithTimeIntervalSince1970:0]]]];
+    B2FileNames *fileNames = [[self fileManager] listFilesWithBucketId:@"bucketId"
+                                                               account:[self account]
+                                                         startFileName:@"startFileName"
+                                                          maxFileCount:@(1)
+                                                                prefix:@"prefix"
+                                                                 error:&error];
     [self verifyURLRequest:expectedRequest];
-    XCTAssertEqualObjects(@[ expectedFile ], files);
+    XCTAssertEqualObjects(expectedFileNames, fileNames);
 }
 
 - (void)testListFilesInBucketFailsWithError
 {
     NSError *error, *thrownError = [NSError new];
     [[self client] setError:thrownError];
-    NSArray<B2File *> *files = [[self fileManager] listFilesWithBucketId:@"bucketId"
+    B2FileNames *fileNames = [[self fileManager] listFilesWithBucketId:@"bucketId"
                                                                  account:[self account]
                                                            startFileName:@"startFileName"
                                                             maxFileCount:@(1)
                                                                   prefix:@"prefix"
                                                                    error:&error];
-    XCTAssertNil(files);
+    XCTAssertNil(fileNames);
+    XCTAssertEqualObjects(thrownError, error);
+}
+
+- (void)testListFileVersionsWithBucketId
+{
+    NSError *error;
+    [self addMockResponse:@{ @"nextFileId": @"nextFileId",
+                             @"nextFileName": @"nextFileName",
+                             @"files": @[ @{ @"fileId": @"fileId",
+                                             @"fileName": @"fileName",
+                                             @"contentLength": @(1),
+                                             @"contentType": @"contentType",
+                                             @"contentSha1": @"contentSha1",
+                                             @"fileInfo": @{},
+                                             @"action": @"upload",
+                                             @"uploadTimestamp": @(0) } ] }];
+    NSMutableURLRequest *expectedRequest = [NSMutableURLRequest requestWithURL:(NSURL *)[NSURL URLWithString:@"http://example.com/apiURL/b2api/v1/b2_list_file_versions"]
+                                                                    httpMethod:@"POST"
+                                                                      httpBody:@{ @"bucketId": @"bucketId",
+                                                                                  @"maxFileCount": @(1),
+                                                                                  @"prefix": @"prefix",
+                                                                                  @"startFileName": @"startFileName",
+                                                                                  @"startFileId": @"startFileId" }
+                                                                       headers:@{}];
+    B2FileVersions *expectedFileVersions = [[B2FileVersions alloc] initWithNextFileId:@"nextFileId"
+                                                                         nextFileName:@"nextFileName"
+                                                                                files:@[ [[B2File alloc] initWithFileId:@"fileId"
+                                                                                                               filename:@"fileName"
+                                                                                                              accountId:@"accountId"
+                                                                                                               bucketId:@"bucketId"
+                                                                                                          contentLength:@(1)
+                                                                                                            contentType:@"contentType"
+                                                                                                               metadata:@{}
+                                                                                                                 action:B2FileInfoActionUploaded
+                                                                                                             uploadDate:[NSDate dateWithTimeIntervalSince1970:0]]]];
+    B2FileVersions * fileVersions = [[self fileManager] listFileVersionsWithBucketId:@"bucketId"
+                                                                             account:[self account]
+                                                                         startFileId:@"startFileId"
+                                                                       startFileName:@"startFileName"
+                                                                        maxFileCount:@(1)
+                                                                              prefix:@"prefix"
+                                                                               error:&error];
+    [self verifyURLRequest:expectedRequest];
+    XCTAssertEqualObjects(expectedFileVersions, fileVersions);
+}
+
+- (void)testListFileVersionsWithBucketIdFailsWithError
+{
+    NSError *error, *thrownError = [NSError new];
+    [[self client] setError:thrownError];
+    B2FileVersions *fileVersions = [[self fileManager] listFileVersionsWithBucketId:@"bucketId"
+                                                                      account:[self account]
+                                                                  startFileId:nil
+                                                                startFileName:nil
+                                                                 maxFileCount:nil
+                                                                       prefix:nil
+                                                                        error:&error];
+    XCTAssertNil(fileVersions);
     XCTAssertEqualObjects(thrownError, error);
 }
 

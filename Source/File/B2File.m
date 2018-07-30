@@ -49,3 +49,42 @@
 }
 
 @end
+
+@implementation B2FileNames
+
+@synthesize nextFileName = _nextFileName;
+@synthesize files = _files;
+
+- (B2FileNames *)initWithNextFileName:(NSString *)nextFileName
+                                files:(NSArray<B2File *> *)files
+{
+    self = [self init];
+    if (self) {
+        _nextFileName = nextFileName;
+        _files = files;
+    }
+    return self;
+}
+
+@end
+
+@implementation B2FileVersions
+
+@synthesize nextFileId = _nextFileId;
+@synthesize nextFileName = _nextFileName;
+@synthesize files = _files;
+
+- (B2FileVersions *)initWithNextFileId:(NSString *)nextFileId
+                          nextFileName:(NSString *)nextFileName
+                                 files:(NSArray<B2File *> *)files
+{
+    self = [self init];
+    if (self) {
+        _nextFileId = nextFileId;
+        _nextFileName = nextFileName;
+        _files = files;
+    }
+    return self;
+}
+
+@end

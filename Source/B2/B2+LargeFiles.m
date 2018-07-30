@@ -85,7 +85,7 @@
                                                                                           error:error];
 }
 
-- (id)listPartsForFileId:(NSString *)fileId
+- (B2Parts *)listPartsForFileId:(NSString *)fileId
                  account:(B2Account *)account
          startPartNumber:(NSNumber *)startPartNumber
             maxPartCount:(NSNumber *)maxPartCount

@@ -65,3 +65,72 @@
 }
 
 @end
+
+@implementation B2FileNames (NSObject)
+
+- (BOOL)isEqual:(id)obj
+{
+    if (obj == nil) {
+        return NO;
+    }
+    if (self == obj) {
+        return YES;
+    }
+    if (![obj isKindOfClass:[self class]]) {
+        return NO;
+    }
+    B2FileNames *other = obj;
+    return ([self nextFileName] == [other nextFileName] || [[self nextFileName] isEqual:[other nextFileName]]) &&
+    ([self files] == [other files] || [[self files] isEqual:[other files]]);
+}
+
+- (NSUInteger)hash
+{
+    return [self nextFileName].hash ^ [self files].hash;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<B2FileNames %p> {nextFileName=%@, files=%@}",
+            (__bridge void *)self,
+            [self nextFileName],
+            [self files]];
+}
+
+@end
+
+@implementation B2FileVersions (NSObject)
+
+- (BOOL)isEqual:(id)obj
+{
+    if (obj == nil) {
+        return NO;
+    }
+    if (self == obj) {
+        return YES;
+    }
+    if (![obj isKindOfClass:[self class]]) {
+        return NO;
+    }
+    B2FileVersions *other = obj;
+    return ([self nextFileId] == [other nextFileId] || [[self nextFileId] isEqual:[other nextFileId]]) &&
+    ([self nextFileName] == [other nextFileName] || [[self nextFileName] isEqual:[other nextFileName]]) &&
+    ([self files] == [other files] || [[self files] isEqual:[other files]]);
+}
+
+- (NSUInteger)hash
+{
+    return [self nextFileId].hash ^ [self nextFileName].hash ^ [self files].hash;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<B2FileVersions %p> {nextFileId=%@, nextFileName=%@, files=%@}",
+            (__bridge void *)self,
+            [self nextFileId],
+            [self nextFileName],
+            [self files]];
+}
+
+
+@end

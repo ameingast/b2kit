@@ -36,8 +36,12 @@ inline NSURL *B2EndpointDeleteFileVersion(NSURL *baseURL) {
     return (NSURL *)[baseURL URLByAppendingPathComponent:@"/b2api/v1/b2_delete_file_version"];
 }
 
-inline NSURL *B2EndpointListFiles(NSURL *baseURL) {
+inline NSURL *B2EndpointListFileNames(NSURL *baseURL) {
     return (NSURL *)[baseURL URLByAppendingPathComponent:@"/b2api/v1/b2_list_file_names"];
+}
+
+inline NSURL *B2EndpointListFileVersions(NSURL *baseURL) {
+    return (NSURL *)[baseURL URLByAppendingPathComponent:@"/b2api/v1/b2_list_file_versions"];
 }
 
 inline NSURL *B2EndpointDownloadFileById(NSURL *baseURL) {

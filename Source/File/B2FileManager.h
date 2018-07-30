@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class B2File;
+@class B2FileNames;
+@class B2FileVersions;
 @class B2Account;
 @class B2Bucket;
 @class B2UploadURL;
@@ -34,12 +36,19 @@ NS_ASSUME_NONNULL_BEGIN
                      account:(B2Account *)account
                       bucket:(B2Bucket *)bucket
                        error:(out NSError **)error;
-- (nullable NSArray<B2File *> *)listFilesWithBucketId:(NSString *)bucketId
-                                              account:(B2Account *)account
-                                        startFileName:(nullable NSString *)startFileName
-                                         maxFileCount:(nullable NSNumber *)maxFileCount
-                                               prefix:(nullable NSString *)prefix
-                                                error:(out NSError **)error;
+- (nullable B2FileNames *)listFilesWithBucketId:(NSString *)bucketId
+                                        account:(B2Account *)account
+                                  startFileName:(nullable NSString *)startFileName
+                                   maxFileCount:(nullable NSNumber *)maxFileCount
+                                         prefix:(nullable NSString *)prefix
+                                          error:(out NSError **)error;
+- (nullable B2FileVersions *)listFileVersionsWithBucketId:(NSString *)bucketId
+                                                  account:(B2Account *)account
+                                              startFileId:(nullable NSString *)startFileId
+                                            startFileName:(nullable NSString *)startFileName
+                                             maxFileCount:(nullable NSNumber *)maxFileCount
+                                                   prefix:(nullable NSString *)prefix
+                                                    error:(out NSError **)error;
 
 // MARK: Delete
 

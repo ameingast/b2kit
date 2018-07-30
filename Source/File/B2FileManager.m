@@ -72,12 +72,12 @@
     return response ? YES : NO;
 }
 
-- (NSArray<B2File *> *)listFilesWithBucketId:(NSString *)bucketId
-                                     account:(B2Account *)account
-                               startFileName:(NSString *)startFileName
-                                maxFileCount:(NSNumber *)maxFileCount
-                                      prefix:(NSString *)prefix
-                                       error:(out NSError *__autoreleasing *)error
+- (B2FileNames *)listFilesWithBucketId:(NSString *)bucketId
+                               account:(B2Account *)account
+                         startFileName:(NSString *)startFileName
+                          maxFileCount:(NSNumber *)maxFileCount
+                                prefix:(NSString *)prefix
+                                 error:(out NSError *__autoreleasing *)error
 {
     NSData *payload = [NSJSONSerialization dataWithJSONObject:@{ @"bucketId": bucketId,
                                                                  @"maxFileCount": maxFileCount != nil ? (NSNumber *)maxFileCount : [NSNull new],
@@ -85,7 +85,7 @@
                                                                  @"prefix" : prefix ? (NSString *)prefix : [NSNull new] }
                                                       options:NSJSONWritingPrettyPrinted
                                                         error:error];
-    NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:B2EndpointListFiles([account apiURL])];
+    NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:B2EndpointListFileNames([account apiURL])];
     [mutableRequest setHTTPMethod:@"POST"];
     [mutableRequest setHTTPBody:payload];
     NSData *response = [[self client] performDownloadRequest:mutableRequest
@@ -110,7 +110,53 @@
                                               account:account
                                              bucketId:bucketId
                                                 error:error];
-    return files;
+    return [[B2FileNames alloc] initWithNextFileName:(NSString *)json[@"nextFileName"]
+                                               files:files];
+}
+
+- (B2FileVersions *)listFileVersionsWithBucketId:(NSString *)bucketId
+                                         account:(B2Account *)account
+                                   startFileId:(nullable NSString *)startFileId
+                                   startFileName:(nullable NSString *)startFileName
+                                    maxFileCount:(nullable NSNumber *)maxFileCount
+                                          prefix:(nullable NSString *)prefix
+                                           error:(out NSError *__autoreleasing *)error
+{
+    NSData *payload = [NSJSONSerialization dataWithJSONObject:@{ @"bucketId": bucketId,
+                                                                 @"maxFileCount": maxFileCount != nil ? (NSNumber *)maxFileCount : [NSNull new],
+                                                                 @"startFileId": startFileId ? (NSString *)startFileId : [NSNull new],
+                                                                 @"startFileName": startFileName ? (NSString *)startFileName : [NSNull new],
+                                                                 @"prefix" : prefix ? (NSString *)prefix : [NSNull new] }
+                                                      options:NSJSONWritingPrettyPrinted
+                                                        error:error];
+    NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:B2EndpointListFileVersions([account apiURL])];
+    [mutableRequest setHTTPMethod:@"POST"];
+    [mutableRequest setHTTPBody:payload];
+    NSData *response = [[self client] performDownloadRequest:mutableRequest
+                                                     account:account
+                                                       error:error];
+    if (!response) {
+        return nil;
+    }
+    NSDictionary<NSString *, id> *json = [NSJSONSerialization JSONObjectWithData:response
+                                                                         options:0
+                                                                           error:error];
+    if (!json) {
+        return nil;
+    }
+    BOOL validationResult = [[B2JSONValidator sharedInstance] validateJSON:json
+                                                                    fields:@[@"files", @"nextFileId", @"nextFileName"]
+                                                                     error:error];
+    if (!validationResult) {
+        return nil;
+    }
+    NSArray<B2File *> *files = [B2File filesFromArray:(NSArray<NSDictionary<NSString *, id> *> *)json[@"files"]
+                                              account:account
+                                             bucketId:bucketId
+                                                error:error];
+    return [[B2FileVersions alloc] initWithNextFileId:(NSString *)json[@"nextFileId"]
+                                  nextFileName:(NSString *)json[@"nextFileName"]
+                                         files:files];
 }
 
 // MARK: Delete

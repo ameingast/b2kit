@@ -98,12 +98,19 @@ NS_ASSUME_NONNULL_BEGIN
                     fileName:(NSString *)filename
                      account:(B2Account *)account
                        error:(out NSError **)error;
-- (nullable NSArray<B2File *> *)listFilesWithBucketId:(NSString *)bucketId
-                                              account:(B2Account *)account
-                                        startFileName:(nullable NSString *)startFileName
-                                         maxFileCount:(nullable NSNumber *)maxFileCount
-                                               prefix:(nullable NSString *)prefix
-                                                error:(out NSError **)error;
+- (nullable B2FileNames *)listFilesWithBucketId:(NSString *)bucketId
+                                        account:(B2Account *)account
+                                  startFileName:(nullable NSString *)startFileName
+                                   maxFileCount:(nullable NSNumber *)maxFileCount
+                                         prefix:(nullable NSString *)prefix
+                                          error:(out NSError **)error;
+- (nullable B2FileVersions *)listFileVersionsWithBucketId:(NSString *)bucketId
+                                                  account:(B2Account *)account
+                                              startFileId:(nullable NSString *)startFileId
+                                            startFileName:(nullable NSString *)startFileName
+                                             maxFileCount:(nullable NSNumber *)maxFileCount
+                                                   prefix:(nullable NSString *)prefix
+                                                    error:(out NSError **)error;
 
 @end
 
@@ -137,11 +144,11 @@ NS_ASSUME_NONNULL_BEGIN
                                                         startFileId:(nullable NSString *)startFileId
                                                        maxFileCount:(nullable NSNumber *)maxFileCount
                                                               error:(out NSError **)error;
-- (nullable NSArray<B2File *> *)listPartsForFileId:(NSString *)fileId
-                                           account:(B2Account *)account
-                                   startPartNumber:(nullable NSNumber *)startPartNumber
-                                      maxPartCount:(nullable NSNumber *)maxPartCount
-                                             error:(out NSError **)error;
+- (nullable B2Parts *)listPartsForFileId:(NSString *)fileId
+                                 account:(B2Account *)account
+                         startPartNumber:(nullable NSNumber *)startPartNumber
+                            maxPartCount:(nullable NSNumber *)maxPartCount
+                                   error:(out NSError **)error;
 
 @end
 
