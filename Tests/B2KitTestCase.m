@@ -26,7 +26,7 @@ static const NSString *B2KitTestBucketNamePrefix = @"B2Kit";
 - (NSString *)accountId
 {
     NSString *accountId = [self secrets][@"ACCOUNT_ID"];
-    if (!accountId || [accountId isEqualTo:[NSNull new]]) {
+    if (!accountId || [accountId isEqual:[NSNull new]]) {
         [self raiseTestException:@"ACCOUNT_ID secret not set. Check 'Resources/Secrets.json'."];
     }
     return accountId;
@@ -35,7 +35,7 @@ static const NSString *B2KitTestBucketNamePrefix = @"B2Kit";
 - (NSString *)applicationKey
 {
     NSString *applicationKey = [self secrets][@"APPLICATION_KEY"];
-    if (!applicationKey || [applicationKey isEqualTo:[NSNull new]]) {
+    if (!applicationKey || [applicationKey isEqual:[NSNull new]]) {
         [self raiseTestException:@"APPLICATION_KEY secret not set. Check 'Resources/Secrets.json'."];
     }
     return applicationKey;
