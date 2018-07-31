@@ -1317,7 +1317,6 @@
 				CA1CAAA02075524E00354FD4 /* Products */,
 				CA1CAAA12075524E00354FD4 /* Source */,
 				CA1CAAAC2075524F00354FD4 /* Tests */,
-				CA269CBE210F6369001E9DA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1385,13 +1384,6 @@
 				CA54E112210F9F6200ADFAE2 /* CredentialsTests.swift */,
 			);
 			path = CLI;
-			sourceTree = "<group>";
-		};
-		CA269CBE210F6369001E9DA3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CA2F313E20936DFB00249557 /* Logging */ = {
