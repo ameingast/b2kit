@@ -7,6 +7,7 @@
 //
 
 #import "B2Parts.h"
+#import "NSArray+B2Kit.h"
 
 @implementation B2Part (NSObject)
 
@@ -76,7 +77,7 @@
 {
     return [NSString stringWithFormat:@"<B2Parts %p> {parts=%@, nextPartNumber=%@}",
             (__bridge void *)self,
-            [self parts],
+            [[self parts] singleLineDescription],
             [self nextPartNumber]];
 }
 

@@ -7,6 +7,8 @@
 //
 
 #import "B2File.h"
+#import "NSArray+B2Kit.h"
+#import "NSDictionary+B2Kit.h"
 
 @implementation B2File (NSObject)
 
@@ -59,7 +61,7 @@
             [self bucketId],
             [self contentLength],
             [self contentType],
-            [self metadata],
+            [[self metadata] singleLineDescription],
             NSStringFromB2FileInfoAction([self action]),
             [self uploadDate]];
 }
@@ -94,7 +96,7 @@
     return [NSString stringWithFormat:@"<B2FileNames %p> {nextFileName=%@, files=%@}",
             (__bridge void *)self,
             [self nextFileName],
-            [self files]];
+            [[self files] singleLineDescription]];
 }
 
 @end
@@ -129,7 +131,7 @@
             (__bridge void *)self,
             [self nextFileId],
             [self nextFileName],
-            [self files]];
+            [[self files] singleLineDescription]];
 }
 
 

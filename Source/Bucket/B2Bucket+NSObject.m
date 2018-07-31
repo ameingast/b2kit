@@ -7,6 +7,8 @@
 //
 
 #import "B2Bucket.h"
+#import "NSArray+B2Kit.h"
+#import "NSDictionary+B2Kit.h"
 
 @implementation B2Bucket (NSObject)
 
@@ -49,8 +51,8 @@
             [self accountId],
             [self bucketId],
             [self bucketName],
-            [self bucketInfo],
-            [self lifeCycleRules],
+            [[self bucketInfo] singleLineDescription],
+            [[self lifeCycleRules] singleLineDescription],
             [self revision]];
 }
 

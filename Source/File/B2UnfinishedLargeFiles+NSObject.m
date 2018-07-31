@@ -7,6 +7,8 @@
 //
 
 #import "B2UnfinishedLargeFiles.h"
+#import "NSArray+B2Kit.h"
+#import "NSDictionary+B2Kit.h"
 
 @implementation B2UnfinishedLargeFile (NSObject)
 
@@ -52,7 +54,7 @@
             [self accountId],
             [self bucketId],
             [self contentType],
-            [self fileInfo],
+            [[self fileInfo] singleLineDescription],
             [self uploadTimestamp]];
 }
 
@@ -86,7 +88,7 @@
 {
     return [NSString stringWithFormat:@"<B2UnfinishedLargeFiles %p> {files=%@, nextFileId=%@}",
             (__bridge void *)self,
-            [self files],
+            [[self files] singleLineDescription],
             [self nextFileId]];
 }
 

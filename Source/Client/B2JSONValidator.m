@@ -9,6 +9,8 @@
 #import "B2JSONValidator.h"
 #import "B2Error.h"
 #import "B2Logger.h"
+#import "NSArray+B2Kit.h"
+#import "NSDictionary+B2Kit.h"
 
 @implementation B2JSONValidator
 
@@ -26,7 +28,9 @@
               fields:(NSArray<NSString *> *)fields
                error:(NSError *__autoreleasing *)error
 {
-    B2LogDebug("Validating JSON dictionary against fields: %@ - %@", fields, dictionary);
+    B2LogDebug("Validating JSON dictionary against fields: %@ - %@",
+               [fields singleLineDescription],
+               [dictionary singleLineDescription]);
     for (NSString *field in fields) {
         if (!dictionary[field]) {
             if (error) {

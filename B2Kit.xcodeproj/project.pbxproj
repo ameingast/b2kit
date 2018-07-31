@@ -844,6 +844,42 @@
 		CAE98FEF20FB2ABE00AD0FDC /* B2Logger+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FED20FB2ABE00AD0FDC /* B2Logger+NSObject.m */; };
 		CAF229E12079031100B3E540 /* B2Error.h in Headers */ = {isa = PBXBuildFile; fileRef = CAF229DF2079031100B3E540 /* B2Error.h */; };
 		CAF229E22079031100B3E540 /* B2Error.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF229E02079031100B3E540 /* B2Error.m */; };
+		CAFC812221107B3E009D5981 /* NSArray+B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFC812021107B3E009D5981 /* NSArray+B2Kit.h */; };
+		CAFC812321107B3E009D5981 /* NSArray+B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFC812021107B3E009D5981 /* NSArray+B2Kit.h */; };
+		CAFC812421107B3E009D5981 /* NSArray+B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFC812021107B3E009D5981 /* NSArray+B2Kit.h */; };
+		CAFC812521107B3E009D5981 /* NSArray+B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFC812021107B3E009D5981 /* NSArray+B2Kit.h */; };
+		CAFC812621107B3E009D5981 /* NSArray+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812121107B3E009D5981 /* NSArray+B2Kit.m */; };
+		CAFC812721107B3E009D5981 /* NSArray+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812121107B3E009D5981 /* NSArray+B2Kit.m */; };
+		CAFC812821107B3E009D5981 /* NSArray+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812121107B3E009D5981 /* NSArray+B2Kit.m */; };
+		CAFC812921107B3E009D5981 /* NSArray+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812121107B3E009D5981 /* NSArray+B2Kit.m */; };
+		CAFC812A21107B43009D5981 /* NSArray+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812121107B3E009D5981 /* NSArray+B2Kit.m */; };
+		CAFC812B21107B43009D5981 /* NSArray+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812121107B3E009D5981 /* NSArray+B2Kit.m */; };
+		CAFC812C21107B43009D5981 /* NSArray+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812121107B3E009D5981 /* NSArray+B2Kit.m */; };
+		CAFC812D21107B44009D5981 /* NSArray+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812121107B3E009D5981 /* NSArray+B2Kit.m */; };
+		CAFC813021107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFC812E21107B5F009D5981 /* NSDictionary+B2Kit.h */; };
+		CAFC813121107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFC812E21107B5F009D5981 /* NSDictionary+B2Kit.h */; };
+		CAFC813221107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFC812E21107B5F009D5981 /* NSDictionary+B2Kit.h */; };
+		CAFC813321107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFC812E21107B5F009D5981 /* NSDictionary+B2Kit.h */; };
+		CAFC813421107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFC812E21107B5F009D5981 /* NSDictionary+B2Kit.h */; };
+		CAFC813521107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFC812E21107B5F009D5981 /* NSDictionary+B2Kit.h */; };
+		CAFC813621107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFC812E21107B5F009D5981 /* NSDictionary+B2Kit.h */; };
+		CAFC813721107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFC812E21107B5F009D5981 /* NSDictionary+B2Kit.h */; };
+		CAFC813821107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812F21107B5F009D5981 /* NSDictionary+B2Kit.m */; };
+		CAFC813921107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812F21107B5F009D5981 /* NSDictionary+B2Kit.m */; };
+		CAFC813A21107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812F21107B5F009D5981 /* NSDictionary+B2Kit.m */; };
+		CAFC813B21107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812F21107B5F009D5981 /* NSDictionary+B2Kit.m */; };
+		CAFC813C21107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812F21107B5F009D5981 /* NSDictionary+B2Kit.m */; };
+		CAFC813D21107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812F21107B5F009D5981 /* NSDictionary+B2Kit.m */; };
+		CAFC813E21107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812F21107B5F009D5981 /* NSDictionary+B2Kit.m */; };
+		CAFC813F21107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC812F21107B5F009D5981 /* NSDictionary+B2Kit.m */; };
+		CAFC814221108291009D5981 /* NSArrayTests+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC814121108291009D5981 /* NSArrayTests+B2Kit.m */; };
+		CAFC814321108291009D5981 /* NSArrayTests+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC814121108291009D5981 /* NSArrayTests+B2Kit.m */; };
+		CAFC814421108291009D5981 /* NSArrayTests+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC814121108291009D5981 /* NSArrayTests+B2Kit.m */; };
+		CAFC814521108291009D5981 /* NSArrayTests+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC814121108291009D5981 /* NSArrayTests+B2Kit.m */; };
+		CAFC8147211082DB009D5981 /* NSDictionaryTests+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC8146211082DB009D5981 /* NSDictionaryTests+B2Kit.m */; };
+		CAFC8148211082DB009D5981 /* NSDictionaryTests+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC8146211082DB009D5981 /* NSDictionaryTests+B2Kit.m */; };
+		CAFC8149211082DB009D5981 /* NSDictionaryTests+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC8146211082DB009D5981 /* NSDictionaryTests+B2Kit.m */; };
+		CAFC814A211082DB009D5981 /* NSDictionaryTests+B2Kit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFC8146211082DB009D5981 /* NSDictionaryTests+B2Kit.m */; };
 		CAFE126B207A4ECC0012BBE5 /* B2FileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFE1269207A4ECC0012BBE5 /* B2FileManager.h */; };
 		CAFE126C207A4ECC0012BBE5 /* B2FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE126A207A4ECC0012BBE5 /* B2FileManager.m */; };
 		CAFE126F207A505A0012BBE5 /* B2FileInfoAction.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFE126D207A505A0012BBE5 /* B2FileInfoAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1092,6 +1128,12 @@
 		CAF229DF2079031100B3E540 /* B2Error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = B2Error.h; sourceTree = "<group>"; };
 		CAF229E02079031100B3E540 /* B2Error.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B2Error.m; sourceTree = "<group>"; };
 		CAF7CB8F207A0768005FEE72 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		CAFC812021107B3E009D5981 /* NSArray+B2Kit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+B2Kit.h"; sourceTree = "<group>"; };
+		CAFC812121107B3E009D5981 /* NSArray+B2Kit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+B2Kit.m"; sourceTree = "<group>"; };
+		CAFC812E21107B5F009D5981 /* NSDictionary+B2Kit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+B2Kit.h"; sourceTree = "<group>"; };
+		CAFC812F21107B5F009D5981 /* NSDictionary+B2Kit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+B2Kit.m"; sourceTree = "<group>"; };
+		CAFC814121108291009D5981 /* NSArrayTests+B2Kit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArrayTests+B2Kit.m"; sourceTree = "<group>"; };
+		CAFC8146211082DB009D5981 /* NSDictionaryTests+B2Kit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionaryTests+B2Kit.m"; sourceTree = "<group>"; };
 		CAFE1269207A4ECC0012BBE5 /* B2FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = B2FileManager.h; sourceTree = "<group>"; };
 		CAFE126A207A4ECC0012BBE5 /* B2FileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B2FileManager.m; sourceTree = "<group>"; };
 		CAFE126D207A505A0012BBE5 /* B2FileInfoAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = B2FileInfoAction.h; sourceTree = "<group>"; };
@@ -1283,6 +1325,7 @@
 				CA702CCA2076009D0094FDED /* Account */,
 				CAA7A1362078D376002B405E /* B2 */,
 				CA702CC9207600930094FDED /* Bucket */,
+				CAFC811F21107B27009D5981 /* Categories */,
 				CAB19E51210F4FD800B83973 /* CLI */,
 				CA702CCD207600C80094FDED /* Client */,
 				CAA7A1372078D392002B405E /* Constants */,
@@ -1451,6 +1494,7 @@
 			children = (
 				CA9BEAF82092F74700A3B70E /* Account */,
 				CA9BEAF92092F74D00A3B70E /* Bucket */,
+				CAFC81402110826B009D5981 /* Categories */,
 				CA269CAA210F580D001E9DA3 /* CLI */,
 				CA7E62AA20F72BFA00B21A37 /* Client */,
 				CA7E62B120F72C5D00B21A37 /* Constants */,
@@ -1607,6 +1651,26 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		CAFC811F21107B27009D5981 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CAFC812021107B3E009D5981 /* NSArray+B2Kit.h */,
+				CAFC812121107B3E009D5981 /* NSArray+B2Kit.m */,
+				CAFC812E21107B5F009D5981 /* NSDictionary+B2Kit.h */,
+				CAFC812F21107B5F009D5981 /* NSDictionary+B2Kit.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		CAFC81402110826B009D5981 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CAFC814121108291009D5981 /* NSArrayTests+B2Kit.m */,
+				CAFC8146211082DB009D5981 /* NSDictionaryTests+B2Kit.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1615,6 +1679,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CADAA3432079EDDB00B470E6 /* B2JSONValidator.h in Headers */,
+				CAFC813021107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */,
 				CAFEB2EF20924DE800A0C017 /* B2DefaultClient.h in Headers */,
 				CAB7152520FA525E00F8E8AB /* B2UnfinishedLargeFiles+Private.h in Headers */,
 				CADAA3472079EEEE00B470E6 /* B2ClientDataResult.h in Headers */,
@@ -1626,6 +1691,7 @@
 				CAD111A220793CE700E62C41 /* B2BucketManager.h in Headers */,
 				CAC422CC20755EA70039854F /* B2Key.h in Headers */,
 				CA2FB9B9207B45B300A9515D /* B2UploadURL.h in Headers */,
+				CAFC812221107B3E009D5981 /* NSArray+B2Kit.h in Headers */,
 				CA7474F6207633ED0064052F /* B2File.h in Headers */,
 				CAC422C0207555420039854F /* B2.h in Headers */,
 				CAFE126B207A4ECC0012BBE5 /* B2FileManager.h in Headers */,
@@ -1660,6 +1726,7 @@
 				CA269D1A210F64C1001E9DA3 /* B2UnfinishedLargeFiles.h in Headers */,
 				CA269CE3210F643C001E9DA3 /* B2BucketLifeCycleRule+Private.h in Headers */,
 				CA269CEE210F6457001E9DA3 /* B2Client.h in Headers */,
+				CAFC813421107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */,
 				CA269CF0210F645D001E9DA3 /* B2DefaultClient.h in Headers */,
 				CA269D14210F64AD001E9DA3 /* B2File+Private.h in Headers */,
 				CA269CCA210F63F0001E9DA3 /* B2Account+Private.h in Headers */,
@@ -1691,6 +1758,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA4855DC2104D6F700F09656 /* B2JSONValidator.h in Headers */,
+				CAFC813221107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */,
 				CA4855DD2104D6F700F09656 /* B2DefaultClient.h in Headers */,
 				CA4855DE2104D6F700F09656 /* B2UnfinishedLargeFiles+Private.h in Headers */,
 				CA4855DF2104D6F700F09656 /* B2ClientDataResult.h in Headers */,
@@ -1702,6 +1770,7 @@
 				CA4855E52104D6F700F09656 /* B2BucketManager.h in Headers */,
 				CA4855E62104D6F700F09656 /* B2Key.h in Headers */,
 				CA4855E72104D6F700F09656 /* B2UploadURL.h in Headers */,
+				CAFC812421107B3E009D5981 /* NSArray+B2Kit.h in Headers */,
 				CA4855E82104D6F700F09656 /* B2File.h in Headers */,
 				CA4855E92104D6F700F09656 /* B2.h in Headers */,
 				CA4855EA2104D6F700F09656 /* B2FileManager.h in Headers */,
@@ -1729,6 +1798,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA4856792104D8E400F09656 /* B2JSONValidator.h in Headers */,
+				CAFC813321107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */,
 				CA48567A2104D8E400F09656 /* B2DefaultClient.h in Headers */,
 				CA48567B2104D8E400F09656 /* B2UnfinishedLargeFiles+Private.h in Headers */,
 				CA48567C2104D8E400F09656 /* B2ClientDataResult.h in Headers */,
@@ -1740,6 +1810,7 @@
 				CA4856822104D8E400F09656 /* B2BucketManager.h in Headers */,
 				CA4856832104D8E400F09656 /* B2Key.h in Headers */,
 				CA4856842104D8E400F09656 /* B2UploadURL.h in Headers */,
+				CAFC812521107B3E009D5981 /* NSArray+B2Kit.h in Headers */,
 				CA4856852104D8E400F09656 /* B2File.h in Headers */,
 				CA4856862104D8E400F09656 /* B2.h in Headers */,
 				CA4856872104D8E400F09656 /* B2FileManager.h in Headers */,
@@ -1767,6 +1838,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA4C4D6D2104746900209D0C /* B2JSONValidator.h in Headers */,
+				CAFC813121107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */,
 				CA4C4D6E2104746900209D0C /* B2DefaultClient.h in Headers */,
 				CA4C4D6F2104746900209D0C /* B2UnfinishedLargeFiles+Private.h in Headers */,
 				CA4C4D702104746900209D0C /* B2ClientDataResult.h in Headers */,
@@ -1778,6 +1850,7 @@
 				CA4C4D762104746900209D0C /* B2BucketManager.h in Headers */,
 				CA4C4D772104746900209D0C /* B2Key.h in Headers */,
 				CA4C4D782104746900209D0C /* B2UploadURL.h in Headers */,
+				CAFC812321107B3E009D5981 /* NSArray+B2Kit.h in Headers */,
 				CA4C4D792104746900209D0C /* B2File.h in Headers */,
 				CA4C4D7A2104746900209D0C /* B2.h in Headers */,
 				CA4C4D7B2104746900209D0C /* B2FileManager.h in Headers */,
@@ -1812,6 +1885,7 @@
 				CA5F53D4210F695A00D973D3 /* B2UnfinishedLargeFiles.h in Headers */,
 				CA5F53D5210F695A00D973D3 /* B2BucketLifeCycleRule+Private.h in Headers */,
 				CA5F53D6210F695A00D973D3 /* B2Client.h in Headers */,
+				CAFC813521107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */,
 				CA5F53D7210F695A00D973D3 /* B2DefaultClient.h in Headers */,
 				CA5F53D8210F695A00D973D3 /* B2File+Private.h in Headers */,
 				CA5F53D9210F695A00D973D3 /* B2Account+Private.h in Headers */,
@@ -1850,6 +1924,7 @@
 				CA5F5432210F698D00D973D3 /* B2UnfinishedLargeFiles.h in Headers */,
 				CA5F5433210F698D00D973D3 /* B2BucketLifeCycleRule+Private.h in Headers */,
 				CA5F5434210F698D00D973D3 /* B2Client.h in Headers */,
+				CAFC813621107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */,
 				CA5F5435210F698D00D973D3 /* B2DefaultClient.h in Headers */,
 				CA5F5436210F698D00D973D3 /* B2File+Private.h in Headers */,
 				CA5F5437210F698D00D973D3 /* B2Account+Private.h in Headers */,
@@ -1888,6 +1963,7 @@
 				CA5F5490210F699900D973D3 /* B2UnfinishedLargeFiles.h in Headers */,
 				CA5F5491210F699900D973D3 /* B2BucketLifeCycleRule+Private.h in Headers */,
 				CA5F5492210F699900D973D3 /* B2Client.h in Headers */,
+				CAFC813721107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */,
 				CA5F5493210F699900D973D3 /* B2DefaultClient.h in Headers */,
 				CA5F5494210F699900D973D3 /* B2File+Private.h in Headers */,
 				CA5F5495210F699900D973D3 /* B2Account+Private.h in Headers */,
@@ -2440,6 +2516,7 @@
 				CA7309792078E11A00289799 /* B2AccountCapability.m in Sources */,
 				CA0B93E72075F48E0000D914 /* B2Range.m in Sources */,
 				CAB7152620FA525E00F8E8AB /* B2UnfinishedLargeFiles+Private.m in Sources */,
+				CAFC812621107B3E009D5981 /* NSArray+B2Kit.m in Sources */,
 				CA187CB420F4985700170CA7 /* B2UnfinishedLargeFiles.m in Sources */,
 				CADAA3442079EDDB00B470E6 /* B2JSONValidator.m in Sources */,
 				CAFE126C207A4ECC0012BBE5 /* B2FileManager.m in Sources */,
@@ -2448,6 +2525,7 @@
 				CA21580D20FB33C50003078C /* B2DefaultClient+NSObject.m in Sources */,
 				CA7474F5207633ED0064052F /* B2File.m in Sources */,
 				CACD604520F63BB400B37322 /* B2Parts.m in Sources */,
+				CAFC813821107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */,
 				CADAA3482079EEEE00B470E6 /* B2ClientDataResult.m in Sources */,
 				CA78D93920F3BEFE00F2A4A3 /* B2MockClient.m in Sources */,
 				CA7474F2207632F20064052F /* B2+Accounts.m in Sources */,
@@ -2490,6 +2568,7 @@
 				CA9BEB012092F78900A3B70E /* B2AccountManagerTests.m in Sources */,
 				CA7E62AC20F72C0A00B21A37 /* B2ClientDataResultTests.m in Sources */,
 				CA7474DF207630C50064052F /* B2KitTestCase.m in Sources */,
+				CAFC8147211082DB009D5981 /* NSDictionaryTests+B2Kit.m in Sources */,
 				CA9BEAFD2092F77500A3B70E /* B2AccountTests.m in Sources */,
 				CA9BEAFF2092F78100A3B70E /* B2AccountCapabilityTests.m in Sources */,
 				CA7E62B920F72CB100B21A37 /* B2UnfinishedLargeFilesTests.m in Sources */,
@@ -2505,6 +2584,7 @@
 				CA9BEB0E2092F86300A3B70E /* B2FileTests.m in Sources */,
 				CA7E62B020F72C2F00B21A37 /* B2JSONValidatorTests.m in Sources */,
 				CA9BEB0C2092F84E00A3B70E /* B2ErrorTests.m in Sources */,
+				CAFC814221108291009D5981 /* NSArrayTests+B2Kit.m in Sources */,
 				CA7E62AE20F72C1F00B21A37 /* B2DefaultClientTests.m in Sources */,
 				CA9BEB032092F7EE00A3B70E /* B2BucketTests.m in Sources */,
 			);
@@ -2531,6 +2611,7 @@
 				CA269CD3210F641D001E9DA3 /* B2+LargeFiles.m in Sources */,
 				CA269D12210F64A6001E9DA3 /* B2UploadURL+NSObject.m in Sources */,
 				CA269D03210F64A6001E9DA3 /* B2File.m in Sources */,
+				CAFC812A21107B43009D5981 /* NSArray+B2Kit.m in Sources */,
 				CA269D0F210F64A6001E9DA3 /* B2UnfinishedLargeFiles+NSObject.m in Sources */,
 				CA269CE8210F6454001E9DA3 /* B2DefaultClient.m in Sources */,
 				CA269CD5210F641D001E9DA3 /* B2+NSObject.m in Sources */,
@@ -2539,6 +2620,7 @@
 				CA269CCE210F641D001E9DA3 /* B2.m in Sources */,
 				CA269CEB210F6454001E9DA3 /* B2JSONValidator+NSObject.m in Sources */,
 				CA269CDB210F642D001E9DA3 /* B2BucketLifeCycleRule+NSObject.m in Sources */,
+				CAFC813C21107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */,
 				CA269CFE210F6488001E9DA3 /* B2Key+NSObject.m in Sources */,
 				CA269CDC210F642D001E9DA3 /* B2BucketLifeCycleRule+Private.m in Sources */,
 				CA269CF8210F6478001E9DA3 /* B2Endpoint.m in Sources */,
@@ -2604,6 +2686,7 @@
 				CA4855B12104D6F700F09656 /* B2AccountCapability.m in Sources */,
 				CA4855B22104D6F700F09656 /* B2Range.m in Sources */,
 				CA4855B32104D6F700F09656 /* B2UnfinishedLargeFiles+Private.m in Sources */,
+				CAFC812821107B3E009D5981 /* NSArray+B2Kit.m in Sources */,
 				CA4855B42104D6F700F09656 /* B2UnfinishedLargeFiles.m in Sources */,
 				CA4855B52104D6F700F09656 /* B2JSONValidator.m in Sources */,
 				CA4855B62104D6F700F09656 /* B2FileManager.m in Sources */,
@@ -2612,6 +2695,7 @@
 				CA4855B92104D6F700F09656 /* B2DefaultClient+NSObject.m in Sources */,
 				CA4855BA2104D6F700F09656 /* B2File.m in Sources */,
 				CA4855BB2104D6F700F09656 /* B2Parts.m in Sources */,
+				CAFC813A21107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */,
 				CA4855BC2104D6F700F09656 /* B2ClientDataResult.m in Sources */,
 				CA4855BD2104D6F700F09656 /* B2MockClient.m in Sources */,
 				CA4855BE2104D6F700F09656 /* B2+Accounts.m in Sources */,
@@ -2654,6 +2738,7 @@
 				CA4856062104D76C00F09656 /* B2AccountManagerTests.m in Sources */,
 				CA4856072104D76C00F09656 /* B2ClientDataResultTests.m in Sources */,
 				CA4856082104D76C00F09656 /* B2KitTestCase.m in Sources */,
+				CAFC814A211082DB009D5981 /* NSDictionaryTests+B2Kit.m in Sources */,
 				CA4856092104D76C00F09656 /* B2AccountTests.m in Sources */,
 				CA48560A2104D76C00F09656 /* B2AccountCapabilityTests.m in Sources */,
 				CA48560B2104D76C00F09656 /* B2UnfinishedLargeFilesTests.m in Sources */,
@@ -2669,6 +2754,7 @@
 				CA4856152104D76C00F09656 /* B2FileTests.m in Sources */,
 				CA4856162104D76C00F09656 /* B2JSONValidatorTests.m in Sources */,
 				CA4856172104D76C00F09656 /* B2ErrorTests.m in Sources */,
+				CAFC814521108291009D5981 /* NSArrayTests+B2Kit.m in Sources */,
 				CA4856182104D76C00F09656 /* B2DefaultClientTests.m in Sources */,
 				CA4856192104D76C00F09656 /* B2BucketTests.m in Sources */,
 			);
@@ -2706,6 +2792,7 @@
 				CA48564E2104D8E400F09656 /* B2AccountCapability.m in Sources */,
 				CA48564F2104D8E400F09656 /* B2Range.m in Sources */,
 				CA4856502104D8E400F09656 /* B2UnfinishedLargeFiles+Private.m in Sources */,
+				CAFC812921107B3E009D5981 /* NSArray+B2Kit.m in Sources */,
 				CA4856512104D8E400F09656 /* B2UnfinishedLargeFiles.m in Sources */,
 				CA4856522104D8E400F09656 /* B2JSONValidator.m in Sources */,
 				CA4856532104D8E400F09656 /* B2FileManager.m in Sources */,
@@ -2714,6 +2801,7 @@
 				CA4856562104D8E400F09656 /* B2DefaultClient+NSObject.m in Sources */,
 				CA4856572104D8E400F09656 /* B2File.m in Sources */,
 				CA4856582104D8E400F09656 /* B2Parts.m in Sources */,
+				CAFC813B21107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */,
 				CA4856592104D8E400F09656 /* B2ClientDataResult.m in Sources */,
 				CA48565A2104D8E400F09656 /* B2MockClient.m in Sources */,
 				CA48565B2104D8E400F09656 /* B2+Accounts.m in Sources */,
@@ -2756,6 +2844,7 @@
 				CA4856A32104D92B00F09656 /* B2AccountManagerTests.m in Sources */,
 				CA4856A42104D92B00F09656 /* B2ClientDataResultTests.m in Sources */,
 				CA4856A52104D92B00F09656 /* B2KitTestCase.m in Sources */,
+				CAFC8149211082DB009D5981 /* NSDictionaryTests+B2Kit.m in Sources */,
 				CA4856A62104D92B00F09656 /* B2AccountTests.m in Sources */,
 				CA4856A72104D92B00F09656 /* B2AccountCapabilityTests.m in Sources */,
 				CA4856A82104D92B00F09656 /* B2UnfinishedLargeFilesTests.m in Sources */,
@@ -2771,6 +2860,7 @@
 				CA4856B22104D92B00F09656 /* B2FileTests.m in Sources */,
 				CA4856B32104D92B00F09656 /* B2JSONValidatorTests.m in Sources */,
 				CA4856B42104D92B00F09656 /* B2ErrorTests.m in Sources */,
+				CAFC814421108291009D5981 /* NSArrayTests+B2Kit.m in Sources */,
 				CA4856B52104D92B00F09656 /* B2DefaultClientTests.m in Sources */,
 				CA4856B62104D92B00F09656 /* B2BucketTests.m in Sources */,
 			);
@@ -2808,6 +2898,7 @@
 				CA4C4D422104746900209D0C /* B2AccountCapability.m in Sources */,
 				CA4C4D432104746900209D0C /* B2Range.m in Sources */,
 				CA4C4D442104746900209D0C /* B2UnfinishedLargeFiles+Private.m in Sources */,
+				CAFC812721107B3E009D5981 /* NSArray+B2Kit.m in Sources */,
 				CA4C4D452104746900209D0C /* B2UnfinishedLargeFiles.m in Sources */,
 				CA4C4D462104746900209D0C /* B2JSONValidator.m in Sources */,
 				CA4C4D472104746900209D0C /* B2FileManager.m in Sources */,
@@ -2816,6 +2907,7 @@
 				CA4C4D4A2104746900209D0C /* B2DefaultClient+NSObject.m in Sources */,
 				CA4C4D4B2104746900209D0C /* B2File.m in Sources */,
 				CA4C4D4C2104746900209D0C /* B2Parts.m in Sources */,
+				CAFC813921107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */,
 				CA4C4D4D2104746900209D0C /* B2ClientDataResult.m in Sources */,
 				CA4C4D4E2104746900209D0C /* B2MockClient.m in Sources */,
 				CA4C4D4F2104746900209D0C /* B2+Accounts.m in Sources */,
@@ -2858,6 +2950,7 @@
 				CA4C4D972104753C00209D0C /* B2AccountManagerTests.m in Sources */,
 				CA4C4D982104753C00209D0C /* B2ClientDataResultTests.m in Sources */,
 				CA4C4D992104753C00209D0C /* B2KitTestCase.m in Sources */,
+				CAFC8148211082DB009D5981 /* NSDictionaryTests+B2Kit.m in Sources */,
 				CA4C4D9A2104753C00209D0C /* B2AccountTests.m in Sources */,
 				CA4C4D9B2104753C00209D0C /* B2AccountCapabilityTests.m in Sources */,
 				CA4C4D9C2104753C00209D0C /* B2UnfinishedLargeFilesTests.m in Sources */,
@@ -2873,6 +2966,7 @@
 				CA4C4DA62104753C00209D0C /* B2FileTests.m in Sources */,
 				CA4C4DA72104753C00209D0C /* B2JSONValidatorTests.m in Sources */,
 				CA4C4DA82104753C00209D0C /* B2ErrorTests.m in Sources */,
+				CAFC814321108291009D5981 /* NSArrayTests+B2Kit.m in Sources */,
 				CA4C4DA92104753C00209D0C /* B2DefaultClientTests.m in Sources */,
 				CA4C4DAA2104753C00209D0C /* B2BucketTests.m in Sources */,
 			);
@@ -2916,6 +3010,7 @@
 				CA5F53A4210F695A00D973D3 /* B2+LargeFiles.m in Sources */,
 				CA5F53A5210F695A00D973D3 /* B2UploadURL+NSObject.m in Sources */,
 				CA5F53A6210F695A00D973D3 /* B2File.m in Sources */,
+				CAFC812B21107B43009D5981 /* NSArray+B2Kit.m in Sources */,
 				CA5F53A7210F695A00D973D3 /* B2UnfinishedLargeFiles+NSObject.m in Sources */,
 				CA5F53A8210F695A00D973D3 /* B2DefaultClient.m in Sources */,
 				CA5F53A9210F695A00D973D3 /* B2+NSObject.m in Sources */,
@@ -2924,6 +3019,7 @@
 				CA5F53AC210F695A00D973D3 /* B2.m in Sources */,
 				CA5F53AD210F695A00D973D3 /* B2JSONValidator+NSObject.m in Sources */,
 				CA5F53AE210F695A00D973D3 /* B2BucketLifeCycleRule+NSObject.m in Sources */,
+				CAFC813D21107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */,
 				CA5F53AF210F695A00D973D3 /* B2Key+NSObject.m in Sources */,
 				CA5F53B0210F695A00D973D3 /* B2BucketLifeCycleRule+Private.m in Sources */,
 				CA5F53B1210F695A00D973D3 /* B2Endpoint.m in Sources */,
@@ -2978,6 +3074,7 @@
 				CA5F5402210F698D00D973D3 /* B2+LargeFiles.m in Sources */,
 				CA5F5403210F698D00D973D3 /* B2UploadURL+NSObject.m in Sources */,
 				CA5F5404210F698D00D973D3 /* B2File.m in Sources */,
+				CAFC812C21107B43009D5981 /* NSArray+B2Kit.m in Sources */,
 				CA5F5405210F698D00D973D3 /* B2UnfinishedLargeFiles+NSObject.m in Sources */,
 				CA5F5406210F698D00D973D3 /* B2DefaultClient.m in Sources */,
 				CA5F5407210F698D00D973D3 /* B2+NSObject.m in Sources */,
@@ -2986,6 +3083,7 @@
 				CA5F540A210F698D00D973D3 /* B2.m in Sources */,
 				CA5F540B210F698D00D973D3 /* B2JSONValidator+NSObject.m in Sources */,
 				CA5F540C210F698D00D973D3 /* B2BucketLifeCycleRule+NSObject.m in Sources */,
+				CAFC813E21107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */,
 				CA5F540D210F698D00D973D3 /* B2Key+NSObject.m in Sources */,
 				CA5F540E210F698D00D973D3 /* B2BucketLifeCycleRule+Private.m in Sources */,
 				CA5F540F210F698D00D973D3 /* B2Endpoint.m in Sources */,
@@ -3040,6 +3138,7 @@
 				CA5F5460210F699900D973D3 /* B2+LargeFiles.m in Sources */,
 				CA5F5461210F699900D973D3 /* B2UploadURL+NSObject.m in Sources */,
 				CA5F5462210F699900D973D3 /* B2File.m in Sources */,
+				CAFC812D21107B44009D5981 /* NSArray+B2Kit.m in Sources */,
 				CA5F5463210F699900D973D3 /* B2UnfinishedLargeFiles+NSObject.m in Sources */,
 				CA5F5464210F699900D973D3 /* B2DefaultClient.m in Sources */,
 				CA5F5465210F699900D973D3 /* B2+NSObject.m in Sources */,
@@ -3048,6 +3147,7 @@
 				CA5F5468210F699900D973D3 /* B2.m in Sources */,
 				CA5F5469210F699900D973D3 /* B2JSONValidator+NSObject.m in Sources */,
 				CA5F546A210F699900D973D3 /* B2BucketLifeCycleRule+NSObject.m in Sources */,
+				CAFC813F21107B5F009D5981 /* NSDictionary+B2Kit.m in Sources */,
 				CA5F546B210F699900D973D3 /* B2Key+NSObject.m in Sources */,
 				CA5F546C210F699900D973D3 /* B2BucketLifeCycleRule+Private.m in Sources */,
 				CA5F546D210F699900D973D3 /* B2Endpoint.m in Sources */,

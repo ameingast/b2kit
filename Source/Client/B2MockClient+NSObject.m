@@ -7,15 +7,20 @@
 //
 
 #import "B2MockClient.h"
+#import "NSArray+B2Kit.h"
 
 @implementation B2MockClient (NSObject)
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<B2MockClient %p> {dataResponses=%@, fileDownloadResponse=%d}",
+    return [NSString stringWithFormat:@"<B2MockClient %p> {requests=%@, dataResponses=%@, fileDownloadResponse=%d, fileURL=%@, account=%@, error=%@}",
             (__bridge void *)self,
-            [self dataResponses],
-            [self fileDownloadResponse]];
+            [[self requests] singleLineDescription],
+            [[self dataResponses] singleLineDescription],
+            [self fileDownloadResponse],
+            [self fileURL],
+            [self account],
+            [self error]];
 }
 
 @end
