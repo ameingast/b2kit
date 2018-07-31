@@ -46,6 +46,11 @@ extension Command {
                                          maxFileCount: maxFileCount,
                                          prefix: prefix)
             print("Files \(files)")
+        case let (.deleteFile(fileId, fileName)):
+            try b2.deleteFile(withFileId: fileId,
+                              fileName: fileName,
+                              account: credentials.account())
+            print("Deleted \(fileId)/\(fileName)")
         case .help:
             print("Usage: \(CommandLine.arguments[0]) <command> [arguments...]")
             print("Environment Variables")
@@ -59,6 +64,7 @@ extension Command {
             print("File Commands")
             print(" * \("fileInfo".colorized(with: .green))\t<fileId>")
             print(" * \("listFiles".colorized(with: .green))\t<bucketId> <startFileName?> <maxFileCount?> <prefix?>")
+            print(" * \("deleteFile".colorized(with: .green))\t<fileId> <fileName>")
         }
     }
 }

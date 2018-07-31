@@ -40,6 +40,11 @@ internal final class CommandTests: XCTestCase {
                        Command.parse(from: ["", "listFiles", "bucketId", "startFileName", "1", "prefix"]))
     }
 
+    func testParseDeleteFile() {
+        XCTAssertEqual(Command.deleteFile(fileId: "fileId", fileName: "fileName"),
+                       Command.parse(from: ["", "deleteFile", "fileId", "fileName"]))
+    }
+
     func testParseNoMatch() {
         XCTAssertEqual(Command.help, Command.parse(from: [""]))
     }

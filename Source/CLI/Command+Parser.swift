@@ -10,35 +10,39 @@ import B2Kit
 
 extension Command {
     static func parse(from arguments: [String]) -> Command {
-        switch (arguments[safe: 1]) {
-        case "listBuckets":
+        switch (arguments[safe: 1]?.lowercased()) {
+        case "listbuckets":
             return .listBuckets(bucketId: arguments[safe: 2],
                                 bucketName: arguments[safe: 3],
                                 bucketTypes: B2BucketTypeFromNSString(arguments[safe: 4] ?? "all"))
-        case "createBucket":
+        case "createbucket":
             if (arguments.count < 3) { return .help }
             return .createBucket(bucketName: arguments[2],
                                  bucketType: B2BucketTypeFromNSString(arguments[safe: 3] ?? "allPrivate"),
                                  info: [:],
                                  lifeCycleRules: [])
-        case "deleteBucket":
+        case "deletebucket":
             if (arguments.count < 3) { return .help }
             return .deleteBucket(bucketId: arguments[2])
-        case "updateBucket":
+        case "updatebucket":
             if (arguments.count < 3) { return .help }
             return .updateBucket(bucketId: arguments[2],
                                  bucketType: B2BucketTypeFromNSString(arguments[safe: 3] ?? "none"),
                                  info: [:],
                                  lifeCycleRules: [])
-        case "fileInfo":
+        case "fileinfo":
             if (arguments.count < 3) { return .help }
             return .fileInfo(fileId: arguments[2])
-        case "listFiles":
+        case "listfiles":
             if (arguments.count < 3) { return .help }
             return .listFiles(bucketId: arguments[2],
                               startFileName: arguments[safe: 3],
                               maxFileCount: arguments[safe: 4].flatMap({ Int($0) }).map({ NSNumber(integerLiteral: $0) }),
                               prefix: arguments[safe: 5])
+        case "deletefile":
+            if (arguments.count < 3) { return .help }
+            return .deleteFile(fileId: arguments[2],
+                               fileName: arguments[3])
         default:
             return .help;
         }
