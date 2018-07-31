@@ -68,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
                         sha1Checksum:(NSString *)sha1Checksum
                           intoBucket:(NSString *)bucketId
                          contentType:(NSString *)contentType
-                      lastModifiedOn:(NSUInteger)lastModifiedOn
+                      lastModifiedOn:(NSDate *)lastModifiedOn
                             fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
                                error:(out NSError **)error;
 

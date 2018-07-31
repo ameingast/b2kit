@@ -15,6 +15,7 @@ extern int B2ErrorCodeChecksumCreationError;
 extern int B2ErrorCodeIncompleteResponse;
 
 NSError *B2CreateError(NSInteger code, NSDictionary<NSErrorUserInfoKey, id> * _Nullable dictionary);
+NSError *B2CreateErrorFromException(NSException *exception);
 
 @interface B2ClientError : NSObject
 

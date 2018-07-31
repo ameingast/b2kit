@@ -63,7 +63,7 @@
                                  sha1Checksum:[self randomDataSha1Checksum]
                                      bucketId:[[self bucket] bucketId]
                                   contentType:@"application/octet-stream"
-                               lastModifiedOn:0
+                               lastModifiedOn:[NSDate date]
                                      fileInfo:nil
                                         error:&error];
     if (!file) {

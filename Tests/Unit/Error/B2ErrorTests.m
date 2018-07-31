@@ -65,4 +65,15 @@
     XCTAssertEqualObjects(@{}, [error userInfo]);
 }
 
+- (void)testB2CreateErrorFromException
+{
+    NSException *exception = [NSException exceptionWithName:@"name"
+                                                     reason:@"reason"
+                                                   userInfo:@{ @(1): @(2) }];
+    NSError *error = B2CreateErrorFromException(exception);
+    XCTAssertEqualObjects(B2KitDomain, [error domain]);
+    XCTAssertEqual(1, [error code]);
+    XCTAssertEqualObjects(@{ @(1): @(2) }, [error userInfo]);
+}
+
 @end

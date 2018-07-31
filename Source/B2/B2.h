@@ -8,17 +8,25 @@
 
 @import Foundation;
 
+/// MARK: Domain
+
 #import <B2Kit/B2Account.h>
 #import <B2Kit/B2File.h>
 #import <B2Kit/B2FileInfoAction.h>
 #import <B2Kit/B2Bucket.h>
 #import <B2Kit/B2BucketLifeCycleRule.h>
 #import <B2Kit/B2Key.h>
-#import <B2Kit/B2Range.h>
-#import <B2Kit/B2UploadURL.h>
 #import <B2Kit/B2Logger.h>
-#import <B2Kit/B2UnfinishedLargeFiles.h>
 #import <B2Kit/B2Parts.h>
+#import <B2Kit/B2Range.h>
+#import <B2Kit/B2UnfinishedLargeFiles.h>
+#import <B2Kit/B2UploadURL.h>
+
+/// MARK: Categories
+
+#import <B2Kit/NSArray+B2Kit.h>
+#import <B2Kit/NSDictionary+B2Kit.h>
+#import <B2Kit/NSURL+B2Kit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -76,7 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
                         sha1Checksum:(NSString *)sha1Checksum
                             bucketId:(NSString *)bucketId
                          contentType:(NSString *)contentType
-                      lastModifiedOn:(NSUInteger)lastModifiedOn
+                      lastModifiedOn:(NSDate *)lastModifiedOn
                             fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
                                error:(out NSError **)error;
 - (BOOL)downloadFileWithFileId:(NSString *)fileId

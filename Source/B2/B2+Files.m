@@ -26,7 +26,7 @@
                sha1Checksum:(NSString *)sha1Checksum
                    bucketId:(NSString *)bucketId
                 contentType:(NSString *)contentType
-             lastModifiedOn:(NSUInteger)lastModifiedOn
+             lastModifiedOn:(NSDate *)lastModifiedOn
                    fileInfo:(NSDictionary<NSString *, NSString *> *)fileInfo
                       error:(out NSError *__autoreleasing *)error
 {

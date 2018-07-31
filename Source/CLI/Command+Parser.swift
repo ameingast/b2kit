@@ -43,6 +43,13 @@ extension Command {
             if (arguments.count < 3) { return .help }
             return .deleteFile(fileId: arguments[2],
                                fileName: arguments[3])
+        case "uploadfile":
+            if (arguments.count < 6) { return .help }
+            return .uploadFile(fileName: arguments[2],
+                               bucketId: arguments[3],
+                               contentType: arguments[4],
+                               location: arguments[5],
+                               info: [:])
         default:
             return .help;
         }

@@ -307,7 +307,7 @@
                              @"contentSha1": @"contentSha1",
                              @"fileInfo": @{},
                              @"action": @"upload",
-                             @"uploadTimestamp": @(0) }];
+                             @"uploadTimestamp": @(1000) }];
     NSMutableURLRequest *expectedURLRequest = [NSMutableURLRequest requestWithURL:(NSURL *)[NSURL URLWithString:@"http://example.com/apiURL/b2api/v1/b2_get_upload_url"]
                                                                        httpMethod:@"POST"
                                                                          httpBody:@{ @"bucketId": @"bucketId" }
@@ -319,7 +319,7 @@
                                                                                         @"X-Bz-File-Name": @"fileName",
                                                                                         @"Content-Type": @"contentType",
                                                                                         @"X-Bz-Content-Sha1": @"contentSha1",
-                                                                                        @"X-Bz-Info-src_last_modified_millis": @"1",
+                                                                                        @"X-Bz-Info-src_last_modified_millis": @"1000",
                                                                                         @"X-Bz-Info-Info1": @"Info1",
                                                                                         @"X-Bz-Info-Info2": @"Info2" }];
     B2File *expectedFile = [[B2File alloc] initWithFileId:@"fileId"
@@ -330,14 +330,14 @@
                                               contentType:@"contentType"
                                                  metadata:@{}
                                                    action:B2FileInfoActionUploaded
-                                               uploadDate:[NSDate dateWithTimeIntervalSince1970:0]];
+                                               uploadDate:[NSDate dateWithTimeIntervalSince1970:1]];
     B2File *file = [[self fileManager] uploadFileAtURL:(NSURL *)[NSURL URLWithString:@"file:///file"]
                                                account:[self account]
                                               fileName:@"fileName"
                                           sha1Checksum:@"contentSha1"
                                             intoBucket:@"bucketId"
                                            contentType:@"contentType"
-                                        lastModifiedOn:1
+                                        lastModifiedOn:[NSDate dateWithTimeIntervalSince1970:1]
                                               fileInfo:@{ @"Info1": @"Info1",
                                                           @"Info2": @"Info2" }
                                                  error:&error];
@@ -356,7 +356,7 @@
                                           sha1Checksum:@"contentSha1"
                                             intoBucket:@"bucketId"
                                            contentType:@"contentType"
-                                        lastModifiedOn:1
+                                        lastModifiedOn:[NSDate dateWithTimeIntervalSince1970:0]
                                               fileInfo:@{}
                                                  error:&error];
     XCTAssertNil(file);

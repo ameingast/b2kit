@@ -48,8 +48,14 @@ int B2ErrorCodeChecksumCreationError = 2;
 
 @end
 
-NSError *B2CreateError(NSInteger code, NSDictionary<NSErrorUserInfoKey, id> * _Nullable dictionary) {
+inline NSError *B2CreateError(NSInteger code, NSDictionary<NSErrorUserInfoKey, id> * _Nullable dictionary) {
     return [[NSError alloc] initWithDomain:B2KitDomain
                                       code:code
                                   userInfo:dictionary];
+}
+
+inline NSError *B2CreateErrorFromException(NSException *exception) {
+    return [[NSError alloc] initWithDomain:B2KitDomain
+                                      code:1
+                                  userInfo:[exception userInfo]];
 }

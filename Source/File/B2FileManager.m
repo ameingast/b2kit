@@ -238,7 +238,7 @@
                sha1Checksum:(NSString *)sha1Checksum
                  intoBucket:(NSString *)bucketId
                 contentType:(NSString *)contentType
-             lastModifiedOn:(NSUInteger)lastModifiedOn
+             lastModifiedOn:(NSDate *)lastModifiedOn
                    fileInfo:(NSDictionary<NSString *, NSString *> *)fileInfo
                       error:(out NSError *__autoreleasing *)error
 {
@@ -259,7 +259,7 @@
     [mutableRequest addValue:sha1Checksum
           forHTTPHeaderField:@"X-Bz-Content-Sha1"];
     if (lastModifiedOn != 0) {
-        [mutableRequest addValue:[NSString stringWithFormat:@"%lu", (unsigned long)lastModifiedOn]
+        [mutableRequest addValue:[NSString stringWithFormat:@"%lu", (unsigned long)[lastModifiedOn timeIntervalSince1970] * 1000]
               forHTTPHeaderField:@"X-Bz-Info-src_last_modified_millis"];
     }
     if (fileInfo) {

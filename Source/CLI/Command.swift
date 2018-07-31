@@ -21,6 +21,7 @@ internal enum Command: Equatable {
     case fileInfo(fileId: String)
     case listFiles(bucketId: String, startFileName: String?, maxFileCount: NSNumber?, prefix: String?)
     case deleteFile(fileId: String, fileName: String)
+    case uploadFile(fileName: String, bucketId: String, contentType: String, location: String, info: [String:String])
 
     // MARK: Help
     case help
@@ -45,6 +46,9 @@ internal enum Command: Equatable {
             return lhsBucketId == rhsBucketId && lhsStartFileName == rhsStartFileName && lhsMaxFileCount == rhsMaxFileCount && lhsPrefix == rhsPrefix
         case let (.deleteFile(lhsFileId, lhsFileName), .deleteFile(rhsFileId, rhsFileName)):
             return lhsFileId == rhsFileId && lhsFileName == rhsFileName
+        case let (.uploadFile(lhsFileName, lhsBucketId, lhsContentType, lhsLocation, lhsInfo),
+                  .uploadFile(rhsFileName, rhsBucketId, rhsContentType, rhsLocation, rhsInfo)):
+            return lhsFileName == rhsFileName && lhsBucketId == rhsBucketId && lhsLocation == rhsLocation && lhsContentType == rhsContentType && lhsInfo == rhsInfo
         case (.help, .help):
             return true
         default:

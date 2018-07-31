@@ -46,25 +46,34 @@ extension Command {
                                          maxFileCount: maxFileCount,
                                          prefix: prefix)
             print("Files \(files)")
-        case let (.deleteFile(fileId, fileName)):
+        case let .deleteFile(fileId, fileName):
             try b2.deleteFile(withFileId: fileId,
                               fileName: fileName,
                               account: credentials.account())
             print("Deleted \(fileId)/\(fileName)")
+        case let .uploadFile(fileName, bucketId, contentType, location, info):
+            let fileURL = URL(fileURLWithPath: location)
+            let file = try b2.uploadFile(at: fileURL,
+                              account: credentials.account(),
+                              fileName: fileName,
+                              sha1Checksum: try (fileURL as NSURL).sha1(),
+                              bucketId: bucketId,
+                              contentType: contentType,
+                              lastModifiedOn: try (fileURL as NSURL).modificationDate(),
+                              fileInfo: info)
+            print("Uploaded \(file)")
         case .help:
             print("Usage: \(CommandLine.arguments[0]) <command> [arguments...]")
-            print("Environment Variables")
-            print(" * B2_ACCOUNT_ID")
-            print(" * B2_APPLICATION_KEY")
             print("Bucket Commands")
-            print(" * \("listBuckets".colorized(with: .green))\t<bucketId?> <bucketName?> <bucketType?>")
-            print(" * \("createBucket".colorized(with: .green))\t<bucketName> <bucketType?>")
-            print(" * \("deleteBucket".colorized(with: .green))\t<bucketId>")
-            print(" * \("updateBucket".colorized(with: .green))\t<bucketId> <bucketType?>")
+            print(" - \("listBuckets".colorized(with: .green))\t<bucketId?> <bucketName?> <bucketType?>")
+            print(" - \("createBucket".colorized(with: .green))\t<bucketName> <bucketType?>")
+            print(" - \("deleteBucket".colorized(with: .green))\t<bucketId>")
+            print(" - \("updateBucket".colorized(with: .green))\t<bucketId> <bucketType?>")
             print("File Commands")
-            print(" * \("fileInfo".colorized(with: .green))\t<fileId>")
-            print(" * \("listFiles".colorized(with: .green))\t<bucketId> <startFileName?> <maxFileCount?> <prefix?>")
-            print(" * \("deleteFile".colorized(with: .green))\t<fileId> <fileName>")
+            print(" - \("fileInfo".colorized(with: .green))\t<fileId>")
+            print(" - \("listFiles".colorized(with: .green))\t<bucketId> <startFileName?> <maxFileCount?> <prefix?>")
+            print(" - \("deleteFile".colorized(with: .green))\t<fileId> <fileName>")
+            print(" - \("uploadFile".colorized(with: .green))\t<fileName> <bucketId> <contentType> <path>")
         }
     }
 }
