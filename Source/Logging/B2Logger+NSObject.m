@@ -32,9 +32,9 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<B2Logger %p> {logLevel=%ld}",
+    return [NSString stringWithFormat:@"<B2Logger %p> {logLevel=%@}",
             (__bridge void *)self,
-            (long)[self logLevel]];
+            NSStringFromB2LogLevel([self logLevel])];
 }
 
 @end

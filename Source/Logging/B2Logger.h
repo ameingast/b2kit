@@ -29,6 +29,9 @@ typedef NS_ENUM(NSInteger, B2LogLevel) {
 
 @end
 
+B2LogLevel B2LogLevelFromNSString(NSString * _Nullable logLevel);
+NSString *NSStringFromB2LogLevel(B2LogLevel logLevel);
+
 #define B2LogTrace(fmt, ...)                                                                                             \
     do {                                                                                                                 \
         if ([[B2Logger sharedInstance] isLogLevel:B2LogLevelTrace]) {                                                    \

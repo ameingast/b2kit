@@ -56,10 +56,15 @@ If you like this library, please consider donating. Thank you!
 
 ## TODO
 
+###
+
+* CLI 
+
 ### Documentation
 
 * API
 * Endpoints
+* CLI
 * Blocking nature of B2Kit
 
 ### Missing end-points

@@ -40,7 +40,7 @@
                                           contentType:(NSString *)dictionary[@"contentType"]
                                              metadata:[NSDictionary new]
                                                action:B2FileInfoActionFromString((NSString *)dictionary[@"action"])
-                                           uploadDate:[NSDate dateWithTimeIntervalSince1970:[(NSNumber *)dictionary[@"uploadTimestamp"] integerValue]]];
+                                           uploadDate:[NSDate dateWithTimeIntervalSince1970:[(NSNumber *)dictionary[@"uploadTimestamp"] integerValue] / 1000]];
         [result addObject:file];
     }
     return result;
@@ -85,7 +85,7 @@
                               contentType:(NSString *)dictionary[@"contentType"]
                                  metadata:[NSDictionary new]
                                    action:B2FileInfoActionFromString((NSString *)dictionary[@"action"])
-                               uploadDate:[NSDate dateWithTimeIntervalSince1970:[(NSNumber *)dictionary[@"uploadTimestamp"] integerValue]]];
+                               uploadDate:[NSDate dateWithTimeIntervalSince1970:[(NSNumber *)dictionary[@"uploadTimestamp"] integerValue] / 1000]];
 }
 
 @end

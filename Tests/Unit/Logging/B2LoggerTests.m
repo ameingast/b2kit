@@ -86,4 +86,24 @@
     XCTAssertTrue([logger isLogLevel:B2LogLevelNone]);
 }
 
+- (void)testB2LogLevelFromNSString
+{
+    XCTAssertEqual(B2LogLevelTrace, B2LogLevelFromNSString(@"trace"));
+    XCTAssertEqual(B2LogLevelDebug, B2LogLevelFromNSString(@"debug"));
+    XCTAssertEqual(B2LogLevelInfo, B2LogLevelFromNSString(@"info"));
+    XCTAssertEqual(B2LogLevelWarn, B2LogLevelFromNSString(@"warn"));
+    XCTAssertEqual(B2LogLevelError, B2LogLevelFromNSString(@"error"));
+    XCTAssertEqual(B2LogLevelNone, B2LogLevelFromNSString(@"none"));
+}
+
+- (void)testNSStringFromB2LogLevel
+{
+    XCTAssertEqualObjects(@"trace", NSStringFromB2LogLevel(B2LogLevelTrace));
+    XCTAssertEqualObjects(@"debug", NSStringFromB2LogLevel(B2LogLevelDebug));
+    XCTAssertEqualObjects(@"info", NSStringFromB2LogLevel(B2LogLevelInfo));
+    XCTAssertEqualObjects(@"warn", NSStringFromB2LogLevel(B2LogLevelWarn));
+    XCTAssertEqualObjects(@"error", NSStringFromB2LogLevel(B2LogLevelError));
+    XCTAssertEqualObjects(@"none", NSStringFromB2LogLevel(B2LogLevelNone));
+}
+
 @end

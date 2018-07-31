@@ -27,7 +27,7 @@
     return [[B2Part alloc] initWithFileId:(NSString *)dictionary[@"fileId"]
                                partNumber:(NSNumber *)dictionary[@"partNumber"]
                               contentSha1:(NSString *)dictionary[@"contentSha1"]
-                          uploadTimestamp:[NSDate dateWithTimeIntervalSince1970:[(NSNumber *)dictionary[@"uploadTimestamp"] integerValue]]];
+                          uploadTimestamp:[NSDate dateWithTimeIntervalSince1970:[(NSNumber *)dictionary[@"uploadTimestamp"] integerValue] / 1000]];
 }
 
 @end

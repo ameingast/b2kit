@@ -67,9 +67,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface B2 (Files)
 
-- (nullable B2File *)fileInfo:(NSString *)fileId
-                      account:(B2Account *)account
-                        error:(out NSError **)error;
+- (nullable B2File *)fileInfoForFileId:(NSString *)fileId
+                               account:(B2Account *)account
+                                 error:(out NSError **)error;
 - (nullable B2File *)uploadFileAtURL:(NSURL *)localFileURL
                              account:(B2Account *)account
                             fileName:(NSString *)filename

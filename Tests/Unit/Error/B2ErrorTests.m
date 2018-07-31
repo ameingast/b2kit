@@ -43,6 +43,22 @@
 
 - (void)testCreateError
 {
+    NSData *payload = [NSJSONSerialization dataWithJSONObject:@{ @"status": @(400),
+                                                                 @"code": @"code",
+                                                                 @"message": @"message" }
+                                                      options:0
+                                                        error:nil];
+    B2ClientError *clientError = [[B2ClientError alloc] initWithJSONData:payload
+                                                                   error:nil];
+    NSError *error = [clientError createError];
+    XCTAssertEqualObjects(@"com.operationalsemantics.b2kit", [error domain]);
+    XCTAssertEqual(400, [error code]);
+    XCTAssertEqualObjects(@"message", [error localizedDescription]);
+    XCTAssertEqualObjects(@{ NSLocalizedDescriptionKey : @"message"} , [error userInfo]);
+}
+
+- (void)testB2CreateError
+{
     NSError *error = B2CreateError(0, @{});
     XCTAssertEqualObjects(@"com.operationalsemantics.b2kit", [error domain]);
     XCTAssertEqual(0, [error code]);

@@ -11,9 +11,9 @@
 
 @implementation B2 (Files)
 
-- (B2File *)fileInfo:(NSString *)fileId
-             account:(B2Account *)account
-               error:(out NSError *__autoreleasing *)error
+- (B2File *)fileInfoForFileId:(NSString *)fileId
+                      account:(B2Account *)account
+                        error:(out NSError *__autoreleasing *)error
 {
     return [[[B2FileManager alloc] initWithClient:[self client]] fileInfoForFileId:fileId
                                                                            account:account

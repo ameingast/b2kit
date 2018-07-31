@@ -43,7 +43,7 @@ int B2ErrorCodeChecksumCreationError = 2;
 
 - (NSError *)createError
 {
-    return B2CreateError([[self status] integerValue], @{ @"message": [self message] });
+    return B2CreateError([[self status] integerValue], @{ NSLocalizedDescriptionKey: [self message] });
 }
 
 @end

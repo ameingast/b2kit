@@ -32,7 +32,7 @@
                        bucketId:(NSString *)dictionary[@"bucketId"]
                     contentType:(NSString *)dictionary[@"contentType"]
                        fileInfo:(NSDictionary<NSString *, NSString *> *)dictionary[@"fileInfo"]
-                uploadTimestamp:[NSDate dateWithTimeIntervalSince1970:[(NSNumber *)dictionary[@"uploadTimestamp"] integerValue]]];
+                uploadTimestamp:[NSDate dateWithTimeIntervalSince1970:[(NSNumber *)dictionary[@"uploadTimestamp"] integerValue] / 1000]];
 }
 
 @end

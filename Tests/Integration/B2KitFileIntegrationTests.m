@@ -114,9 +114,9 @@
         XCTFail(@"File download failed: %@", error);
         return;
     }
-    B2File *fileInfo = [[self b2] fileInfo:[file fileId]
-                                   account:[self account]
-                                     error:&error];
+    B2File *fileInfo = [[self b2] fileInfoForFileId:[file fileId]
+                                            account:[self account]
+                                              error:&error];
     if (!fileInfo) {
         XCTFail(@"File Info failed: %@", error);
         return;
