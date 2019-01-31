@@ -122,7 +122,6 @@
 		CA269D1A210F64C1001E9DA3 /* B2UnfinishedLargeFiles.h in Headers */ = {isa = PBXBuildFile; fileRef = CA187CB120F4985700170CA7 /* B2UnfinishedLargeFiles.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA269D1B210F64C5001E9DA3 /* B2UnfinishedLargeFiles+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7152320FA525E00F8E8AB /* B2UnfinishedLargeFiles+Private.h */; };
 		CA269D1C210F64C8001E9DA3 /* B2UploadURL.h in Headers */ = {isa = PBXBuildFile; fileRef = CA2FB9B7207B45B300A9515D /* B2UploadURL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA269D2D210F6827001E9DA3 /* libB2Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA269CB3210F6323001E9DA3 /* libB2Kit.a */; };
 		CA2F314120936E0A00249557 /* B2Logger.h in Headers */ = {isa = PBXBuildFile; fileRef = CA2F313F20936E0A00249557 /* B2Logger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA2F314220936E0A00249557 /* B2Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2F314020936E0A00249557 /* B2Logger.m */; };
 		CA2FB9B9207B45B300A9515D /* B2UploadURL.h in Headers */ = {isa = PBXBuildFile; fileRef = CA2FB9B7207B45B300A9515D /* B2UploadURL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -758,6 +757,7 @@
 		CA5F54A9210F699900D973D3 /* B2Parts+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151F20FA51CB00F8E8AB /* B2Parts+Private.h */; };
 		CA702CC7207600620094FDED /* B2BucketLifeCycleRule.h in Headers */ = {isa = PBXBuildFile; fileRef = CA702CC5207600620094FDED /* B2BucketLifeCycleRule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA702CC8207600620094FDED /* B2BucketLifeCycleRule.m in Sources */ = {isa = PBXBuildFile; fileRef = CA702CC6207600620094FDED /* B2BucketLifeCycleRule.m */; };
+		CA719DBA22031FE30003DE34 /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1CAA9F2075524E00354FD4 /* B2Kit.framework */; };
 		CA7309782078E11A00289799 /* B2AccountCapability.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7309762078E11A00289799 /* B2AccountCapability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA7309792078E11A00289799 /* B2AccountCapability.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7309772078E11A00289799 /* B2AccountCapability.m */; };
 		CA7474DF207630C50064052F /* B2KitTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474DE207630C50064052F /* B2KitTestCase.m */; };
@@ -920,13 +920,6 @@
 			remoteGlobalIDString = CA1CAA9E2075524E00354FD4;
 			remoteInfo = B2Kit;
 		};
-		CA269D2A210F67AE001E9DA3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CA1CAA9E2075524E00354FD4;
-			remoteInfo = "B2Kit (macOS Framework)";
-		};
 		CA48559F2104D4BB00F09656 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
@@ -976,12 +969,12 @@
 			remoteGlobalIDString = CA1CAA9E2075524E00354FD4;
 			remoteInfo = "B2Kit (macOS Framework)";
 		};
-		CA5F5392210F686500D973D3 /* PBXContainerItemProxy */ = {
+		CA719DB822031FDE0003DE34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CA269CB2210F6323001E9DA3;
-			remoteInfo = "B2Kit (macOS Static Library)";
+			remoteGlobalIDString = CA1CAA9E2075524E00354FD4;
+			remoteInfo = "B2Kit (macOS Framework)";
 		};
 		CA9BEB1B2092F95300A3B70E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1302,7 +1295,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA269D2D210F6827001E9DA3 /* libB2Kit.a in Frameworks */,
+				CA719DBA22031FE30003DE34 /* B2Kit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1317,6 +1310,7 @@
 				CA1CAAA02075524E00354FD4 /* Products */,
 				CA1CAAA12075524E00354FD4 /* Source */,
 				CA1CAAAC2075524F00354FD4 /* Tests */,
+				CAF909152153C50400D19861 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1668,6 +1662,13 @@
 				CAE98FE920FB2A7400AD0FDC /* B2Error+NSObject.m */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		CAF909152153C50400D19861 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CAFC811F21107B27009D5981 /* Categories */ = {
@@ -2340,8 +2341,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CA269D2B210F67AE001E9DA3 /* PBXTargetDependency */,
-				CA5F5393210F686500D973D3 /* PBXTargetDependency */,
+				CA719DB922031FDE0003DE34 /* PBXTargetDependency */,
 			);
 			name = B2KitCLI;
 			productName = B2KitCLI;
@@ -2356,7 +2356,7 @@
 			attributes = {
 				CLASSPREFIX = B2;
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Andreas Meingast";
 				TargetAttributes = {
 					CA1CAA9E2075524E00354FD4 = {
@@ -2370,9 +2370,11 @@
 					};
 					CA54E0F7210F9D9F00ADFAE2 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					CAB19E58210F500C00B83973 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -3260,11 +3262,6 @@
 			target = CA1CAA9E2075524E00354FD4 /* B2Kit (macOS Framework) */;
 			targetProxy = CA1CAAAA2075524F00354FD4 /* PBXContainerItemProxy */;
 		};
-		CA269D2B210F67AE001E9DA3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CA1CAA9E2075524E00354FD4 /* B2Kit (macOS Framework) */;
-			targetProxy = CA269D2A210F67AE001E9DA3 /* PBXContainerItemProxy */;
-		};
 		CA4855A02104D4BB00F09656 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CA4C4D322104746900209D0C /* B2Kit (iOS Framework) */;
@@ -3300,10 +3297,10 @@
 			target = CA1CAA9E2075524E00354FD4 /* B2Kit (macOS Framework) */;
 			targetProxy = CA54E114210FA09B00ADFAE2 /* PBXContainerItemProxy */;
 		};
-		CA5F5393210F686500D973D3 /* PBXTargetDependency */ = {
+		CA719DB922031FDE0003DE34 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CA269CB2210F6323001E9DA3 /* B2Kit (macOS Static Library) */;
-			targetProxy = CA5F5392210F686500D973D3 /* PBXContainerItemProxy */;
+			target = CA1CAA9E2075524E00354FD4 /* B2Kit (macOS Framework) */;
+			targetProxy = CA719DB822031FDE0003DE34 /* PBXContainerItemProxy */;
 		};
 		CA9BEB1A2092F95300A3B70E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3317,6 +3314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_GCD_PERFORMANCE = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_EMPTY_CONTEXT = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -3348,11 +3346,13 @@
 				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_INTERFACE_IVARS = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SEMICOLON_BEFORE_METHOD_BODY = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -3411,7 +3411,11 @@
 					"-Wmissing-variable-declarations",
 					"-Wno-cstring-format-directive",
 					"-Wno-auto-import",
+					"-Wno-objc-messaging-id",
 				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -3421,6 +3425,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_GCD_PERFORMANCE = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_EMPTY_CONTEXT = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -3452,11 +3457,13 @@
 				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_INTERFACE_IVARS = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SEMICOLON_BEFORE_METHOD_BODY = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -3510,7 +3517,11 @@
 					"-Wmissing-variable-declarations",
 					"-Wno-cstring-format-directive",
 					"-Wno-auto-import",
+					"-Wno-objc-messaging-id",
 				);
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3853,9 +3864,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitCLIUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -3869,8 +3877,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitCLIUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -3978,9 +3984,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -3992,9 +3995,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
