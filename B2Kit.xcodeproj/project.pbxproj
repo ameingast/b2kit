@@ -30,8 +30,6 @@
 		CA21581120FB33E40003078C /* B2JSONValidator+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21580F20FB33E40003078C /* B2JSONValidator+NSObject.m */; };
 		CA21581520FB34090003078C /* B2MockClient+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21581320FB34090003078C /* B2MockClient+NSObject.m */; };
 		CA21581920FB343F0003078C /* B2FileManager+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA21581720FB343F0003078C /* B2FileManager+NSObject.m */; };
-		CA269CAC210F59F0001E9DA3 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA269CAB210F59F0001E9DA3 /* Categories.swift */; };
-		CA269CAE210F60AE001E9DA3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA269CAD210F60AE001E9DA3 /* Colors.swift */; };
 		CA269CC3210F63DA001E9DA3 /* B2Account.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC422C3207555B20039854F /* B2Account.m */; };
 		CA269CC4210F63DA001E9DA3 /* B2Account+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FD920FB293700AD0FDC /* B2Account+NSObject.m */; };
 		CA269CC5210F63DA001E9DA3 /* B2Account+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7151820FA4AF100F8E8AB /* B2Account+Private.m */; };
@@ -486,16 +484,6 @@
 		CA4C4DAF2104753C00209D0C /* Blob.bin in Resources */ = {isa = PBXBuildFile; fileRef = CAC00D0F2082335B00958DB7 /* Blob.bin */; };
 		CA4C4DB02104753C00209D0C /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = CAAF8DE120F0F26E0071F8C3 /* Secrets.json */; };
 		CA4C4DB8210477F900209D0C /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4C4D8F2104746900209D0C /* B2Kit.framework */; };
-		CA54E106210F9EEC00ADFAE2 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA269CAB210F59F0001E9DA3 /* Categories.swift */; };
-		CA54E107210F9EEC00ADFAE2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA269CAD210F60AE001E9DA3 /* Colors.swift */; };
-		CA54E108210F9EEC00ADFAE2 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB19E54210F4FF000B83973 /* Command.swift */; };
-		CA54E109210F9EEC00ADFAE2 /* Command+Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA388BF210F979C00963966 /* Command+Executor.swift */; };
-		CA54E10A210F9EEC00ADFAE2 /* Command+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA388BD210F976900963966 /* Command+Parser.swift */; };
-		CA54E10B210F9EEC00ADFAE2 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB19E52210F4FF000B83973 /* Credentials.swift */; };
-		CA54E10D210F9F3D00ADFAE2 /* CategoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54E10C210F9F3D00ADFAE2 /* CategoriesTests.swift */; };
-		CA54E10F210F9F4E00ADFAE2 /* ColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54E10E210F9F4E00ADFAE2 /* ColorsTests.swift */; };
-		CA54E111210F9F5A00ADFAE2 /* CommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54E110210F9F5A00ADFAE2 /* CommandTests.swift */; };
-		CA54E113210F9F6200ADFAE2 /* CredentialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54E112210F9F6200ADFAE2 /* CredentialsTests.swift */; };
 		CA54E116210FA0A000ADFAE2 /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1CAA9F2075524E00354FD4 /* B2Kit.framework */; };
 		CA5F5396210F695A00D973D3 /* B2+Versions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA07839420F87DEB00DF0CE2 /* B2+Versions.m */; };
 		CA5F5397210F695A00D973D3 /* B2ClientDataResult+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FE520FB29F700AD0FDC /* B2ClientDataResult+NSObject.m */; };
@@ -757,7 +745,6 @@
 		CA5F54A9210F699900D973D3 /* B2Parts+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151F20FA51CB00F8E8AB /* B2Parts+Private.h */; };
 		CA702CC7207600620094FDED /* B2BucketLifeCycleRule.h in Headers */ = {isa = PBXBuildFile; fileRef = CA702CC5207600620094FDED /* B2BucketLifeCycleRule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA702CC8207600620094FDED /* B2BucketLifeCycleRule.m in Sources */ = {isa = PBXBuildFile; fileRef = CA702CC6207600620094FDED /* B2BucketLifeCycleRule.m */; };
-		CA719DBA22031FE30003DE34 /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1CAA9F2075524E00354FD4 /* B2Kit.framework */; };
 		CA7309782078E11A00289799 /* B2AccountCapability.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7309762078E11A00289799 /* B2AccountCapability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA7309792078E11A00289799 /* B2AccountCapability.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7309772078E11A00289799 /* B2AccountCapability.m */; };
 		CA7474DF207630C50064052F /* B2KitTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474DE207630C50064052F /* B2KitTestCase.m */; };
@@ -819,15 +806,10 @@
 		CA9BEB252092F95300A3B70E /* B2KitBucketIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7474DC207630B50064052F /* B2KitBucketIntegrationTests.m */; };
 		CA9BEB312092F95300A3B70E /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1CAA9F2075524E00354FD4 /* B2Kit.framework */; };
 		CA9BEB332092F95300A3B70E /* Blob.bin in Resources */ = {isa = PBXBuildFile; fileRef = CAC00D0F2082335B00958DB7 /* Blob.bin */; };
-		CAA388BE210F976900963966 /* Command+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA388BD210F976900963966 /* Command+Parser.swift */; };
-		CAA388C0210F979C00963966 /* Command+Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA388BF210F979C00963966 /* Command+Executor.swift */; };
 		CAA7A1302078D2AD002B405E /* B2BucketType.h in Headers */ = {isa = PBXBuildFile; fileRef = CAA7A12E2078D2AD002B405E /* B2BucketType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAA7A1312078D2AD002B405E /* B2BucketType.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA7A12F2078D2AD002B405E /* B2BucketType.m */; };
 		CAAF8DE220F0F26E0071F8C3 /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = CAAF8DE120F0F26E0071F8C3 /* Secrets.json */; };
 		CAAF8DE320F0F26E0071F8C3 /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = CAAF8DE120F0F26E0071F8C3 /* Secrets.json */; };
-		CAB19E60210F502300B83973 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB19E54210F4FF000B83973 /* Command.swift */; };
-		CAB19E61210F502300B83973 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB19E52210F4FF000B83973 /* Credentials.swift */; };
-		CAB19E62210F502300B83973 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB19E53210F4FF000B83973 /* main.swift */; };
 		CAB7151520FA4A2F00F8E8AB /* B2Bucket+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151320FA4A2F00F8E8AB /* B2Bucket+Private.h */; };
 		CAB7151620FA4A2F00F8E8AB /* B2Bucket+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7151420FA4A2F00F8E8AB /* B2Bucket+Private.m */; };
 		CAB7151920FA4AF100F8E8AB /* B2Account+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151720FA4AF100F8E8AB /* B2Account+Private.h */; };
@@ -969,13 +951,6 @@
 			remoteGlobalIDString = CA1CAA9E2075524E00354FD4;
 			remoteInfo = "B2Kit (macOS Framework)";
 		};
-		CA719DB822031FDE0003DE34 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CA1CAA9E2075524E00354FD4;
-			remoteInfo = "B2Kit (macOS Framework)";
-		};
 		CA9BEB1B2092F95300A3B70E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
@@ -984,18 +959,6 @@
 			remoteInfo = B2Kit;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		CAB19E57210F500C00B83973 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CA071CC020EF67640049D00A /* B2+Logging.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "B2+Logging.m"; sourceTree = "<group>"; };
@@ -1028,8 +991,6 @@
 		CA21581320FB34090003078C /* B2MockClient+NSObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "B2MockClient+NSObject.m"; sourceTree = "<group>"; };
 		CA21581720FB343F0003078C /* B2FileManager+NSObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "B2FileManager+NSObject.m"; sourceTree = "<group>"; };
 		CA21C4D42103997B001518BC /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
-		CA269CAB210F59F0001E9DA3 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
-		CA269CAD210F60AE001E9DA3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CA269CB3210F6323001E9DA3 /* libB2Kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libB2Kit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2F313F20936E0A00249557 /* B2Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = B2Logger.h; sourceTree = "<group>"; };
 		CA2F314020936E0A00249557 /* B2Logger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B2Logger.m; sourceTree = "<group>"; };
@@ -1048,10 +1009,6 @@
 		CA4C4D8F2104746900209D0C /* B2Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = B2Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA4C4DB42104753C00209D0C /* B2KitUnitTests (iOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitUnitTests (iOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA54E0F8210F9D9F00ADFAE2 /* B2KitCLIUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = B2KitCLIUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA54E10C210F9F3D00ADFAE2 /* CategoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTests.swift; sourceTree = "<group>"; };
-		CA54E10E210F9F4E00ADFAE2 /* ColorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTests.swift; sourceTree = "<group>"; };
-		CA54E110210F9F5A00ADFAE2 /* CommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandTests.swift; sourceTree = "<group>"; };
-		CA54E112210F9F6200ADFAE2 /* CredentialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsTests.swift; sourceTree = "<group>"; };
 		CA5F53F1210F695A00D973D3 /* libB2Kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libB2Kit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5F544F210F698D00D973D3 /* libB2Kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libB2Kit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5F54AD210F699900D973D3 /* libB2Kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libB2Kit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1098,15 +1055,9 @@
 		CA9BEB172092F8B700A3B70E /* B2KeyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B2KeyTests.m; sourceTree = "<group>"; };
 		CA9BEB372092F95300A3B70E /* B2KitIntegrationTests (macOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitIntegrationTests (macOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9BEB382092F95300A3B70E /* B2KitIntegrationTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = B2KitIntegrationTests.plist; sourceTree = "<group>"; };
-		CAA388BD210F976900963966 /* Command+Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+Parser.swift"; sourceTree = "<group>"; };
-		CAA388BF210F979C00963966 /* Command+Executor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+Executor.swift"; sourceTree = "<group>"; };
 		CAA7A12E2078D2AD002B405E /* B2BucketType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = B2BucketType.h; sourceTree = "<group>"; };
 		CAA7A12F2078D2AD002B405E /* B2BucketType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B2BucketType.m; sourceTree = "<group>"; };
 		CAAF8DE120F0F26E0071F8C3 /* Secrets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Secrets.json; sourceTree = "<group>"; };
-		CAB19E52210F4FF000B83973 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		CAB19E53210F4FF000B83973 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		CAB19E54210F4FF000B83973 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
-		CAB19E59210F500C00B83973 /* B2KitCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = B2KitCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB7151320FA4A2F00F8E8AB /* B2Bucket+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "B2Bucket+Private.h"; sourceTree = "<group>"; };
 		CAB7151420FA4A2F00F8E8AB /* B2Bucket+Private.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "B2Bucket+Private.m"; sourceTree = "<group>"; };
 		CAB7151720FA4AF100F8E8AB /* B2Account+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "B2Account+Private.h"; sourceTree = "<group>"; };
@@ -1291,14 +1242,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CAB19E56210F500C00B83973 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA719DBA22031FE30003DE34 /* B2Kit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1329,7 +1272,6 @@
 				CA48569B2104D8E400F09656 /* B2Kit.framework */,
 				CA4856C02104D92B00F09656 /* B2KitUnitTests (watchOS Framework).xctest */,
 				CA4856D62104D9B500F09656 /* B2KitIntegrationTests (watchOS Framework).xctest */,
-				CAB19E59210F500C00B83973 /* B2KitCLI */,
 				CA269CB3210F6323001E9DA3 /* libB2Kit.a */,
 				CA5F53F1210F695A00D973D3 /* libB2Kit.a */,
 				CA5F544F210F698D00D973D3 /* libB2Kit.a */,
@@ -1346,7 +1288,6 @@
 				CAA7A1362078D376002B405E /* B2 */,
 				CA702CC9207600930094FDED /* Bucket */,
 				CAFC811F21107B27009D5981 /* Categories */,
-				CAB19E51210F4FD800B83973 /* CLI */,
 				CA702CCD207600C80094FDED /* Client */,
 				CAA7A1372078D392002B405E /* Constants */,
 				CAF229DE2079030200B3E540 /* Error */,
@@ -1367,17 +1308,6 @@
 				CA7474DE207630C50064052F /* B2KitTestCase.m */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		CA269CAA210F580D001E9DA3 /* CLI */ = {
-			isa = PBXGroup;
-			children = (
-				CA54E10C210F9F3D00ADFAE2 /* CategoriesTests.swift */,
-				CA54E10E210F9F4E00ADFAE2 /* ColorsTests.swift */,
-				CA54E110210F9F5A00ADFAE2 /* CommandTests.swift */,
-				CA54E112210F9F6200ADFAE2 /* CredentialsTests.swift */,
-			);
-			path = CLI;
 			sourceTree = "<group>";
 		};
 		CA2F313E20936DFB00249557 /* Logging */ = {
@@ -1508,7 +1438,6 @@
 				CA9BEAF82092F74700A3B70E /* Account */,
 				CA9BEAF92092F74D00A3B70E /* Bucket */,
 				CAFC81402110826B009D5981 /* Categories */,
-				CA269CAA210F580D001E9DA3 /* CLI */,
 				CA7E62AA20F72BFA00B21A37 /* Client */,
 				CA7E62B120F72C5D00B21A37 /* Constants */,
 				CA9BEB0A2092F84600A3B70E /* Error */,
@@ -1620,20 +1549,6 @@
 				CA3885F32077A113004F2158 /* B2Endpoint.m */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		CAB19E51210F4FD800B83973 /* CLI */ = {
-			isa = PBXGroup;
-			children = (
-				CA269CAB210F59F0001E9DA3 /* Categories.swift */,
-				CA269CAD210F60AE001E9DA3 /* Colors.swift */,
-				CAB19E54210F4FF000B83973 /* Command.swift */,
-				CAA388BF210F979C00963966 /* Command+Executor.swift */,
-				CAA388BD210F976900963966 /* Command+Parser.swift */,
-				CAB19E52210F4FF000B83973 /* Credentials.swift */,
-				CAB19E53210F4FF000B83973 /* main.swift */,
-			);
-			path = CLI;
 			sourceTree = "<group>";
 		};
 		CADD511F207DDDDF00A29C53 /* Resources */ = {
@@ -2330,24 +2245,6 @@
 			productReference = CA9BEB372092F95300A3B70E /* B2KitIntegrationTests (macOS Framework).xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CAB19E58210F500C00B83973 /* B2KitCLI */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CAB19E5D210F500C00B83973 /* Build configuration list for PBXNativeTarget "B2KitCLI" */;
-			buildPhases = (
-				CAB19E55210F500C00B83973 /* Sources */,
-				CAB19E56210F500C00B83973 /* Frameworks */,
-				CAB19E57210F500C00B83973 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CA719DB922031FDE0003DE34 /* PBXTargetDependency */,
-			);
-			name = B2KitCLI;
-			productName = B2KitCLI;
-			productReference = CAB19E59210F500C00B83973 /* B2KitCLI */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2369,10 +2266,6 @@
 						CreatedOnToolsVersion = 9.4.1;
 					};
 					CA54E0F7210F9D9F00ADFAE2 = {
-						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1000;
-					};
-					CAB19E58210F500C00B83973 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
 					};
@@ -2398,7 +2291,6 @@
 				CA5F5394210F695A00D973D3 /* B2Kit (iOS Static Library) */,
 				CA5F53F2210F698D00D973D3 /* B2Kit (tvOS Static Library) */,
 				CA5F5450210F699900D973D3 /* B2Kit (watchOS Static Library) */,
-				CAB19E58210F500C00B83973 /* B2KitCLI */,
 				CA1CAAA72075524F00354FD4 /* B2KitUnitTests (macOS Framework) */,
 				CA4C4D912104753C00209D0C /* B2KitUnitTests (iOS Framework) */,
 				CA48569D2104D92B00F09656 /* B2KitUnitTests (watchOS Framework) */,
@@ -3021,16 +2913,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA54E113210F9F6200ADFAE2 /* CredentialsTests.swift in Sources */,
-				CA54E111210F9F5A00ADFAE2 /* CommandTests.swift in Sources */,
-				CA54E10D210F9F3D00ADFAE2 /* CategoriesTests.swift in Sources */,
-				CA54E10F210F9F4E00ADFAE2 /* ColorsTests.swift in Sources */,
-				CA54E107210F9EEC00ADFAE2 /* Colors.swift in Sources */,
-				CA54E10A210F9EEC00ADFAE2 /* Command+Parser.swift in Sources */,
-				CA54E10B210F9EEC00ADFAE2 /* Credentials.swift in Sources */,
-				CA54E109210F9EEC00ADFAE2 /* Command+Executor.swift in Sources */,
-				CA54E106210F9EEC00ADFAE2 /* Categories.swift in Sources */,
-				CA54E108210F9EEC00ADFAE2 /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3240,20 +3122,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CAB19E55210F500C00B83973 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CAB19E61210F502300B83973 /* Credentials.swift in Sources */,
-				CA269CAE210F60AE001E9DA3 /* Colors.swift in Sources */,
-				CAA388BE210F976900963966 /* Command+Parser.swift in Sources */,
-				CA269CAC210F59F0001E9DA3 /* Categories.swift in Sources */,
-				CAA388C0210F979C00963966 /* Command+Executor.swift in Sources */,
-				CAB19E60210F502300B83973 /* Command.swift in Sources */,
-				CAB19E62210F502300B83973 /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -3296,11 +3164,6 @@
 			isa = PBXTargetDependency;
 			target = CA1CAA9E2075524E00354FD4 /* B2Kit (macOS Framework) */;
 			targetProxy = CA54E114210FA09B00ADFAE2 /* PBXContainerItemProxy */;
-		};
-		CA719DB922031FDE0003DE34 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CA1CAA9E2075524E00354FD4 /* B2Kit (macOS Framework) */;
-			targetProxy = CA719DB822031FDE0003DE34 /* PBXContainerItemProxy */;
 		};
 		CA9BEB1A2092F95300A3B70E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3976,28 +3839,6 @@
 			};
 			name = Release;
 		};
-		CAB19E5E210F500C00B83973 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		CAB19E5F210F500C00B83973 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -4159,15 +4000,6 @@
 			buildConfigurations = (
 				CA9BEB352092F95300A3B70E /* Debug */,
 				CA9BEB362092F95300A3B70E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CAB19E5D210F500C00B83973 /* Build configuration list for PBXNativeTarget "B2KitCLI" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CAB19E5E210F500C00B83973 /* Debug */,
-				CAB19E5F210F500C00B83973 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
