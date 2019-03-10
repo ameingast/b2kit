@@ -10,6 +10,6 @@ script:
   - xcodebuild -configuration Release -scheme "B2Kit (iOS Static Library)" clean build CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" ENABLE_TESTABILITY=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty
   - xcodebuild -configuration Release -scheme "B2Kit (tvOS Static Library)" clean build CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" ENABLE_TESTABILITY=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty
   - xcodebuild -configuration Release -scheme "B2Kit (watchOS Static Library)" clean build CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" ENABLE_TESTABILITY=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty
-  - pod lib lint
+  - pod lib lint --verbose
 after_success:
   - bash <(curl -s https://codecov.io/bash)
