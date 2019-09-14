@@ -40,7 +40,7 @@
                              error:(out NSError *__autoreleasing *)error
 {
     B2ClientDataResult __block *result;
-    NSCondition *condition = [NSCondition new];
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     if (account) {
         [mutableRequest addValue:[(B2Account *)account token]
               forHTTPHeaderField:@"Authorization"];
@@ -57,12 +57,11 @@
                                                        result = [[B2ClientDataResult alloc] initWithData:(NSData *)data
                                                                                                 response:(NSHTTPURLResponse *)response];
                                                    }
-                                                   [condition signal];
+                                                   dispatch_semaphore_signal(semaphore);
                                                }];
     B2LogDebug("Enqueuing download request: %@ for account: %@", mutableRequest, account);
-    [condition lock];
     [task resume];
-    [condition wait];
+    (void)dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     B2LogDebug("Finished download request: %@ (error=%@)", result, error ? *error : nil);
     return result && [result validate:error] ? [result data] : nil;
 }
@@ -73,7 +72,7 @@
                          error:(out NSError *__autoreleasing *)error
 {
     BOOL __block downloadResult = NO;
-    NSCondition *condition = [NSCondition new];
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     if (account) {
         [mutableRequest addValue:[(B2Account *)account token]
               forHTTPHeaderField:@"Authorization"];
@@ -91,12 +90,11 @@
                                                                                                                             toURL:fileURL
                                                                                                                             error:error];
                                                                }
-                                                               [condition signal];
+                                                               dispatch_semaphore_signal(semaphore);
                                                            }];
     B2LogDebug("Enqueuing download request: %@ for account: %@ to url: %@", mutableRequest, account, fileURL);
-    [condition lock];
     [task resume];
-    [condition wait];
+    (void)dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     B2LogDebug("Finished download request: %d to url: %@ (error=%@)", downloadResult, fileURL, error ? *error : nil);
     return downloadResult;
 }
@@ -107,7 +105,7 @@
                            error:(out NSError *__autoreleasing *)error
 {
     B2ClientDataResult __block *result;
-    NSCondition *condition = [NSCondition new];
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     NSURLSessionTask *task = [[self session] uploadTaskWithRequest:mutableRequest
                                                           fromFile:fileURL
                                                  completionHandler:^(NSData *data,
@@ -121,12 +119,11 @@
                                                          result = [[B2ClientDataResult alloc] initWithData:(NSData *)data
                                                                                                   response:(NSHTTPURLResponse *)response];
                                                      }
-                                                     [condition signal];
+                                                     dispatch_semaphore_signal(semaphore);
                                                  }];
     B2LogDebug("Enqueuing upload request: %@ for account: %@", mutableRequest, account);
-    [condition lock];
     [task resume];
-    [condition wait];
+    (void)dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     B2LogDebug("Finished upload request: %@ (error=%@)", result, error ? *error : nil);
     return result && [result validate:error] ? [result data] : nil;
 }
