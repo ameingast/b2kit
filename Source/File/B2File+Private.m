@@ -37,6 +37,7 @@
                                             accountId:[account accountId]
                                              bucketId:bucketId
                                         contentLength:(NSNumber *)dictionary[@"contentLength"]
+                                          contentSha1:(NSString *)dictionary[@"contentSha1"]
                                           contentType:(NSString *)dictionary[@"contentType"]
                                              metadata:[NSDictionary new]
                                                action:B2FileInfoActionFromString((NSString *)dictionary[@"action"])
@@ -82,6 +83,7 @@
                                 accountId:(NSString *)dictionary[@"accountId"]
                                  bucketId:(NSString *)dictionary[@"bucketId"]
                             contentLength:(NSNumber *)dictionary[@"contentLength"]
+                              contentSha1:(NSString *)dictionary[@"contentSha1"]
                               contentType:(NSString *)dictionary[@"contentType"]
                                  metadata:[NSDictionary new]
                                    action:B2FileInfoActionFromString((NSString *)dictionary[@"action"])

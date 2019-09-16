@@ -22,6 +22,7 @@
                                         accountId:@"accountId"
                                          bucketId:@"bucketId"
                                     contentLength:@(1)
+                                      contentSha1:@"contentSha1"
                                       contentType:@"contentType"
                                          metadata:@{}
                                            action:B2FileInfoActionUploaded
@@ -32,6 +33,7 @@
     XCTAssertEqualObjects(@"bucketId", [file bucketId]);
     XCTAssertEqualObjects(@(1), [file contentLength]);
     XCTAssertEqualObjects(@"contentType", [file contentType]);
+    XCTAssertEqualObjects(@"contentSha1", [file contentSha1]);
     XCTAssertEqual(B2FileInfoActionUploaded, [file action]);
     XCTAssertEqualObjects([NSDate dateWithTimeIntervalSince1970:0], [file uploadDate]);
 }
@@ -50,6 +52,7 @@
                                                 accountId:@"accountId"
                                                  bucketId:@"bucketId"
                                             contentLength:@(1)
+                                              contentSha1:@"contentSha1"
                                               contentType:@"contentType"
                                                  metadata:@{}
                                                    action:B2FileInfoActionUploaded
@@ -76,6 +79,7 @@
                                                 accountId:@"accountId"
                                                  bucketId:@"bucketId"
                                             contentLength:@(1)
+                                              contentSha1:@"contentSha1"
                                               contentType:@"contentType"
                                                  metadata:@{}
                                                    action:B2FileInfoActionUploaded

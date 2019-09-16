@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
                  accountId:(NSString *)accountId
                   bucketId:(NSString *)bucketId
              contentLength:(NSNumber *)contentLength
+               contentSha1:(NSString *)contentSha1
                contentType:(NSString *)contentType
                   metadata:(NSDictionary<NSString *, NSString *> *)metadata
                     action:(B2FileInfoAction)action

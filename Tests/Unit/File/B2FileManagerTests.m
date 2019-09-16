@@ -65,6 +65,7 @@
                                                 accountId:@"accountId"
                                                  bucketId:@"bucketId"
                                             contentLength:@(1)
+                                              contentSha1:@"contentSha1"
                                               contentType:@"contentType"
                                                  metadata:@{}
                                                    action:B2FileInfoActionUploaded
@@ -148,6 +149,7 @@
                                                                                                        accountId:@"accountId"
                                                                                                         bucketId:@"bucketId"
                                                                                                    contentLength:@(1)
+                                                                                                     contentSha1:@"contentSha1"
                                                                                                      contentType:@"contentType"
                                                                                                         metadata:@{}
                                                                                                           action:B2FileInfoActionUploaded
@@ -204,6 +206,7 @@
                                                                                                               accountId:@"accountId"
                                                                                                                bucketId:@"bucketId"
                                                                                                           contentLength:@(1)
+                                                                                                            contentSha1:@"contentSha1"
                                                                                                             contentType:@"contentType"
                                                                                                                metadata:@{}
                                                                                                                  action:B2FileInfoActionUploaded
@@ -327,6 +330,7 @@
                                                 accountId:@"accountId"
                                                  bucketId:@"bucketId"
                                             contentLength:@(0)
+                                              contentSha1:@"contentSha1"
                                               contentType:@"contentType"
                                                  metadata:@{}
                                                    action:B2FileInfoActionUploaded
