@@ -10,9 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern NSString *B2KitDomain;
-extern int B2ErrorCodeChecksumCreationError;
-extern int B2ErrorCodeIncompleteResponse;
+extern const NSString * const B2KitDomain;
+extern const int B2ErrorCodeChecksumCreationError;
+extern const int B2ErrorCodeIncompleteResponse;
+extern const int B2ErrorCodeLocalIOError;
+extern const int B2ErrorChecksumMismatch;
 
 NSError *B2CreateError(NSInteger code, NSDictionary<NSErrorUserInfoKey, id> * _Nullable dictionary);
 NSError *B2CreateErrorFromException(NSException *exception);

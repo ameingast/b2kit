@@ -10,9 +10,11 @@
 #import "B2Client.h"
 #import "B2JSONValidator.h"
 
-NSString *B2KitDomain = @"com.operationalsemantics.b2kit";
-int B2ErrorCodeIncompleteResponse = 1;
-int B2ErrorCodeChecksumCreationError = 2;
+const NSString * const B2KitDomain = @"com.operationalsemantics.b2kit";
+const int B2ErrorCodeIncompleteResponse = 1;
+const int B2ErrorCodeChecksumCreationError = 2;
+const int B2ErrorCodeLocalIOError = 3;
+const int B2ErrorChecksumMismatch = 4;
 
 @implementation B2ClientError
 
@@ -49,13 +51,13 @@ int B2ErrorCodeChecksumCreationError = 2;
 @end
 
 inline NSError *B2CreateError(NSInteger code, NSDictionary<NSErrorUserInfoKey, id> * _Nullable dictionary) {
-    return [[NSError alloc] initWithDomain:B2KitDomain
+    return [[NSError alloc] initWithDomain:(NSString *)B2KitDomain
                                       code:code
                                   userInfo:dictionary];
 }
 
 inline NSError *B2CreateErrorFromException(NSException *exception) {
-    return [[NSError alloc] initWithDomain:B2KitDomain
+    return [[NSError alloc] initWithDomain:(NSString *)B2KitDomain
                                       code:1
                                   userInfo:[exception userInfo]];
 }
