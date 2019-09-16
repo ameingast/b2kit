@@ -203,4 +203,42 @@
     }
 }
 
+- (void)testConvenienceUpload
+{
+    NSError *error;
+    NSURL *fileURL = (NSURL *)[[NSBundle bundleForClass:[self class]] URLForResource:@"Blib"
+                                                                       withExtension:@"bin"];
+    B2File *file = [[self b2] uploadLargeFileAtURL:fileURL
+                                           account:[self account]
+                                          fileName:@"test-large.bin"
+                                          bucketId:[[self bucket] bucketId]
+                                       contentType:@"application/octet-stream"
+                                    lastModifiedOn:[NSDate date]
+                                          fileInfo:nil
+                                             error:&error];
+    if (!file) {
+        XCTFail(@"File upload failed: %@", error);
+        return;
+    }
+    BOOL downloadResult = [[self b2] downloadFileWithFileId:[file fileId]
+                                                    account:[self account]
+                                                      range:nil
+                                                locationURL:[self targetURL]
+                                                      error:&error];
+    if (!downloadResult) {
+        XCTFail(@"File download failed: %@", error);
+        return;
+    }
+    XCTAssertEqualObjects([NSData dataWithContentsOfURL:fileURL],
+                          [NSData dataWithContentsOfURL:[self targetURL]]);
+    BOOL deleteResult = [[self b2] deleteFileWithFileId:[file fileId]
+                                               fileName:@"test-large.bin"
+                                                account:[self account]
+                                                  error:&error];
+    if (!deleteResult) {
+        XCTFail(@"File delete failed: %@", error);
+        return;
+    }
+}
+
 @end

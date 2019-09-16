@@ -15,6 +15,7 @@
 #import <B2Kit/B2FileInfoAction.h>
 #import <B2Kit/B2Bucket.h>
 #import <B2Kit/B2BucketLifeCycleRule.h>
+#import <B2Kit/B2Error.h>
 #import <B2Kit/B2Key.h>
 #import <B2Kit/B2Logger.h>
 #import <B2Kit/B2Parts.h>
@@ -25,7 +26,9 @@
 /// MARK: Categories
 
 #import <B2Kit/NSArray+B2Kit.h>
+#import <B2Kit/NSData+B2Kit.h>
 #import <B2Kit/NSDictionary+B2Kit.h>
+#import <B2Kit/NSFileManager+B2Kit.h>
 #import <B2Kit/NSURL+B2Kit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -157,6 +160,19 @@ NS_ASSUME_NONNULL_BEGIN
                          startPartNumber:(nullable NSNumber *)startPartNumber
                             maxPartCount:(nullable NSNumber *)maxPartCount
                                    error:(out NSError **)error;
+
+@end
+
+@interface B2 (Convenience)
+
+- (nullable B2File *)uploadLargeFileAtURL:(NSURL *)localFileURL
+                                  account:(B2Account *)account
+                                 fileName:(NSString *)filename
+                                 bucketId:(NSString *)bucketId
+                              contentType:(NSString *)contentType
+                           lastModifiedOn:(NSDate *)lastModifiedOn
+                                 fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
+                                    error:(out NSError **)error;
 
 @end
 

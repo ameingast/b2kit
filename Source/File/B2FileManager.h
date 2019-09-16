@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern long long B2UploadChunkSize;
+
 @class B2File;
 @class B2FileNames;
 @class B2FileVersions;
@@ -121,6 +123,17 @@ NS_ASSUME_NONNULL_BEGIN
                          startPartNumber:(nullable NSNumber *)startPartNumber
                             maxPartCount:(nullable NSNumber *)maxPartCount
                                    error:(out NSError **)error;
+
+// MARK: Convenience
+
+- (nullable B2File *)uploadLargeFileAtURL:(NSURL *)localFileURL
+                                  account:(B2Account *)account
+                                 fileName:(NSString *)filename
+                                 bucketId:(NSString *)bucketId
+                              contentType:(NSString *)contentType
+                           lastModifiedOn:(NSDate *)lastModifiedOn
+                                 fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
+                                    error:(out NSError **)error;
 
 @end
 

@@ -21,6 +21,25 @@
 #import "B2Parts.h"
 #import "B2Parts+Private.h"
 #import "B2Range.h"
+#import "B2Logger.h"
+#import "NSFileManager+B2Kit.h"
+#import "NSData+B2Kit.h"
+
+long long B2UploadChunkSize = 0;
+static NSInteger B2KitUploadConcurrency = 3;
+static NSUInteger B2KitUploadRetries = 5;
+
+@interface B2FileManager (Private)
+
+- (nullable NSString *)uploadPartForFileIdAndCleanUp:(NSURL *)localFileURL
+                                              fileId:(NSString *)fileId
+                                             account:(B2Account *)account
+                                          partNumber:(long long)partNumber
+                                                size:(long long)size
+                                       stopExecution:(BOOL *)stopExecution
+                                               error:(out NSError **)error;
+
+@end
 
 @implementation B2FileManager
 
@@ -116,7 +135,7 @@
 
 - (B2FileVersions *)listFileVersionsWithBucketId:(NSString *)bucketId
                                          account:(B2Account *)account
-                                   startFileId:(nullable NSString *)startFileId
+                                     startFileId:(nullable NSString *)startFileId
                                    startFileName:(nullable NSString *)startFileName
                                     maxFileCount:(nullable NSNumber *)maxFileCount
                                           prefix:(nullable NSString *)prefix
@@ -155,8 +174,8 @@
                                              bucketId:bucketId
                                                 error:error];
     return [[B2FileVersions alloc] initWithNextFileId:(NSString *)json[@"nextFileId"]
-                                  nextFileName:(NSString *)json[@"nextFileName"]
-                                         files:files];
+                                         nextFileName:(NSString *)json[@"nextFileName"]
+                                                files:files];
 }
 
 // MARK: Delete
@@ -534,6 +553,162 @@
                                                        error:error];
     return response ? [[B2Parts alloc] initWithJSONData:response
                                                   error:error]: nil;
+}
+
+// MARK: Convenience
+
+- (nullable B2File *)uploadLargeFileAtURL:(NSURL *)localFileURL
+                                  account:(B2Account *)account
+                                 fileName:(NSString *)filename
+                                 bucketId:(NSString *)bucketId
+                              contentType:(NSString *)contentType
+                           lastModifiedOn:(NSDate *)lastModifiedOn
+                                 fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
+                                    error:(out NSError *__autoreleasing *)error
+{
+    NSMutableDictionary<NSNumber *, NSString *> *checksums = [NSMutableDictionary new];
+    NSArray<NSString *> *sortedChecksums;
+    long long chunkSize = B2UploadChunkSize > 0 ? B2UploadChunkSize : [[account recommendedPartSize] longLongValue];
+    long long fileSize = fileSize = [[NSFileManager defaultManager] fileSize:localFileURL
+                                                                       error:error];
+    if (fileSize < 0) {
+        return nil;
+    }
+    if (fileSize <= [[account absoluteMinimumPartSize] longLongValue] * 2LL) {
+        NSString *sha1Checksum = [[NSFileManager defaultManager] sha1ForFileAtURL:localFileURL
+                                                                            error:error];
+        if (!sha1Checksum) {
+            return nil;
+        }
+        return [self uploadFileAtURL:localFileURL
+                             account:account
+                            fileName:filename
+                        sha1Checksum:sha1Checksum
+                          intoBucket:bucketId
+                         contentType:contentType
+                      lastModifiedOn:lastModifiedOn
+                            fileInfo:fileInfo
+                               error:error];
+    }
+    NSString *fileId = [self startUploadForFileName:filename
+                                            account:account
+                                           bucketId:bucketId
+                                        contentType:contentType
+                                           fileInfo:fileInfo
+                                              error:error];
+    if (!fileId) {
+        return nil;
+    }
+    NSError __block *partialError;
+    BOOL __block stopExecution = NO;
+    dispatch_semaphore_t sem = dispatch_semaphore_create(B2KitUploadConcurrency);
+    dispatch_group_t group = dispatch_group_create();
+    for (long long i = 0; i * chunkSize < fileSize; i++) {
+        dispatch_group_enter(group);
+        dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            (void)dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+            if (stopExecution) {
+                (void)dispatch_semaphore_signal(sem);
+                dispatch_group_leave(group);
+            }
+            NSString *partSha1Checksum = [self uploadPartForFileIdAndCleanUp:localFileURL
+                                                                      fileId:fileId
+                                                                     account:account
+                                                                  partNumber:i
+                                                                        size:chunkSize
+                                                               stopExecution:&stopExecution
+                                                                       error:&partialError];
+            if (partSha1Checksum) {
+                [checksums setObject:partSha1Checksum
+                              forKey:@(i)];
+            } else {
+                stopExecution = YES;
+            }
+            (void)dispatch_semaphore_signal(sem);
+            dispatch_group_leave(group);
+        });
+    }
+    (void)dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    if (partialError) {
+        if (error) {
+            *error = partialError;
+        }
+        goto cleanup;
+    }
+    sortedChecksums = [checksums objectsForKeys:[[checksums allKeys] sortedArrayUsingSelector:@selector(compare:)]
+                                               notFoundMarker:@""];
+    BOOL finishResult = [self finishUploadForFileId:fileId
+                                            account:account
+                               contentSha1Checksums:sortedChecksums
+                                              error:error];
+    if (!finishResult) {
+        goto cleanup;
+    }
+    return [self fileInfoForFileId:fileId
+                           account:account
+                             error:error];
+cleanup:
+    if (fileId) {
+        NSError *localError;
+        BOOL cancelResult = [self cancelUploadForFileId:fileId
+                                                account:account
+                                                  error:&localError];
+        if (!cancelResult) {
+            B2LogError(@"Unable to clean up %@ (fileId=%@) - %@", filename, fileId, localError);
+        }
+    }
+    return nil;
+}
+
+// MARK: Private
+
+- (NSString *)uploadPartForFileIdAndCleanUp:(NSURL *)localFileURL
+                                     fileId:(NSString *)fileId
+                                    account:(B2Account *)account
+                                 partNumber:(long long)partNumber
+                                       size:(long long)size
+                              stopExecution:(BOOL *)stopExecution
+                                      error:(out NSError *__autoreleasing *)error
+{
+    NSURL *chunkUrl = [[NSFileManager defaultManager] temporaryFileURL];
+    @try {
+        NSData *chunk = [NSData dataWithContentsOfURL:localFileURL
+                                             atOffset:(unsigned long long)partNumber * (unsigned long long)size
+                                             withSize:(NSUInteger)size
+                                                error:error];
+        if (!chunk) {
+            return nil;
+        }
+        BOOL result = [chunk writeToURL:chunkUrl
+                             atomically:NO];
+        if (!result) {
+            return nil;
+        }
+        NSString *chunkSha1 = [chunk sha1];
+        NSUInteger retryCounter = 0;
+        while (!*stopExecution) {
+            BOOL uploadResult = [self uploadPartForFileId:fileId
+                                                  account:account
+                                             dataLocation:chunkUrl
+                                               partNumber:@(partNumber + 1)
+                                            contentLength:@([chunk length])
+                                      contentSha1Checksum:chunkSha1
+                                                    error:error];
+            if (!uploadResult && ++retryCounter > B2KitUploadRetries) {
+                return nil;
+            }
+            return chunkSha1;
+        }
+    } @finally {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:(NSString *)[chunkUrl path]]) {
+            NSError *localError;
+            BOOL removeResult = [[NSFileManager defaultManager] removeItemAtURL:chunkUrl
+                                                                          error:&localError];
+            if (!removeResult) {
+                B2LogError(@"Unable to clean up %@ (fileId=%@) - %@", chunkUrl, fileId, localError);
+            }
+        }
+    }
 }
 
 @end
