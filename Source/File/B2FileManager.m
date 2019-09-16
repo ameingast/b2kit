@@ -295,7 +295,6 @@ static NSUInteger B2KitUploadRetries = 5;
                                                       error:error];
 }
 
-
 // MARK: Download
 
 - (BOOL)downloadFileWithFileId:(NSString *)fileId
@@ -321,7 +320,6 @@ static NSUInteger B2KitUploadRetries = 5;
                                                     error:error];
     return response;
 }
-
 
 - (BOOL)downloadFileWithFileName:(NSString *)fileName
                       bucketName:(NSString *)bucketName

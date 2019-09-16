@@ -57,7 +57,6 @@
     return response;
 }
 
-
 // MARK: B2Client
 
 - (NSData *)performDownloadRequest:(NSMutableURLRequest *)request

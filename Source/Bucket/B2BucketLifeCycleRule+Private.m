@@ -55,5 +55,4 @@
     return result;
 }
 
-
 @end

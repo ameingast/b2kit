@@ -134,5 +134,4 @@
             [[self files] singleLineDescription]];
 }
 
-
 @end

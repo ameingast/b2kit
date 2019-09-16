@@ -26,7 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addDataResponse:(NSData *)dataResponse;
 - (nullable NSData *)nextDataResponse;
 
-
 @end
 
 NS_ASSUME_NONNULL_END

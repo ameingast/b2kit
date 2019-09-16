@@ -36,7 +36,7 @@
     return [self logLevel] <= level;
 }
 
-inline B2LogLevel B2LogLevelFromNSString(NSString *logLevel) { // TODO: test
+inline B2LogLevel B2LogLevelFromNSString(NSString *logLevel) {
     if ([logLevel isEqualToString:@"trace"]) {
         return B2LogLevelTrace;
     } else if ([logLevel isEqualToString:@"debug"]) {

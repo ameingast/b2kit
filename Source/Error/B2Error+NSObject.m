@@ -34,7 +34,6 @@
     [self message].hash;
 }
 
-
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"<B2ClientError %p> {status=%@, code=%@, message=%@}",
