@@ -11,6 +11,17 @@
 
 @implementation B2 (Convenience)
 
+- (BOOL)downloadFileWithFileId:(NSString *)fileId
+                       account:(B2Account *)account
+                   locationURL:(NSURL *)locationURL
+                         error:(out NSError *__autoreleasing *)error
+{
+    return [[[B2FileManager alloc] initWithClient:[self client]] downloadFileWithFileId:fileId
+                                                                                account:account
+                                                                            locationURL:locationURL
+                                                                                  error:error];
+}
+
 - (nullable B2File *)uploadLargeFileAtURL:(NSURL *)localFileURL
                                   account:(B2Account *)account
                                  fileName:(NSString *)filename

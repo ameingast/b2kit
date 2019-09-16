@@ -203,7 +203,7 @@
     }
 }
 
-- (void)testConvenienceUpload
+- (void)testConvenienceUploadAndDownload
 {
     NSError *error;
     NSURL *fileURL = (NSURL *)[[NSBundle bundleForClass:[self class]] URLForResource:@"Blib"
@@ -222,12 +222,10 @@
     }
     BOOL downloadResult = [[self b2] downloadFileWithFileId:[file fileId]
                                                     account:[self account]
-                                                      range:nil
                                                 locationURL:[self targetURL]
                                                       error:&error];
     if (!downloadResult) {
         XCTFail(@"File download failed: %@", error);
-        return;
     }
     XCTAssertEqualObjects([NSData dataWithContentsOfURL:fileURL],
                           [NSData dataWithContentsOfURL:[self targetURL]]);

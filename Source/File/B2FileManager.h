@@ -11,6 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 extern long long B2UploadChunkSize;
+extern long long B2DownloadChunkSize;
+extern NSInteger B2KitUploadConcurrency;
+extern NSInteger B2KitDownloadConcurrency;
+extern NSInteger B2KitUploadRetries;
+extern NSInteger B2KitDownloadRetries;
 
 @class B2File;
 @class B2FileNames;
@@ -125,6 +130,11 @@ extern long long B2UploadChunkSize;
                                    error:(out NSError **)error;
 
 // MARK: Convenience
+
+- (BOOL)downloadFileWithFileId:(NSString *)fileId
+                       account:(B2Account *)account
+                   locationURL:(NSURL *)locationURL
+                         error:(out NSError **)error;
 
 - (nullable B2File *)uploadLargeFileAtURL:(NSURL *)localFileURL
                                   account:(B2Account *)account

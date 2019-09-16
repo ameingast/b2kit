@@ -11,6 +11,7 @@
 #import "B2Account.h"
 #import "B2DefaultClient.h"
 #import "B2File.h"
+#import "B2Error.h"
 #import "B2File+Private.h"
 #import "B2FileManager.h"
 #import "B2Endpoint.h"
@@ -26,10 +27,21 @@
 #import "NSData+B2Kit.h"
 
 long long B2UploadChunkSize = 0;
-static NSInteger B2KitUploadConcurrency = 3;
-static NSUInteger B2KitUploadRetries = 5;
+long long B2DownloadChunkSize = 16 * 1024 * 1024;
+NSInteger B2KitUploadConcurrency = 3;
+NSInteger B2KitDownloadConcurrency = 3;
+NSInteger B2KitUploadRetries = 5;
+NSInteger B2KitDownloadRetries = 5;
 
 @interface B2FileManager (Private)
+
+- (nullable NSURL *)downloadFilePartWithFileId:(NSString *)fileId
+                                       account:(B2Account *)account
+                                 contentLength:(long long)contentLength
+                                    partNumber:(long long)partNumber
+                                     chunkSize:(long long)chunkSize
+                                 stopExecution:(BOOL *)stopExecution
+                                         error:(out NSError **)error;
 
 - (nullable NSString *)uploadPartForFileIdAndCleanUp:(NSURL *)localFileURL
                                               fileId:(NSString *)fileId
@@ -555,6 +567,122 @@ static NSUInteger B2KitUploadRetries = 5;
 
 // MARK: Convenience
 
+- (BOOL)downloadFileWithFileId:(NSString *)fileId
+                       account:(B2Account *)account
+                   locationURL:(NSURL *)locationURL
+                         error:(out NSError *__autoreleasing *)error
+{
+    NSMutableDictionary<NSNumber *, NSURL *> *chunkUrls = [NSMutableDictionary new];
+    NSString *path = [locationURL path];
+    if (!path) {
+        if (error) {
+            *error = B2CreateError(B2ErrorCodeLocalIOError, @{});
+        }
+        return NO;
+    }
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        BOOL result = [[NSFileManager defaultManager] createFileAtPath:path
+                                                              contents:nil
+                                                            attributes:nil];
+        if (!result) {
+            if (error) {
+                *error = B2CreateError(B2ErrorCodeLocalIOError, @{});
+            }
+            return NO;
+        }
+    }
+    @try {
+        B2File *file = [self fileInfoForFileId:fileId
+                                       account:account
+                                         error:error];
+        if (!file) {
+            return NO;
+        }
+        NSError __block *partialError;
+        BOOL __block stopExecution = NO;
+        dispatch_semaphore_t sem = dispatch_semaphore_create(B2KitDownloadConcurrency);
+        dispatch_group_t group = dispatch_group_create();
+        long long contentLength = [[file contentLength] longLongValue];
+        for (long long i = 0; i * B2DownloadChunkSize < contentLength; i++) {
+            dispatch_group_enter(group);
+            dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                (void)dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+                if (stopExecution) {
+                    (void)dispatch_semaphore_signal(sem);
+                    dispatch_group_leave(group);
+                }
+                NSURL *chunkUrl = [self downloadFilePartWithFileId:fileId
+                                                           account:account
+                                                     contentLength:[[file contentLength] longLongValue]
+                                                        partNumber:i
+                                                         chunkSize:B2DownloadChunkSize
+                                                     stopExecution:&stopExecution
+                                                             error:&partialError];
+                if (chunkUrl) {
+                    @synchronized (chunkUrls) {
+                        [chunkUrls setObject:chunkUrl
+                                      forKey:@(i)];
+                    }
+                } else {
+                    stopExecution = YES;
+                }
+                (void)dispatch_semaphore_signal(sem);
+                dispatch_group_leave(group);
+            });
+        }
+        (void)dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+        if (partialError) {
+            if (error) {
+                *error = partialError;
+            }
+            return NO;
+        }
+        NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:path];
+        if (!fileHandle) {
+            if (error) {
+                *error = B2CreateError(B2ErrorCodeLocalIOError, @{});
+            }
+            return NO;
+        }
+        NSArray<NSURL *> *sortedChunkUrls = [chunkUrls objectsForKeys:[[chunkUrls allKeys] sortedArrayUsingSelector:@selector(compare:)]
+                                                       notFoundMarker:(NSURL *)[NSURL URLWithString:@"file:///"]];
+        for (NSURL *chunkURL in sortedChunkUrls) {
+            NSData *data = [NSData dataWithContentsOfURL:chunkURL];
+            [fileHandle writeData:data];
+        }
+        [fileHandle closeFile];
+        NSString *downloadSha1 = [[NSFileManager defaultManager] sha1ForFileAtURL:locationURL
+                                                                            error:error];
+        if (!downloadSha1) {
+            return NO;
+        }
+        if (![downloadSha1 isEqualToString:[file contentSha1]]) {
+            if (error) {
+                *error = B2CreateError(B2ErrorChecksumMismatch, @{@"downloadedChecksum": downloadSha1,
+                                                                  @"serverChecksum":[file contentSha1]});
+            }
+            return NO;
+        }
+        return YES;
+    } @catch (NSException *e) {
+        if (error) {
+            *error = B2CreateErrorFromException(e);
+        }
+        return NO;
+    } @finally {
+        for (NSURL *chunkURL in [chunkUrls allValues]) {
+            NSError *localError;
+            if ([[NSFileManager defaultManager] fileExistsAtPath:(NSString *)[chunkURL path]]) {
+                BOOL result = [[NSFileManager defaultManager] removeItemAtURL:chunkURL
+                                                                        error:&localError];
+                if (!result) {
+                    B2LogError(@"Unable to clean up %@ (fileId=%@) - %@", [locationURL path], fileId, localError);
+                }
+            }
+        }
+    }
+}
+
 - (nullable B2File *)uploadLargeFileAtURL:(NSURL *)localFileURL
                                   account:(B2Account *)account
                                  fileName:(NSString *)filename
@@ -617,8 +745,10 @@ static NSUInteger B2KitUploadRetries = 5;
                                                                stopExecution:&stopExecution
                                                                        error:&partialError];
             if (partSha1Checksum) {
-                [checksums setObject:partSha1Checksum
-                              forKey:@(i)];
+                @synchronized (checksums) {
+                    [checksums setObject:partSha1Checksum
+                                  forKey:@(i)];
+                }
             } else {
                 stopExecution = YES;
             }
@@ -634,7 +764,7 @@ static NSUInteger B2KitUploadRetries = 5;
         goto cleanup;
     }
     sortedChecksums = [checksums objectsForKeys:[[checksums allKeys] sortedArrayUsingSelector:@selector(compare:)]
-                                               notFoundMarker:@""];
+                                 notFoundMarker:@""];
     BOOL finishResult = [self finishUploadForFileId:fileId
                                             account:account
                                contentSha1Checksums:sortedChecksums
@@ -660,6 +790,43 @@ cleanup:
 
 // MARK: Private
 
+- (NSURL *)downloadFilePartWithFileId:(NSString *)fileId
+                              account:(B2Account *)account
+                        contentLength:(long long)contentLength
+                           partNumber:(long long)partNumber
+                            chunkSize:(long long)chunkSize
+                        stopExecution:(BOOL *)stopExecution
+                                error:(out NSError *__autoreleasing *)error
+{
+    long long lowerBound = partNumber * chunkSize;
+    long long upperBound = (partNumber * chunkSize + chunkSize < contentLength ? partNumber * chunkSize + chunkSize : contentLength) - 1;
+    B2Range *range = [[B2Range alloc] initWithStart:@(lowerBound)
+                                                end:@(upperBound)];
+    NSURL *chunkURL = [[NSFileManager defaultManager] temporaryFileURL];
+    NSInteger retryCounter = 0;
+    while (!*stopExecution) {
+        BOOL downloadResult = [self downloadFileWithFileId:fileId
+                                                   account:account
+                                                     range:range
+                                               locationURL:chunkURL
+                                                     error:error];
+        if (!downloadResult && ++retryCounter > B2KitDownloadRetries) {
+            NSError *localError;
+            if ([[NSFileManager defaultManager] fileExistsAtPath:(NSString *)[chunkURL path]]) {
+                BOOL result = [[NSFileManager defaultManager] removeItemAtURL:chunkURL
+                                                                        error:&localError];
+                if (!result) {
+                    B2LogError(@"Unable to clean up %@ (fileId=%@) - %@", [chunkURL path], fileId, localError);
+                }
+            }
+            return nil;
+        } else if (downloadResult) {
+            return chunkURL;
+        }
+    }
+    return nil;
+}
+
 - (NSString *)uploadPartForFileIdAndCleanUp:(NSURL *)localFileURL
                                      fileId:(NSString *)fileId
                                     account:(B2Account *)account
@@ -683,7 +850,7 @@ cleanup:
             return nil;
         }
         NSString *chunkSha1 = [chunk sha1];
-        NSUInteger retryCounter = 0;
+        NSInteger retryCounter = 0;
         while (!*stopExecution) {
             BOOL uploadResult = [self uploadPartForFileId:fileId
                                                   account:account
@@ -694,9 +861,11 @@ cleanup:
                                                     error:error];
             if (!uploadResult && ++retryCounter > B2KitUploadRetries) {
                 return nil;
+            } else if (uploadResult) {
+                return chunkSha1;
             }
-            return chunkSha1;
         }
+        return nil;
     } @finally {
         if ([[NSFileManager defaultManager] fileExistsAtPath:(NSString *)[chunkUrl path]]) {
             NSError *localError;

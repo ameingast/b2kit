@@ -165,6 +165,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface B2 (Convenience)
 
+- (BOOL)downloadFileWithFileId:(NSString *)fileId
+                       account:(B2Account *)account
+                   locationURL:(NSURL *)locationURL
+                         error:(out NSError **)error;
+
 - (nullable B2File *)uploadLargeFileAtURL:(NSURL *)localFileURL
                                   account:(B2Account *)account
                                  fileName:(NSString *)filename
