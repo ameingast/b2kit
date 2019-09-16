@@ -16,7 +16,31 @@ B2Kit is a lightweight, zero-dependency Objective-C/Swift library for accessing
 
 ## Installation
 
-```TODO```
+### Installation with CocoaPods
+
+Integrating this framework with Cocoapods is straightforward.
+
+Just declare this dependency in your Podfile:
+
+```ruby
+pod 'B2Kit', :git => 'https://github.com/ameingast/b2kit.git'
+```
+
+### Installation with Carthage                                                  
+
+To use [Carthage](https://github.com/Carthage/Carthage) (a more lightweight, but more hands on package manager) just create a `Cartfile` with
+
+```ruby                                                                         
+github "ameingast/b2kit" "master"                                   
+```                                        
+
+Then follow the [steps in the Carthage guide](https://github.com/Carthage/Carthage#getting-started) basically:
+
+* run `carthage update`                                                         
+* drag the framework from Carthage/Build into Linked Frameworks on the General tab
+* add `carthage copy-frameworks` to a `Run Scripts` phase                       
+
+and you're done.
 
 ## Documentation
 
@@ -26,7 +50,7 @@ For a more detailled B2 service documentation, check out the [official B2 docume
 
 ## Examples
 
-```TODO```
+Some examples are available in the [project playground](Playground.playground/Contents.swift).
 
 ## Tests
 
@@ -56,16 +80,10 @@ If you like this library, please consider donating. Thank you!
 
 ## TODO
 
-###
-
-* CLI 
-
 ### Documentation
 
 * API
 * Endpoints
-* CLI
-* Blocking nature of B2Kit
 
 ### Missing end-points
 
@@ -76,6 +94,6 @@ If you like this library, please consider donating. Thank you!
 
 ## Copyright and License
 
-Copyright (c) 2018, Andreas Meingast <ameingast@gmail.com>.
+Copyright (c) 2018-2019, Andreas Meingast <ameingast@gmail.com>.
 
 The framework is published under a BSD style license. For more information, please see the [LICENSE](./LICENSE) file.
