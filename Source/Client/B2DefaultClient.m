@@ -30,7 +30,9 @@
 {
     self = [super init];
     if (self) {
-        _session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        sessionConfiguration.URLCredentialStorage = nil;
+        _session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
     }
     return self;
 }
