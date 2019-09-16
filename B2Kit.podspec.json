@@ -19,6 +19,7 @@
                             "Source/File/B2FileInfoAction.h",
                             "Source/Logging/B2Logger.h",
                             "Source/File/B2Parts.h",
+                            "Source/Error/B2Error.h",
                             "Source/File/B2File.h",
                             "Source/Bucket/B2Bucket.h",
                             "Source/Key/B2Key.h",
@@ -28,5 +29,7 @@
                             "Source/Bucket/B2BucketType.h",
                             "Source/Categories/NSArray+B2Kit.h",
                             "Source/Categories/NSDictionary+B2Kit.h",
-                            "Source/Categories/NSURL+B2Kit.h"]
+                            "Source/Categories/NSURL+B2Kit.h",
+                            "Source/Categories/NSData+B2Kit.h",
+                            "Source/Categories/NSFileManager+B2Kit.h"]
 }
