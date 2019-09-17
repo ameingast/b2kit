@@ -24,6 +24,7 @@
                              account:(B2Account *)account
                             bucketId:(NSString *)bucketId
                          contentType:(NSString *)contentType
+                         contentSha1:(NSString *)contentSha1
                             fileInfo:(NSDictionary<NSString *, NSString *> *)fileInfo
                                error:(out NSError *__autoreleasing *)error
 {
@@ -31,6 +32,7 @@
                                                                                 account:account
                                                                                bucketId:bucketId
                                                                             contentType:contentType
+                                                                            contentSha1:contentSha1
                                                                                fileInfo:fileInfo
                                                                                   error:error];
 }

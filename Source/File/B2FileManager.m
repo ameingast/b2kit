@@ -395,13 +395,19 @@ NSInteger B2KitDownloadRetries = 5;
                              account:(B2Account *)account
                             bucketId:(NSString *)bucketId
                          contentType:(NSString *)contentType
+                         contentSha1:(NSString *)contentSha1
                             fileInfo:(NSDictionary<NSString *, NSString *> *)fileInfo
                                error:(out NSError *__autoreleasing *)error
 {
+    NSMutableDictionary<NSString *, NSString *> *extendedFileInfo = fileInfo ? [NSMutableDictionary dictionaryWithDictionary:fileInfo] : [NSMutableDictionary new];
+    if (contentSha1) {
+        [extendedFileInfo setObject:contentSha1
+                             forKey:@"large_file_sha1"];
+    }
     NSData *payload = [NSJSONSerialization dataWithJSONObject:@{ @"fileName": filename,
                                                                  @"bucketId": bucketId,
                                                                  @"contentType": contentType,
-                                                                 @"fileInfo": fileInfo ? (NSDictionary<NSString *, NSString *> *)fileInfo : [NSNull new] }
+                                                                 @"fileInfo": [extendedFileInfo count] > 0 ? extendedFileInfo : [NSNull new] }
                                                       options:NSJSONWritingPrettyPrinted
                                                         error:error];
     if (!payload) {
@@ -656,7 +662,8 @@ NSInteger B2KitDownloadRetries = 5;
         if (!downloadSha1) {
             return NO;
         }
-        if (![downloadSha1 isEqualToString:[file contentSha1]]) {
+        if (![downloadSha1 isEqualToString:[file contentSha1]] &&
+            ![downloadSha1 isEqualToString:(NSString *)[file fileInfo][@"large_file_sha1"]]) {
             if (error) {
                 *error = B2CreateError(B2ErrorChecksumMismatch, @{@"downloadedChecksum": downloadSha1,
                                                                   @"serverChecksum":[file contentSha1]});
@@ -688,8 +695,9 @@ NSInteger B2KitDownloadRetries = 5;
                                  fileName:(NSString *)filename
                                  bucketId:(NSString *)bucketId
                               contentType:(NSString *)contentType
+                              contentSha1:(NSString *)contentSha1
                            lastModifiedOn:(NSDate *)lastModifiedOn
-                                 fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
+                                 fileInfo:(NSDictionary<NSString *, NSString *> *)fileInfo
                                     error:(out NSError *__autoreleasing *)error
 {
     NSMutableDictionary<NSNumber *, NSString *> *checksums = [NSMutableDictionary new];
@@ -701,15 +709,17 @@ NSInteger B2KitDownloadRetries = 5;
         return nil;
     }
     if (fileSize <= [[account absoluteMinimumPartSize] longLongValue] * 2LL) {
-        NSString *sha1Checksum = [[NSFileManager defaultManager] sha1ForFileAtURL:localFileURL
-                                                                            error:error];
-        if (!sha1Checksum) {
+        if (!contentSha1) {
+            contentSha1 = [[NSFileManager defaultManager] sha1ForFileAtURL:localFileURL
+                                                                     error:error];
+        }
+        if (!contentSha1) {
             return nil;
         }
         return [self uploadFileAtURL:localFileURL
                              account:account
                             fileName:filename
-                        sha1Checksum:sha1Checksum
+                        sha1Checksum:contentSha1
                           intoBucket:bucketId
                          contentType:contentType
                       lastModifiedOn:lastModifiedOn
@@ -720,6 +730,7 @@ NSInteger B2KitDownloadRetries = 5;
                                             account:account
                                            bucketId:bucketId
                                         contentType:contentType
+                                        contentSha1:contentSha1
                                            fileInfo:fileInfo
                                               error:error];
     if (!fileId) {

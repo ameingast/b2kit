@@ -27,8 +27,9 @@
                                  fileName:(NSString *)filename
                                  bucketId:(NSString *)bucketId
                               contentType:(NSString *)contentType
+                              contentSha1:(NSString *)contentSha1
                            lastModifiedOn:(NSDate *)lastModifiedOn
-                                 fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
+                                 fileInfo:(NSDictionary<NSString *, NSString *> *)fileInfo
                                     error:(out NSError *__autoreleasing *)error
 {
     return [[[B2FileManager alloc] initWithClient:[self client]] uploadLargeFileAtURL:localFileURL
@@ -36,6 +37,7 @@
                                                                              fileName:filename
                                                                              bucketId:bucketId
                                                                           contentType:contentType
+                                                                          contentSha1:contentSha1
                                                                        lastModifiedOn:lastModifiedOn
                                                                              fileInfo:fileInfo
                                                                                 error:error];

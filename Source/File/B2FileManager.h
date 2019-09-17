@@ -102,6 +102,7 @@ extern NSInteger B2KitDownloadRetries;
                                       account:(B2Account *)account
                                      bucketId:(NSString *)bucketId
                                   contentType:(NSString *)contentType
+                                  contentSha1:(nullable NSString *)contentSha1
                                      fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
                                         error:(out NSError **)error;
 - (BOOL)cancelUploadForFileId:(NSString *)fileId
@@ -141,6 +142,7 @@ extern NSInteger B2KitDownloadRetries;
                                  fileName:(NSString *)filename
                                  bucketId:(NSString *)bucketId
                               contentType:(NSString *)contentType
+                              contentSha1:(nullable NSString *)contentSha1
                            lastModifiedOn:(NSDate *)lastModifiedOn
                                  fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
                                     error:(out NSError **)error;

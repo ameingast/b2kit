@@ -138,6 +138,7 @@
                                                  account:[self account]
                                                 bucketId:[[self bucket] bucketId]
                                              contentType:@"application/octet-stream"
+                                             contentSha1:@"10857559cd204a3a9ef6de53fac6ed84f3164cfd"
                                                 fileInfo:nil
                                                    error:&error];
     if (!fileId) {
@@ -213,6 +214,7 @@
                                           fileName:@"test-large.bin"
                                           bucketId:[[self bucket] bucketId]
                                        contentType:@"application/octet-stream"
+                                       contentSha1:@"10857559cd204a3a9ef6de53fac6ed84f3164cfd"
                                     lastModifiedOn:[NSDate date]
                                           fileInfo:nil
                                              error:&error];

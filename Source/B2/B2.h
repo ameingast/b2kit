@@ -134,6 +134,7 @@ NS_ASSUME_NONNULL_BEGIN
                                       account:(B2Account *)account
                                      bucketId:(NSString *)bucketId
                                   contentType:(NSString *)contentType
+                                  contentSha1:(nullable NSString *)contentSha1
                                      fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
                                         error:(out NSError **)error;
 - (BOOL)cancelUploadForFileId:(NSString *)fileId
@@ -175,6 +176,7 @@ NS_ASSUME_NONNULL_BEGIN
                                  fileName:(NSString *)filename
                                  bucketId:(NSString *)bucketId
                               contentType:(NSString *)contentType
+                              contentSha1:(nullable NSString *)contentSha1
                            lastModifiedOn:(NSDate *)lastModifiedOn
                                  fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
                                     error:(out NSError **)error;
