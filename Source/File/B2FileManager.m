@@ -716,15 +716,23 @@ NSInteger B2KitDownloadRetries = 5;
         if (!contentSha1) {
             return nil;
         }
-        return [self uploadFileAtURL:localFileURL
-                             account:account
-                            fileName:filename
-                        sha1Checksum:contentSha1
-                          intoBucket:bucketId
-                         contentType:contentType
-                      lastModifiedOn:lastModifiedOn
-                            fileInfo:fileInfo
-                               error:error];
+        long retryCounter = 0;
+        while (true) {
+            B2File *result =  [self uploadFileAtURL:localFileURL
+                                            account:account
+                                           fileName:filename
+                                       sha1Checksum:contentSha1
+                                         intoBucket:bucketId
+                                        contentType:contentType
+                                     lastModifiedOn:lastModifiedOn
+                                           fileInfo:fileInfo
+                                              error:error];
+            if (!result && ++retryCounter > B2KitUploadRetries) {
+                return nil;
+            } else if (result) {
+                return result;
+            }
+        }
     }
     NSString *fileId = [self startUploadForFileName:filename
                                             account:account
