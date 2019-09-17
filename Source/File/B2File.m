@@ -19,7 +19,7 @@
 @synthesize bucketId = _bucketId;
 @synthesize contentLength = _contentLength;
 @synthesize contentType = _contentType;
-@synthesize metadata = _metadata;
+@synthesize fileInfo = _fileInfo;
 @synthesize action = _action;
 @synthesize uploadDate = _uploadDate;
 
@@ -30,7 +30,7 @@
              contentLength:(NSNumber *)contentLength
                contentSha1:(NSString *)contentSha1
                contentType:(NSString *)contentType
-                  metadata:(NSDictionary<NSString *, NSString *> *)metadata
+                  fileInfo:(NSDictionary<NSString *, NSString *> *)fileInfo
                     action:(B2FileInfoAction)action
                 uploadDate:(NSDate *)uploadDate
 {
@@ -43,7 +43,7 @@
         _contentLength = contentLength;
         _contentSha1 = contentSha1;
         _contentType = contentType;
-        _metadata = metadata;
+        _fileInfo = fileInfo;
         _action = action;
         _uploadDate = uploadDate;
     }

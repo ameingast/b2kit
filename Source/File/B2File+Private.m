@@ -39,7 +39,7 @@
                                         contentLength:(NSNumber *)dictionary[@"contentLength"]
                                           contentSha1:(NSString *)dictionary[@"contentSha1"]
                                           contentType:(NSString *)dictionary[@"contentType"]
-                                             metadata:[NSDictionary new]
+                                             fileInfo:@{}
                                                action:B2FileInfoActionFromString((NSString *)dictionary[@"action"])
                                            uploadDate:[NSDate dateWithTimeIntervalSince1970:[(NSNumber *)dictionary[@"uploadTimestamp"] integerValue] / 1000]];
         [result addObject:file];
@@ -85,7 +85,7 @@
                             contentLength:(NSNumber *)dictionary[@"contentLength"]
                               contentSha1:(NSString *)dictionary[@"contentSha1"]
                               contentType:(NSString *)dictionary[@"contentType"]
-                                 metadata:[NSDictionary new]
+                                 fileInfo:(NSDictionary *)dictionary[@"fileInfo"]
                                    action:B2FileInfoActionFromString((NSString *)dictionary[@"action"])
                                uploadDate:[NSDate dateWithTimeIntervalSince1970:[(NSNumber *)dictionary[@"uploadTimestamp"] integerValue] / 1000]];
 }

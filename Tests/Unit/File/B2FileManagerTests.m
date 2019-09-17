@@ -67,7 +67,7 @@
                                             contentLength:@(1)
                                               contentSha1:@"contentSha1"
                                               contentType:@"contentType"
-                                                 metadata:@{}
+                                                 fileInfo:@{}
                                                    action:B2FileInfoActionUploaded
                                                uploadDate:[NSDate dateWithTimeIntervalSince1970:0]];
     B2File *file = [[self fileManager] fileInfoForFileId:@"fileId"
@@ -151,7 +151,7 @@
                                                                                                    contentLength:@(1)
                                                                                                      contentSha1:@"contentSha1"
                                                                                                      contentType:@"contentType"
-                                                                                                        metadata:@{}
+                                                                                                        fileInfo:@{}
                                                                                                           action:B2FileInfoActionUploaded
                                                                                                       uploadDate:[NSDate dateWithTimeIntervalSince1970:0]]]];
     B2FileNames *fileNames = [[self fileManager] listFilesWithBucketId:@"bucketId"
@@ -208,7 +208,7 @@
                                                                                                           contentLength:@(1)
                                                                                                             contentSha1:@"contentSha1"
                                                                                                             contentType:@"contentType"
-                                                                                                               metadata:@{}
+                                                                                                               fileInfo:@{}
                                                                                                                  action:B2FileInfoActionUploaded
                                                                                                              uploadDate:[NSDate dateWithTimeIntervalSince1970:0]]]];
     B2FileVersions * fileVersions = [[self fileManager] listFileVersionsWithBucketId:@"bucketId"
@@ -332,7 +332,7 @@
                                             contentLength:@(0)
                                               contentSha1:@"contentSha1"
                                               contentType:@"contentType"
-                                                 metadata:@{}
+                                                 fileInfo:@{}
                                                    action:B2FileInfoActionUploaded
                                                uploadDate:[NSDate dateWithTimeIntervalSince1970:1]];
     B2File *file = [[self fileManager] uploadFileAtURL:(NSURL *)[NSURL URLWithString:@"file:///file"]
@@ -470,6 +470,7 @@
                              @"accountId": @"accountId",
                              @"bucketId": @"bucketId",
                              @"contentType": @"contentType",
+                             @"contentSha1": @"contentSha1",
                              @"fileInfo": @{},
                              @"uploadTimestamp": @(0) }];
     NSMutableURLRequest *expectedRequest = [NSMutableURLRequest requestWithURL:(NSURL *)[NSURL URLWithString:@"http://example.com/apiURL/b2api/v1/b2_start_large_file"]
@@ -477,12 +478,13 @@
                                                                       httpBody:@{ @"fileName": @"fileName",
                                                                                   @"bucketId": @"bucketId",
                                                                                   @"contentType": @"contentType",
-                                                                                  @"fileInfo": @{} }
+                                                                                  @"fileInfo": @{@"large_file_sha1": @"contentSha1"} }
                                                                        headers:@{}];
     NSString *fileId = [[self fileManager] startUploadForFileName:@"fileName"
                                                           account:[self account]
                                                          bucketId:@"bucketId"
                                                       contentType:@"contentType"
+                                                      contentSha1:@"contentSha1"
                                                          fileInfo:@{}
                                                             error:&error];
     [self verifyURLRequest:expectedRequest];
@@ -497,6 +499,7 @@
                                                           account:[self account]
                                                          bucketId:@"bucketId"
                                                       contentType:@"contentType"
+                                                      contentSha1:@"contentSha1"
                                                          fileInfo:@{}
                                                             error:&error];
     XCTAssertNil(fileId);

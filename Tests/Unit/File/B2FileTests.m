@@ -24,7 +24,7 @@
                                     contentLength:@(1)
                                       contentSha1:@"contentSha1"
                                       contentType:@"contentType"
-                                         metadata:@{}
+                                         fileInfo:@{}
                                            action:B2FileInfoActionUploaded
                                        uploadDate:[NSDate dateWithTimeIntervalSince1970:0]];
     XCTAssertEqualObjects(@"fileId", [file fileId]);
@@ -54,7 +54,7 @@
                                             contentLength:@(1)
                                               contentSha1:@"contentSha1"
                                               contentType:@"contentType"
-                                                 metadata:@{}
+                                                 fileInfo:@{}
                                                    action:B2FileInfoActionUploaded
                                                uploadDate:[NSDate dateWithTimeIntervalSince1970:0]];
     NSArray<B2File *> *files = [B2File filesFromArray:@[ @{ @"fileId": @"fileId",
@@ -81,7 +81,7 @@
                                             contentLength:@(1)
                                               contentSha1:@"contentSha1"
                                               contentType:@"contentType"
-                                                 metadata:@{}
+                                                 fileInfo:@{}
                                                    action:B2FileInfoActionUploaded
                                                uploadDate:[NSDate dateWithTimeIntervalSince1970:0]];
     B2File *file = [[B2File alloc] initWithJSONData:(NSData *)[NSJSONSerialization dataWithJSONObject:@{ @"fileId": @"fileId",

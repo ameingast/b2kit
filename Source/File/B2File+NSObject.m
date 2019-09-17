@@ -32,7 +32,7 @@
     ([self contentLength] == [other contentLength] || [[self contentLength] isEqual:[other contentLength]]) &&
     ([self contentSha1] == [other contentSha1] || [[self contentSha1] isEqual:[other contentSha1]]) &&
     ([self contentType] == [other contentType] || [[self contentType] isEqual:[other contentType]]) &&
-    ([self metadata] == [other metadata] || [[self metadata] isEqual:[other metadata]]) &&
+    ([self fileInfo] == [other fileInfo] || [[self fileInfo] isEqual:[other fileInfo]]) &&
     ([self uploadDate] == [other uploadDate] || [[self uploadDate] isEqual:[other uploadDate]]) &&
     [self action] == [other action];
 }
@@ -47,7 +47,7 @@
     [self contentLength].hash ^
     [self contentSha1].hash ^
     [self contentType].hash ^
-    [self metadata].hash ^
+    [self fileInfo].hash ^
     [self uploadDate].hash ^
     @([self action]).hash;
 }
@@ -55,7 +55,7 @@
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"<B2File %p> {fileId=%@, filename=%@, accountId=%@, bucketId=%@, "
-            "contentLength=%@, contentSha1=%@, contentType=%@, metadata=%@, action=%@, uploadDate=%@}",
+            "contentLength=%@, contentSha1=%@, contentType=%@, fileInfo=%@, action=%@, uploadDate=%@}",
             (__bridge void *)self,
             [self fileId],
             [self filename],
@@ -64,7 +64,7 @@
             [self contentLength],
             [self contentSha1],
             [self contentType],
-            [[self metadata] singleLineDescription],
+            [[self fileInfo] singleLineDescription],
             NSStringFromB2FileInfoAction([self action]),
             [self uploadDate]];
 }

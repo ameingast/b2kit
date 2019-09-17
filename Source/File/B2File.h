@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, nonnull) NSString *bucketId;
 @property (nonatomic, readonly, nonnull) NSNumber *contentLength;
 @property (nonatomic, readonly, nonnull) NSString *contentType;
-@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSString *> *metadata;
+@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSString *> *fileInfo;
 @property (nonatomic, readonly, nonnull) NSDate *uploadDate;
 @property (nonatomic, readonly) B2FileInfoAction action;
 
@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
              contentLength:(NSNumber *)contentLength
                contentSha1:(NSString *)contentSha1
                contentType:(NSString *)contentType
-                  metadata:(NSDictionary<NSString *, NSString *> *)metadata
+                  fileInfo:(NSDictionary<NSString *, NSString *> *)fileInfo
                     action:(B2FileInfoAction)action
                 uploadDate:(NSDate *)uploadDate;
 
