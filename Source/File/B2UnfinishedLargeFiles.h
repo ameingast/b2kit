@@ -34,11 +34,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface B2UnfinishedLargeFiles : NSObject
 
-@property (nonatomic, nonnull, readonly) NSArray<B2UnfinishedLargeFile *> *files;
-@property (nonatomic, nonnull, readonly) NSString *nextFileId;
+@property (nonatomic, readonly, nonnull) NSArray<B2UnfinishedLargeFile *> *files;
+@property (nonatomic, readonly, nullable) NSString *nextFileId;
 
 - (B2UnfinishedLargeFiles *)initWithFiles:(NSArray<B2UnfinishedLargeFile *> *)files
-                               nextFileId:(NSString *)nextFileId;
+                               nextFileId:(nullable NSString *)nextFileId;
 
 @end
 

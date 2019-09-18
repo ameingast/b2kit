@@ -53,7 +53,9 @@
     self = [super init];
     if (self) {
         _files = files;
-        _nextFileId = nextFileId;
+        if (![nextFileId isKindOfClass:[NSNull class]]) {
+            _nextFileId = nextFileId;
+        }
     }
     return self;
 }

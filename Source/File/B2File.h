@@ -42,22 +42,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface B2FileNames : NSObject
 
-@property (nonatomic, readonly, nonnull) NSString *nextFileName;
+@property (nonatomic, readonly, nullable) NSString *nextFileName;
 @property (nonatomic, readonly, nonnull) NSArray<B2File *> *files;
 
-- (B2FileNames *)initWithNextFileName:(NSString *)nextFileName
+- (B2FileNames *)initWithNextFileName:(nullable NSString *)nextFileName
                                 files:(NSArray<B2File *> *)files;
 
 @end
 
 @interface B2FileVersions : NSObject
 
-@property (nonatomic, readonly, nonnull) NSString *nextFileId;
-@property (nonatomic, readonly, nonnull) NSString *nextFileName;
+@property (nonatomic, readonly, nullable) NSString *nextFileId;
+@property (nonatomic, readonly, nullable) NSString *nextFileName;
 @property (nonatomic, readonly, nonnull) NSArray<B2File *> *files;
 
-- (B2FileVersions *)initWithNextFileId:(NSString *)nextFileId
-                          nextFileName:(NSString *)nextFileName
+- (B2FileVersions *)initWithNextFileId:(nullable NSString *)nextFileId
+                          nextFileName:(nullable NSString *)nextFileName
                                  files:(NSArray<B2File *> *)files;
 
 @end

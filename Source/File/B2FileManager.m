@@ -141,7 +141,7 @@ NSInteger B2KitDownloadRetries = 5;
                                               account:account
                                              bucketId:bucketId
                                                 error:error];
-    return [[B2FileNames alloc] initWithNextFileName:(NSString *)json[@"nextFileName"]
+    return [[B2FileNames alloc] initWithNextFileName:json[@"nextFileName"]
                                                files:files];
 }
 
@@ -185,8 +185,8 @@ NSInteger B2KitDownloadRetries = 5;
                                               account:account
                                              bucketId:bucketId
                                                 error:error];
-    return [[B2FileVersions alloc] initWithNextFileId:(NSString *)json[@"nextFileId"]
-                                         nextFileName:(NSString *)json[@"nextFileName"]
+    return [[B2FileVersions alloc] initWithNextFileId:json[@"nextFileId"]
+                                         nextFileName:json[@"nextFileName"]
                                                 files:files];
 }
 

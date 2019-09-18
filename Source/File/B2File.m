@@ -62,7 +62,9 @@
 {
     self = [self init];
     if (self) {
-        _nextFileName = nextFileName;
+        if (![nextFileName isKindOfClass:[NSNull class]]) {
+            _nextFileName = nextFileName;
+        }
         _files = files;
     }
     return self;
@@ -82,8 +84,13 @@
 {
     self = [self init];
     if (self) {
-        _nextFileId = nextFileId;
-        _nextFileName = nextFileName;
+
+        if (![nextFileId isKindOfClass:[NSNull class]]) {
+            _nextFileId = nextFileId;
+        }
+        if (![nextFileName isKindOfClass:[NSNull class]]) {
+            _nextFileName = nextFileName;
+        }
         _files = files;
     }
     return self;
