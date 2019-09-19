@@ -22,22 +22,25 @@
         return NO;
     }
     B2ResumeContext *other = obj;
-    return ([self chunkSize] == [other chunkSize] || [[self chunkSize] isEqual:[other chunkSize]]) &&
+    return ([self date] == [other date] || [[self date] isEqual:[other date]]) &&
+    ([self chunkSize] == [other chunkSize] || [[self chunkSize] isEqual:[other chunkSize]]) &&
     ([self fileId] == [other fileId] || [[self fileId] isEqual:[other fileId]]) &&
     ([self completedChunks] == [other completedChunks] || [[self completedChunks] isEqual:[other completedChunks]]);
 }
 
 - (NSUInteger)hash
 {
-    return [self chunkSize].hash ^
+    return [self date].hash ^
+    [self chunkSize].hash ^
     [self fileId].hash ^
     [self completedChunks].hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<B2ResumeContext %p> {chunkSize=%@, fileId=%@, completedChunks=%@}",
+    return [NSString stringWithFormat:@"<B2ResumeContext %p> {date=%@, chunkSize=%@, fileId=%@, completedChunks=%@}",
             (__bridge void *)self,
+            [self date],
             [self chunkSize],
             [self fileId],
             [self completedChunks]];

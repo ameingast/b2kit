@@ -227,6 +227,11 @@
         XCTFail(@"File upload failed: %@", error);
         return;
     }
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:resumeContext];
+    B2ResumeContext *decodedResumeContext = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    XCTAssertNotNil(decodedResumeContext);
+    XCTAssertEqualObjects(@{@(1): @"10857559cd204a3a9ef6de53fac6ed84f3164cfd"},
+                          [decodedResumeContext completedChunks]);
     BOOL downloadResult = [[self b2] downloadFileWithFileId:[file fileId]
                                                     account:[self account]
                                                 locationURL:[self targetURL]

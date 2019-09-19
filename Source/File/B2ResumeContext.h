@@ -10,8 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface B2ResumeContext : NSObject
+@interface B2ResumeContext : NSObject<NSCoding>
 
+@property (nonatomic, nullable, readonly) NSDate *date;
 @property (nonatomic, nullable) NSNumber *chunkSize;
 @property (nonatomic, nullable) NSString *fileId;
 @property (nonatomic, nonnull) NSMutableDictionary<NSNumber *, NSString *> *completedChunks;

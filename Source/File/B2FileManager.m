@@ -619,6 +619,7 @@ NSInteger B2KitDownloadRetries = 5;
                 if (stopExecution) {
                     (void)dispatch_semaphore_signal(sem);
                     dispatch_group_leave(group);
+                    return;
                 }
                 NSURL *chunkUrl = [self downloadFilePartWithFileId:fileId
                                                            account:account
@@ -761,11 +762,6 @@ NSInteger B2KitDownloadRetries = 5;
     NSString *fileId;
     if (resumeContext && [resumeContext fileId]) {
         fileId = [resumeContext fileId];
-        if (![self fileInfoForFileId:fileId
-                        account:account
-                               error:error]) {
-            return nil;
-        }
         B2LogDebug(@"Set fileId from resumeContext: %@", fileId);
     } else {
         fileId = [self startUploadForFileName:filename
@@ -787,11 +783,13 @@ NSInteger B2KitDownloadRetries = 5;
     dispatch_group_t group = dispatch_group_create();
     for (long long i = 0; i * chunkSize < fileSize; i++) {
         dispatch_group_enter(group);
+        // lots of threads
         dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             (void)dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
             if (stopExecution) {
                 (void)dispatch_semaphore_signal(sem);
                 dispatch_group_leave(group);
+                return;
             }
             NSString *partSha1Checksum = [self uploadPartForFileIdAndCleanUp:localFileURL
                                                                       fileId:fileId
