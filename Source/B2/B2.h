@@ -22,6 +22,7 @@
 #import <B2Kit/B2Range.h>
 #import <B2Kit/B2UnfinishedLargeFiles.h>
 #import <B2Kit/B2UploadURL.h>
+#import <B2Kit/B2ResumeContext.h>
 
 /// MARK: Categories
 
@@ -179,6 +180,8 @@ NS_ASSUME_NONNULL_BEGIN
                               contentSha1:(nullable NSString *)contentSha1
                            lastModifiedOn:(NSDate *)lastModifiedOn
                                  fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
+                            resumeContext:(nullable B2ResumeContext *)resumeContext
+                     resumeContextChanged:(nullable void (^)(B2ResumeContext *))callback
                                     error:(out NSError **)error;
 
 @end

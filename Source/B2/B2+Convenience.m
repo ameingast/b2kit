@@ -30,6 +30,8 @@
                               contentSha1:(NSString *)contentSha1
                            lastModifiedOn:(NSDate *)lastModifiedOn
                                  fileInfo:(NSDictionary<NSString *, NSString *> *)fileInfo
+                            resumeContext:(out B2ResumeContext *)resumeContext
+                     resumeContextChanged:(void (^)(B2ResumeContext *))callback
                                     error:(out NSError *__autoreleasing *)error
 {
     return [[[B2FileManager alloc] initWithClient:[self client]] uploadLargeFileAtURL:localFileURL
@@ -40,6 +42,8 @@
                                                                           contentSha1:contentSha1
                                                                        lastModifiedOn:lastModifiedOn
                                                                              fileInfo:fileInfo
+                                                                        resumeContext:resumeContext
+                                                                 resumeContextChanged:callback
                                                                                 error:error];
 }
 

@@ -209,6 +209,7 @@
     NSError *error;
     NSURL *fileURL = (NSURL *)[[NSBundle bundleForClass:[self class]] URLForResource:@"Blib"
                                                                        withExtension:@"bin"];
+    B2ResumeContext *resumeContext = [B2ResumeContext new];
     B2File *file = [[self b2] uploadLargeFileAtURL:fileURL
                                            account:[self account]
                                           fileName:@"test-large.bin"
@@ -217,6 +218,10 @@
                                        contentSha1:@"10857559cd204a3a9ef6de53fac6ed84f3164cfd"
                                     lastModifiedOn:[NSDate date]
                                           fileInfo:nil
+                                     resumeContext:resumeContext
+                              resumeContextChanged:^(B2ResumeContext *ctx) {
+                                  NSLog(@"Resume context changed: %@", ctx);
+                              }
                                              error:&error];
     if (!file) {
         XCTFail(@"File upload failed: %@", error);

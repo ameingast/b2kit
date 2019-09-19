@@ -23,6 +23,7 @@
 #import "B2Parts+Private.h"
 #import "B2Range.h"
 #import "B2Logger.h"
+#import "B2ResumeContext.h"
 #import "NSFileManager+B2Kit.h"
 #import "NSData+B2Kit.h"
 
@@ -49,6 +50,8 @@ NSInteger B2KitDownloadRetries = 5;
                                           partNumber:(long long)partNumber
                                                 size:(long long)size
                                        stopExecution:(BOOL *)stopExecution
+                                       resumeContext:(out B2ResumeContext *)resumeContext
+                                resumeContextChanged:(void (^_Nullable)(B2ResumeContext *))callback
                                                error:(out NSError **)error;
 
 @end
@@ -698,17 +701,28 @@ NSInteger B2KitDownloadRetries = 5;
                               contentSha1:(NSString *)contentSha1
                            lastModifiedOn:(NSDate *)lastModifiedOn
                                  fileInfo:(NSDictionary<NSString *, NSString *> *)fileInfo
+                            resumeContext:(out B2ResumeContext *)resumeContext
+                     resumeContextChanged:(void (^)(B2ResumeContext *))callback
                                     error:(out NSError *__autoreleasing *)error
 {
     NSMutableDictionary<NSNumber *, NSString *> *checksums = [NSMutableDictionary new];
     NSArray<NSString *> *sortedChecksums;
-    long long chunkSize = B2UploadChunkSize > 0 ? B2UploadChunkSize : [[account recommendedPartSize] longLongValue];
+    long long chunkSize;
+    if (resumeContext && [resumeContext chunkSize]) {
+        B2LogDebug(@"Set chunkSize from resumeContext: %@", [resumeContext chunkSize]);
+        chunkSize = [[resumeContext chunkSize] longLongValue];
+    } else {
+        chunkSize = B2UploadChunkSize > 0 ? B2UploadChunkSize : [[account recommendedPartSize] longLongValue];
+        B2LogDebug(@"Set chunkSize: %@", @(chunkSize));
+        [resumeContext setChunkSize:@(chunkSize)];
+    }
     long long fileSize = fileSize = [[NSFileManager defaultManager] fileSize:localFileURL
                                                                        error:error];
     if (fileSize < 0) {
         return nil;
     }
     if (fileSize <= [[account absoluteMinimumPartSize] longLongValue] * 2LL) {
+        B2LogDebug(@"Single chunk convenience upload");
         if (!contentSha1) {
             contentSha1 = [[NSFileManager defaultManager] sha1ForFileAtURL:localFileURL
                                                                      error:error];
@@ -730,17 +744,40 @@ NSInteger B2KitDownloadRetries = 5;
             if (!result && ++retryCounter > B2KitUploadRetries) {
                 return nil;
             } else if (result) {
+                if (resumeContext) {
+                    [resumeContext setFileId:[result fileId]];
+                    [resumeContext setChunkSize:[result contentLength]];
+                    [resumeContext addChunkWithPart:@(1)
+                                               sha1:contentSha1];
+                }
+                if (callback) {
+                    callback(resumeContext);
+                }
                 return result;
             }
         }
     }
-    NSString *fileId = [self startUploadForFileName:filename
-                                            account:account
-                                           bucketId:bucketId
-                                        contentType:contentType
-                                        contentSha1:contentSha1
-                                           fileInfo:fileInfo
-                                              error:error];
+    B2LogDebug(@"Multi-chunk convenience download");
+    NSString *fileId;
+    if (resumeContext && [resumeContext fileId]) {
+        fileId = [resumeContext fileId];
+        if (![self fileInfoForFileId:fileId
+                        account:account
+                               error:error]) {
+            return nil;
+        }
+        B2LogDebug(@"Set fileId from resumeContext: %@", fileId);
+    } else {
+        fileId = [self startUploadForFileName:filename
+                                      account:account
+                                     bucketId:bucketId
+                                  contentType:contentType
+                                  contentSha1:contentSha1
+                                     fileInfo:fileInfo
+                                        error:error];
+        [resumeContext setFileId:fileId];
+        B2LogDebug(@"Set fileId: %@", fileId);
+    }
     if (!fileId) {
         return nil;
     }
@@ -762,6 +799,8 @@ NSInteger B2KitDownloadRetries = 5;
                                                                   partNumber:i
                                                                         size:chunkSize
                                                                stopExecution:&stopExecution
+                                                               resumeContext:resumeContext
+                                                        resumeContextChanged:callback
                                                                        error:&partialError];
             if (partSha1Checksum) {
                 @synchronized (checksums) {
@@ -780,6 +819,7 @@ NSInteger B2KitDownloadRetries = 5;
         if (error) {
             *error = partialError;
         }
+        B2LogDebug(@"Upload failed after retries: %@", partialError);
         goto cleanup;
     }
     sortedChecksums = [checksums objectsForKeys:[[checksums allKeys] sortedArrayUsingSelector:@selector(compare:)]
@@ -789,6 +829,7 @@ NSInteger B2KitDownloadRetries = 5;
                                contentSha1Checksums:sortedChecksums
                                               error:error];
     if (!finishResult) {
+        B2LogDebug(@"Upload failed during finish: %@", error ? *error : nil);
         goto cleanup;
     }
     return [self fileInfoForFileId:fileId
@@ -852,10 +893,23 @@ cleanup:
                                  partNumber:(long long)partNumber
                                        size:(long long)size
                               stopExecution:(BOOL *)stopExecution
+                              resumeContext:(out B2ResumeContext *)resumeContext
+                       resumeContextChanged:(void (^)(B2ResumeContext *))callback
                                       error:(out NSError *__autoreleasing *)error
 {
     NSURL *chunkUrl = [[NSFileManager defaultManager] temporaryFileURL];
+    NSNumber *chunkNumber = @(partNumber + 1);
     @try {
+        if (resumeContext) {
+            B2LogDebug(@"Partial download with resumeContext: %@", resumeContext);
+            for (NSNumber *completedChunk in [resumeContext completedChunks]) {
+                if ([chunkNumber isEqualToNumber:completedChunk]) {
+                    B2LogDebug(@"ResumeContext contains chunk: %@ - skipping upload", chunkNumber);
+                    return [resumeContext completedChunks][chunkNumber];
+                }
+            }
+            B2LogDebug(@"ResumeContext does not contain chunk: %@ - proceeding with upload", chunkNumber);
+        }
         NSData *chunk = [NSData dataWithContentsOfURL:localFileURL
                                              atOffset:(unsigned long long)partNumber * (unsigned long long)size
                                              withSize:(NSUInteger)size
@@ -874,13 +928,22 @@ cleanup:
             BOOL uploadResult = [self uploadPartForFileId:fileId
                                                   account:account
                                              dataLocation:chunkUrl
-                                               partNumber:@(partNumber + 1)
+                                               partNumber:chunkNumber
                                             contentLength:@([chunk length])
                                       contentSha1Checksum:chunkSha1
                                                     error:error];
             if (!uploadResult && ++retryCounter > B2KitUploadRetries) {
+                B2LogDebug(@"Upload failed after %ld retries", retryCounter);
                 return nil;
             } else if (uploadResult) {
+                if (resumeContext) {
+                    B2LogDebug(@"Upload succeeded with resumeContext. Recording chunk: %@", chunkNumber);
+                    [resumeContext addChunkWithPart:chunkNumber
+                                               sha1:chunkSha1];
+                }
+                if (callback) {
+                    callback(resumeContext);
+                }
                 return chunkSha1;
             }
         }

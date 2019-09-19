@@ -26,6 +26,7 @@ extern NSInteger B2KitDownloadRetries;
 @class B2Range;
 @class B2UnfinishedLargeFiles;
 @class B2Parts;
+@class B2ResumeContext;
 @protocol B2Client;
 
 @interface B2FileManager : NSObject
@@ -145,6 +146,8 @@ extern NSInteger B2KitDownloadRetries;
                               contentSha1:(nullable NSString *)contentSha1
                            lastModifiedOn:(NSDate *)lastModifiedOn
                                  fileInfo:(nullable NSDictionary<NSString *, NSString *> *)fileInfo
+                            resumeContext:(nullable B2ResumeContext *)resumeContext
+                     resumeContextChanged:(nullable void (^)(B2ResumeContext *))callback
                                     error:(out NSError **)error;
 
 @end
