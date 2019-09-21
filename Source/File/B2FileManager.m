@@ -907,26 +907,31 @@ cleanup:
             }
             B2LogDebug(@"ResumeContext does not contain chunk: %@ - proceeding with upload", chunkNumber);
         }
-        NSData *chunk = [NSData dataWithContentsOfURL:localFileURL
-                                             atOffset:(unsigned long long)partNumber * (unsigned long long)size
-                                             withSize:(NSUInteger)size
-                                                error:error];
-        if (!chunk) {
-            return nil;
+        NSString *chunkSha1;
+        NSUInteger chunkLength;
+        @autoreleasepool {
+            NSData *chunk = [NSData dataWithContentsOfURL:localFileURL
+                                                 atOffset:(unsigned long long)partNumber * (unsigned long long)size
+                                                 withSize:(NSUInteger)size
+                                                    error:error];
+            if (!chunk) {
+                return nil;
+            }
+            BOOL result = [chunk writeToURL:chunkUrl
+                                 atomically:NO];
+            if (!result) {
+                return nil;
+            }
+            chunkSha1 = [chunk sha1];
+            chunkLength = [chunk length];
         }
-        BOOL result = [chunk writeToURL:chunkUrl
-                             atomically:NO];
-        if (!result) {
-            return nil;
-        }
-        NSString *chunkSha1 = [chunk sha1];
         NSInteger retryCounter = 0;
         while (!*stopExecution) {
             BOOL uploadResult = [self uploadPartForFileId:fileId
                                                   account:account
                                              dataLocation:chunkUrl
                                                partNumber:chunkNumber
-                                            contentLength:@([chunk length])
+                                            contentLength:@(chunkLength)
                                       contentSha1Checksum:chunkSha1
                                                     error:error];
             if (!uploadResult && ++retryCounter > B2KitUploadRetries) {
