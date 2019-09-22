@@ -8,6 +8,8 @@
 
 @import Foundation;
 
+#import "B2Lifecycle.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 extern long long B2UploadChunkSize;
@@ -29,9 +31,10 @@ extern NSInteger B2KitDownloadRetries;
 @class B2ResumeContext;
 @protocol B2Client;
 
-@interface B2FileManager : NSObject
+@interface B2FileManager : NSObject<B2Stop>
 
-@property (readonly, nonatomic) id<B2Client> client;
+@property (readonly, nullable, nonatomic) id<B2Client> client;
+@property (readonly, nonnull, nonatomic) NSMutableArray<NSURL *> *staleChunks;
 
 - (B2FileManager *)initWithClient:(id<B2Client>)client;
 

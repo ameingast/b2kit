@@ -15,9 +15,9 @@
                               applicationKey:(NSString *)applicationKey
                                        error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2AccountManager alloc] initWithClient:[self client]] authorizeAccountWithAccountId:accountId
-                                                                                   applicationKey:applicationKey
-                                                                                            error:error];
+    return [[[self accountManager] initWithClient:[self client]] authorizeAccountWithAccountId:accountId
+                                                                                applicationKey:applicationKey
+                                                                                         error:error];
 }
 
 @end

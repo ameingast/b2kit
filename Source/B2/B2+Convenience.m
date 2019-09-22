@@ -16,10 +16,10 @@
                    locationURL:(NSURL *)locationURL
                          error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2FileManager alloc] initWithClient:[self client]] downloadFileWithFileId:fileId
-                                                                                account:account
-                                                                            locationURL:locationURL
-                                                                                  error:error];
+    return [[[self fileManager] initWithClient:[self client]] downloadFileWithFileId:fileId
+                                                                             account:account
+                                                                         locationURL:locationURL
+                                                                               error:error];
 }
 
 - (nullable B2File *)uploadLargeFileAtURL:(NSURL *)localFileURL
@@ -34,17 +34,17 @@
                      resumeContextChanged:(void (^)(B2ResumeContext *))callback
                                     error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2FileManager alloc] initWithClient:[self client]] uploadLargeFileAtURL:localFileURL
-                                                                              account:account
-                                                                             fileName:filename
-                                                                             bucketId:bucketId
-                                                                          contentType:contentType
-                                                                          contentSha1:contentSha1
-                                                                       lastModifiedOn:lastModifiedOn
-                                                                             fileInfo:fileInfo
-                                                                        resumeContext:resumeContext
-                                                                 resumeContextChanged:callback
-                                                                                error:error];
+    return [[[self fileManager] initWithClient:[self client]] uploadLargeFileAtURL:localFileURL
+                                                                           account:account
+                                                                          fileName:filename
+                                                                          bucketId:bucketId
+                                                                       contentType:contentType
+                                                                       contentSha1:contentSha1
+                                                                    lastModifiedOn:lastModifiedOn
+                                                                          fileInfo:fileInfo
+                                                                     resumeContext:resumeContext
+                                                              resumeContextChanged:callback
+                                                                             error:error];
 }
 
 @end

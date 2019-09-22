@@ -59,14 +59,42 @@ NSInteger B2KitDownloadRetries = 5;
 @implementation B2FileManager
 
 @synthesize client = _client;
+@synthesize staleChunks = _staleChunks;
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _staleChunks = [NSMutableArray array];
+    }
+    return self;
+}
 
 - (B2FileManager *)initWithClient:(id<B2Client>)client
 {
-    self = [super init];
+    self = [self init];
     if (self) {
         _client = client;
     }
     return self;
+}
+
+// Mark: B2Lifecycle
+
+- (void)stop
+{
+    B2LogDebug(@"Cleaning up stale chunk files: %@", [self staleChunks]);
+    for (NSURL *chunkURL in [self staleChunks]) {
+        NSError *error;
+        if ([[NSFileManager defaultManager] fileExistsAtPath:(NSString *)[chunkURL path]]) {
+            BOOL result = [[NSFileManager defaultManager] removeItemAtURL:chunkURL
+                                                                    error:&error];
+            if (!result) {
+                B2LogError(@"Unable to clean up: %@ - %@", chunkURL, error);
+            }
+        }
+    }
+    [[self staleChunks] removeAllObjects];
 }
 
 // MARK: Meta
@@ -630,6 +658,7 @@ NSInteger B2KitDownloadRetries = 5;
                                                              error:&partialError];
                 if (chunkUrl) {
                     @synchronized (chunkUrls) {
+                        [[self staleChunks] addObject:chunkUrl];
                         [chunkUrls setObject:chunkUrl
                                       forKey:@(i)];
                     }
@@ -681,6 +710,7 @@ NSInteger B2KitDownloadRetries = 5;
         }
         return NO;
     } @finally {
+        B2LogDebug(@"Cleaning up stale chunk files: %@", chunkUrls);
         for (NSURL *chunkURL in [chunkUrls allValues]) {
             NSError *localError;
             if ([[NSFileManager defaultManager] fileExistsAtPath:(NSString *)[chunkURL path]]) {
@@ -689,6 +719,9 @@ NSInteger B2KitDownloadRetries = 5;
                 if (!result) {
                     B2LogError(@"Unable to clean up %@ (fileId=%@) - %@", [locationURL path], fileId, localError);
                 }
+            }
+            @synchronized ([self staleChunks]) {
+                [[self staleChunks] removeObject:chunkURL];
             }
         }
     }
@@ -758,7 +791,7 @@ NSInteger B2KitDownloadRetries = 5;
             }
         }
     }
-    B2LogDebug(@"Multi-chunk convenience download");
+    B2LogDebug(@"Multi-chunk convenience upload");
     NSString *fileId;
     if (resumeContext && [resumeContext fileId]) {
         fileId = [resumeContext fileId];
@@ -845,7 +878,9 @@ cleanup:
     return nil;
 }
 
-// MARK: Private
+@end
+
+@implementation B2FileManager (Private)
 
 - (NSURL *)downloadFilePartWithFileId:(NSString *)fileId
                               account:(B2Account *)account
@@ -898,14 +933,15 @@ cleanup:
     NSNumber *chunkNumber = @(partNumber + 1);
     @try {
         if (resumeContext) {
-            B2LogDebug(@"Partial download with resumeContext: %@", resumeContext);
+            B2LogDebug(@"Partial upload with resumeContext: %@", resumeContext);
             for (NSNumber *completedChunk in [resumeContext completedChunks]) {
                 if ([chunkNumber isEqualToNumber:completedChunk]) {
                     B2LogDebug(@"ResumeContext contains chunk: %@ - skipping upload", chunkNumber);
                     return [resumeContext completedChunks][chunkNumber];
                 }
             }
-            B2LogDebug(@"ResumeContext does not contain chunk: %@ - proceeding with upload", chunkNumber);
+            B2LogDebug(@"ResumeContext does not contain chunk: %@ - proceeding with upload at chunkUrl: %@",
+                       chunkNumber, chunkUrl);
         }
         NSString *chunkSha1;
         NSUInteger chunkLength;
@@ -924,6 +960,9 @@ cleanup:
             }
             chunkSha1 = [chunk sha1];
             chunkLength = [chunk length];
+        }
+        @synchronized ([self staleChunks]) {
+            [[self staleChunks] addObject:chunkUrl];
         }
         NSInteger retryCounter = 0;
         while (!*stopExecution) {
@@ -951,6 +990,7 @@ cleanup:
         }
         return nil;
     } @finally {
+        B2LogDebug(@"Cleaning up stale chunk file: %@", chunkUrl);
         if ([[NSFileManager defaultManager] fileExistsAtPath:(NSString *)[chunkUrl path]]) {
             NSError *localError;
             BOOL removeResult = [[NSFileManager defaultManager] removeItemAtURL:chunkUrl
@@ -958,6 +998,9 @@ cleanup:
             if (!removeResult) {
                 B2LogError(@"Unable to clean up %@ (fileId=%@) - %@", chunkUrl, fileId, localError);
             }
+        }
+        @synchronized ([self staleChunks]) {
+            [[self staleChunks] removeObject:chunkUrl];
         }
     }
 }

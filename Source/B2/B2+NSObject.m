@@ -12,8 +12,12 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<B2 %p> {}",
-            (__bridge void *)self];
+    return [NSString stringWithFormat:@"<B2 %p> {client=%@, accountManager=%@, bucketManager=%@, fileManager=%@}",
+            (__bridge void *)self,
+            [self client],
+            [self accountManager],
+            [self bucketManager],
+            [self fileManager]];
 }
 
 @end

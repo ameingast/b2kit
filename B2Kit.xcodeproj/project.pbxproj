@@ -866,6 +866,14 @@
 		CAA7A1312078D2AD002B405E /* B2BucketType.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA7A12F2078D2AD002B405E /* B2BucketType.m */; };
 		CAAF8DE220F0F26E0071F8C3 /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = CAAF8DE120F0F26E0071F8C3 /* Secrets.json */; };
 		CAAF8DE320F0F26E0071F8C3 /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = CAAF8DE120F0F26E0071F8C3 /* Secrets.json */; };
+		CAB02DC123374FD500A5974D /* B2Lifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB02DC023374F0B00A5974D /* B2Lifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAB02DC223374FD600A5974D /* B2Lifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB02DC023374F0B00A5974D /* B2Lifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAB02DC323374FD700A5974D /* B2Lifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB02DC023374F0B00A5974D /* B2Lifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAB02DC423374FD700A5974D /* B2Lifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB02DC023374F0B00A5974D /* B2Lifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAB02DC523374FD700A5974D /* B2Lifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB02DC023374F0B00A5974D /* B2Lifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAB02DC623374FD800A5974D /* B2Lifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB02DC023374F0B00A5974D /* B2Lifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAB02DC723374FD800A5974D /* B2Lifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB02DC023374F0B00A5974D /* B2Lifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAB02DC823374FD900A5974D /* B2Lifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB02DC023374F0B00A5974D /* B2Lifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAB7151520FA4A2F00F8E8AB /* B2Bucket+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151320FA4A2F00F8E8AB /* B2Bucket+Private.h */; };
 		CAB7151620FA4A2F00F8E8AB /* B2Bucket+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7151420FA4A2F00F8E8AB /* B2Bucket+Private.m */; };
 		CAB7151920FA4AF100F8E8AB /* B2Account+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7151720FA4AF100F8E8AB /* B2Account+Private.h */; };
@@ -1138,6 +1146,7 @@
 		CAA7A12E2078D2AD002B405E /* B2BucketType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = B2BucketType.h; sourceTree = "<group>"; };
 		CAA7A12F2078D2AD002B405E /* B2BucketType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B2BucketType.m; sourceTree = "<group>"; };
 		CAAF8DE120F0F26E0071F8C3 /* Secrets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Secrets.json; sourceTree = "<group>"; };
+		CAB02DC023374F0B00A5974D /* B2Lifecycle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = B2Lifecycle.h; sourceTree = "<group>"; };
 		CAB7151320FA4A2F00F8E8AB /* B2Bucket+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "B2Bucket+Private.h"; sourceTree = "<group>"; };
 		CAB7151420FA4A2F00F8E8AB /* B2Bucket+Private.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "B2Bucket+Private.m"; sourceTree = "<group>"; };
 		CAB7151720FA4AF100F8E8AB /* B2Account+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "B2Account+Private.h"; sourceTree = "<group>"; };
@@ -1375,6 +1384,7 @@
 				CAF229DE2079030200B3E540 /* Error */,
 				CA702CCB207600A10094FDED /* File */,
 				CA702CCC207600A70094FDED /* Key */,
+				CAB02DBF23374EE100A5974D /* Lifecycle */,
 				CA2F313E20936DFB00249557 /* Logging */,
 				CA1CAAA22075524E00354FD4 /* B2Kit.h */,
 			);
@@ -1637,6 +1647,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		CAB02DBF23374EE100A5974D /* Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				CAB02DC023374F0B00A5974D /* B2Lifecycle.h */,
+			);
+			path = Lifecycle;
+			sourceTree = "<group>";
+		};
 		CADD511F207DDDDF00A29C53 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1711,6 +1729,7 @@
 				CAE5EFEA2333BC31001AE5B7 /* B2ResumeContext.h in Headers */,
 				CA7D96122110B8F0003EE894 /* NSURL+B2Kit.h in Headers */,
 				CADAA3432079EDDB00B470E6 /* B2JSONValidator.h in Headers */,
+				CAB02DC123374FD500A5974D /* B2Lifecycle.h in Headers */,
 				CAFC813021107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */,
 				CAFEB2EF20924DE800A0C017 /* B2DefaultClient.h in Headers */,
 				CAB7152520FA525E00F8E8AB /* B2UnfinishedLargeFiles+Private.h in Headers */,
@@ -1755,6 +1774,7 @@
 				CAE5EFEE2333BC31001AE5B7 /* B2ResumeContext.h in Headers */,
 				CA7D96222110BBC6003EE894 /* NSArray+B2Kit.h in Headers */,
 				CA269CEF210F645A001E9DA3 /* B2ClientDataResult.h in Headers */,
+				CAB02DC523374FD700A5974D /* B2Lifecycle.h in Headers */,
 				CA269CE5210F6443001E9DA3 /* B2BucketType.h in Headers */,
 				CA269CE1210F6435001E9DA3 /* B2Bucket+Private.h in Headers */,
 				CA269CCD210F6417001E9DA3 /* B2.h in Headers */,
@@ -1799,6 +1819,7 @@
 				CAE5EFEC2333BC31001AE5B7 /* B2ResumeContext.h in Headers */,
 				CA7D96142110B8F0003EE894 /* NSURL+B2Kit.h in Headers */,
 				CA4855DC2104D6F700F09656 /* B2JSONValidator.h in Headers */,
+				CAB02DC323374FD700A5974D /* B2Lifecycle.h in Headers */,
 				CAFC813221107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */,
 				CA4855DD2104D6F700F09656 /* B2DefaultClient.h in Headers */,
 				CA4855DE2104D6F700F09656 /* B2UnfinishedLargeFiles+Private.h in Headers */,
@@ -1843,6 +1864,7 @@
 				CAE5EFED2333BC31001AE5B7 /* B2ResumeContext.h in Headers */,
 				CA7D96152110B8F0003EE894 /* NSURL+B2Kit.h in Headers */,
 				CA4856792104D8E400F09656 /* B2JSONValidator.h in Headers */,
+				CAB02DC423374FD700A5974D /* B2Lifecycle.h in Headers */,
 				CAFC813321107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */,
 				CA48567A2104D8E400F09656 /* B2DefaultClient.h in Headers */,
 				CA48567B2104D8E400F09656 /* B2UnfinishedLargeFiles+Private.h in Headers */,
@@ -1887,6 +1909,7 @@
 				CAE5EFEB2333BC31001AE5B7 /* B2ResumeContext.h in Headers */,
 				CA7D96132110B8F0003EE894 /* NSURL+B2Kit.h in Headers */,
 				CA4C4D6D2104746900209D0C /* B2JSONValidator.h in Headers */,
+				CAB02DC223374FD600A5974D /* B2Lifecycle.h in Headers */,
 				CAFC813121107B5F009D5981 /* NSDictionary+B2Kit.h in Headers */,
 				CA4C4D6E2104746900209D0C /* B2DefaultClient.h in Headers */,
 				CA4C4D6F2104746900209D0C /* B2UnfinishedLargeFiles+Private.h in Headers */,
@@ -1931,6 +1954,7 @@
 				CAE5EFEF2333BC31001AE5B7 /* B2ResumeContext.h in Headers */,
 				CA7D96232110BBC6003EE894 /* NSArray+B2Kit.h in Headers */,
 				CA5F53CF210F695A00D973D3 /* B2ClientDataResult.h in Headers */,
+				CAB02DC823374FD900A5974D /* B2Lifecycle.h in Headers */,
 				CA5F53D0210F695A00D973D3 /* B2BucketType.h in Headers */,
 				CA5F53D1210F695A00D973D3 /* B2Bucket+Private.h in Headers */,
 				CA5F53D2210F695A00D973D3 /* B2.h in Headers */,
@@ -1975,6 +1999,7 @@
 				CAE5EFF02333BC31001AE5B7 /* B2ResumeContext.h in Headers */,
 				CA7D96242110BBC7003EE894 /* NSArray+B2Kit.h in Headers */,
 				CA5F542D210F698D00D973D3 /* B2ClientDataResult.h in Headers */,
+				CAB02DC623374FD800A5974D /* B2Lifecycle.h in Headers */,
 				CA5F542E210F698D00D973D3 /* B2BucketType.h in Headers */,
 				CA5F542F210F698D00D973D3 /* B2Bucket+Private.h in Headers */,
 				CA5F5430210F698D00D973D3 /* B2.h in Headers */,
@@ -2019,6 +2044,7 @@
 				CAE5EFF12333BC31001AE5B7 /* B2ResumeContext.h in Headers */,
 				CA7D96252110BBC7003EE894 /* NSArray+B2Kit.h in Headers */,
 				CA5F548B210F699900D973D3 /* B2ClientDataResult.h in Headers */,
+				CAB02DC723374FD800A5974D /* B2Lifecycle.h in Headers */,
 				CA5F548C210F699900D973D3 /* B2BucketType.h in Headers */,
 				CA5F548D210F699900D973D3 /* B2Bucket+Private.h in Headers */,
 				CA5F548E210F699900D973D3 /* B2.h in Headers */,

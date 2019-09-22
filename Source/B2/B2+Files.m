@@ -15,9 +15,9 @@
                       account:(B2Account *)account
                         error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2FileManager alloc] initWithClient:[self client]] fileInfoForFileId:fileId
-                                                                           account:account
-                                                                             error:error];
+    return [[[self fileManager] initWithClient:[self client]] fileInfoForFileId:fileId
+                                                                        account:account
+                                                                          error:error];
 }
 
 - (B2File *)uploadFileAtURL:(NSURL *)localFileURL
@@ -30,15 +30,15 @@
                    fileInfo:(NSDictionary<NSString *, NSString *> *)fileInfo
                       error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2FileManager alloc] initWithClient:[self client]] uploadFileAtURL:localFileURL
-                                                                         account:account
-                                                                        fileName:filename
-                                                                    sha1Checksum:sha1Checksum
-                                                                      intoBucket:bucketId
-                                                                     contentType:contentType
-                                                                  lastModifiedOn:lastModifiedOn
-                                                                        fileInfo:fileInfo
-                                                                           error:error];
+    return [[[self fileManager] initWithClient:[self client]] uploadFileAtURL:localFileURL
+                                                                      account:account
+                                                                     fileName:filename
+                                                                 sha1Checksum:sha1Checksum
+                                                                   intoBucket:bucketId
+                                                                  contentType:contentType
+                                                               lastModifiedOn:lastModifiedOn
+                                                                     fileInfo:fileInfo
+                                                                        error:error];
 }
 
 - (BOOL)downloadFileWithFileId:(NSString *)fileId
@@ -47,11 +47,11 @@
                    locationURL:(NSURL *)locationURL
                          error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2FileManager alloc] initWithClient:[self client]] downloadFileWithFileId:fileId
-                                                                                account:account
-                                                                                  range:range
-                                                                            locationURL:locationURL
-                                                                                  error:error];
+    return [[[self fileManager] initWithClient:[self client]] downloadFileWithFileId:fileId
+                                                                             account:account
+                                                                               range:range
+                                                                         locationURL:locationURL
+                                                                               error:error];
 }
 
 - (BOOL)downloadFileWithFileName:(NSString *)fileName
@@ -61,12 +61,12 @@
                      locationURL:(NSURL *)locationURL
                            error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2FileManager alloc] initWithClient:[self client]] downloadFileWithFileName:fileName
-                                                                               bucketName:bucketName
-                                                                                  account:account
-                                                                                    range:range
-                                                                              locationURL:locationURL
-                                                                                    error:error];
+    return [[[self fileManager] initWithClient:[self client]] downloadFileWithFileName:fileName
+                                                                            bucketName:bucketName
+                                                                               account:account
+                                                                                 range:range
+                                                                           locationURL:locationURL
+                                                                                 error:error];
 }
 
 - (BOOL)hideFileWithFileName:(NSString *)fileName
@@ -74,10 +74,10 @@
                       bucket:(B2Bucket *)bucket
                        error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2FileManager alloc] initWithClient:[self client]] hideFileWithFileName:fileName
-                                                                              account:account
-                                                                               bucket:bucket
-                                                                                error:error];
+    return [[[self fileManager] initWithClient:[self client]] hideFileWithFileName:fileName
+                                                                           account:account
+                                                                            bucket:bucket
+                                                                             error:error];
 }
 
 - (BOOL)deleteFileWithFileId:(NSString *)fileId
@@ -85,10 +85,10 @@
                      account:(B2Account *)account
                        error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2FileManager alloc] initWithClient:[self client]] deleteFileWithFileId:fileId
-                                                                             filename:filename
-                                                                              account:account
-                                                                                error:error];
+    return [[[self fileManager] initWithClient:[self client]] deleteFileWithFileId:fileId
+                                                                          filename:filename
+                                                                           account:account
+                                                                             error:error];
 }
 
 - (B2FileNames *)listFilesWithBucketId:(NSString *)bucketId
@@ -98,12 +98,12 @@
                                 prefix:(NSString *)prefix
                                  error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2FileManager alloc] initWithClient:[self client]] listFilesWithBucketId:bucketId
-                                                                               account:account
-                                                                         startFileName:startFileName
-                                                                          maxFileCount:maxFileCount
-                                                                                prefix:prefix
-                                                                                 error:error];
+    return [[[self fileManager] initWithClient:[self client]] listFilesWithBucketId:bucketId
+                                                                            account:account
+                                                                      startFileName:startFileName
+                                                                       maxFileCount:maxFileCount
+                                                                             prefix:prefix
+                                                                              error:error];
 }
 
 - (nullable B2FileVersions *)listFileVersionsWithBucketId:(NSString *)bucketId
@@ -114,12 +114,12 @@
                                                    prefix:(nullable NSString *)prefix
                                                     error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2FileManager alloc] initWithClient:[self client]] listFileVersionsWithBucketId:bucketId
-                                                                                      account:account
-                                                                                  startFileId:startFileId
-                                                                                startFileName:startFileName
-                                                                                 maxFileCount:maxFileCount
-                                                                                       prefix:prefix error:error];
+    return [[[self fileManager] initWithClient:[self client]] listFileVersionsWithBucketId:bucketId
+                                                                                   account:account
+                                                                               startFileId:startFileId
+                                                                             startFileName:startFileName
+                                                                              maxFileCount:maxFileCount
+                                                                                    prefix:prefix error:error];
 }
 
 @end

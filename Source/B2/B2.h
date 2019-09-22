@@ -8,6 +8,10 @@
 
 @import Foundation;
 
+/// MARK: Lifecycle
+
+#import <B2Kit/B2Lifecycle.h>
+
 /// MARK: Domain
 
 #import <B2Kit/B2Account.h>
@@ -34,13 +38,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class B2AccountManager;
+@class B2BucketManager;
+@class B2FileManager;
 @protocol B2Client;
 
-@interface B2 : NSObject
+@interface B2 : NSObject<B2Start, B2Stop>
 
 + (B2 *)sharedInstance;
 
 @property (readonly, nonnull, nonatomic) id<B2Client> client;
+@property (readonly, nonnull, nonatomic) B2AccountManager *accountManager;
+@property (readonly, nonnull, nonatomic) B2BucketManager *bucketManager;
+@property (readonly, nonnull, nonatomic) B2FileManager *fileManager;
 
 @end
 

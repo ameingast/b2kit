@@ -18,12 +18,12 @@
                           lifeCycleRules:(NSArray<B2BucketLifeCycleRule *> *)lifeCycleRules
                                    error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2BucketManager alloc] initWithClient:[self client]] createBucketWithBucketName:bucketName
-                                                                                      account:account
-                                                                                   bucketType:bucketType
-                                                                                         info:info
-                                                                               lifeCycleRules:lifeCycleRules
-                                                                                        error:error];
+    return [[[self bucketManager] initWithClient:[self client]] createBucketWithBucketName:bucketName
+                                                                                   account:account
+                                                                                bucketType:bucketType
+                                                                                      info:info
+                                                                            lifeCycleRules:lifeCycleRules
+                                                                                     error:error];
 }
 
 - (NSArray<B2Bucket *>*)listBucketsForAccount:(B2Account *)account
@@ -32,20 +32,20 @@
                                   bucketTypes:(B2BucketType)bucketTypes
                                         error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2BucketManager alloc] initWithClient:[self client]] listBucketsForAccount:account
-                                                                                bucketId:bucketId
-                                                                              bucketName:bucketName
-                                                                             bucketTypes:bucketTypes
-                                                                                   error:error];
+    return [[[self bucketManager] initWithClient:[self client]] listBucketsForAccount:account
+                                                                             bucketId:bucketId
+                                                                           bucketName:bucketName
+                                                                          bucketTypes:bucketTypes
+                                                                                error:error];
 }
 
 - (B2Bucket *)deleteBucketWithBucketId:(NSString *)bucketId
                                account:(B2Account *)account
                                  error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2BucketManager alloc] initWithClient:[self client]] deleteBucketWithBucketId:bucketId
-                                                                                    account:account
-                                                                                      error:error];
+    return [[[self bucketManager] initWithClient:[self client]] deleteBucketWithBucketId:bucketId
+                                                                                 account:account
+                                                                                   error:error];
 }
 
 - (B2Bucket *)updateBucketWithBucketId:(NSString *)bucketId
@@ -55,12 +55,12 @@
                         lifeCycleRules:(NSArray<B2BucketLifeCycleRule *> *)lifeCycleRules
                                  error:(out NSError *__autoreleasing *)error
 {
-    return [[[B2BucketManager alloc] initWithClient:[self client]] updateBucketWithBucketId:bucketId
-                                                                                    account:account
-                                                                                 bucketType:bucketType
-                                                                                       info:info
-                                                                             lifeCycleRules:lifeCycleRules
-                                                                                      error:error];
+    return [[[self bucketManager] initWithClient:[self client]] updateBucketWithBucketId:bucketId
+                                                                                 account:account
+                                                                              bucketType:bucketType
+                                                                                    info:info
+                                                                          lifeCycleRules:lifeCycleRules
+                                                                                   error:error];
 }
 
 @end
