@@ -974,7 +974,7 @@ cleanup:
                                       contentSha1Checksum:chunkSha1
                                                     error:error];
             if (!uploadResult && ++retryCounter > B2KitUploadRetries) {
-                B2LogDebug(@"Upload failed after %ld retries", retryCounter);
+                B2LogDebug(@"Upload failed after %ld retries", (long)retryCounter);
                 return nil;
             } else if (uploadResult) {
                 if (resumeContext) {
