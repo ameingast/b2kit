@@ -27,6 +27,8 @@
                             "Source/File/B2Range.h",
                             "Source/Account/B2Account.h",
                             "Source/Bucket/B2BucketType.h",
+                            "Source/File/B2ResumeContext.h",
+                            "Source/Lifecycle/B2Lifecycle.h",
                             "Source/Categories/NSArray+B2Kit.h",
                             "Source/Categories/NSDictionary+B2Kit.h",
                             "Source/Categories/NSURL+B2Kit.h",
