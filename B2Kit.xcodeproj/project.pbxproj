@@ -500,7 +500,6 @@
 		CA4C4DAF2104753C00209D0C /* Blob.bin in Resources */ = {isa = PBXBuildFile; fileRef = CAC00D0F2082335B00958DB7 /* Blob.bin */; };
 		CA4C4DB02104753C00209D0C /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = CAAF8DE120F0F26E0071F8C3 /* Secrets.json */; };
 		CA4C4DB8210477F900209D0C /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4C4D8F2104746900209D0C /* B2Kit.framework */; };
-		CA54E116210FA0A000ADFAE2 /* B2Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1CAA9F2075524E00354FD4 /* B2Kit.framework */; };
 		CA5F5396210F695A00D973D3 /* B2+Versions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA07839420F87DEB00DF0CE2 /* B2+Versions.m */; };
 		CA5F5397210F695A00D973D3 /* B2ClientDataResult+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE98FE520FB29F700AD0FDC /* B2ClientDataResult+NSObject.m */; };
 		CA5F5398210F695A00D973D3 /* B2Parts+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7152020FA51CB00F8E8AB /* B2Parts+Private.m */; };
@@ -1024,13 +1023,6 @@
 			remoteGlobalIDString = CA4C4D322104746900209D0C;
 			remoteInfo = "B2Kit (iOS Framework)";
 		};
-		CA54E114210FA09B00ADFAE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CA1CAA9E2075524E00354FD4;
-			remoteInfo = "B2Kit (macOS Framework)";
-		};
 		CA9BEB1B2092F95300A3B70E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA1CAA962075524E00354FD4 /* Project object */;
@@ -1091,7 +1083,6 @@
 		CA4856D62104D9B500F09656 /* B2KitIntegrationTests (watchOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitIntegrationTests (watchOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA4C4D8F2104746900209D0C /* B2Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = B2Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA4C4DB42104753C00209D0C /* B2KitUnitTests (iOS Framework).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B2KitUnitTests (iOS Framework).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA54E0F8210F9D9F00ADFAE2 /* B2KitCLIUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = B2KitCLIUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5F53F1210F695A00D973D3 /* libB2Kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libB2Kit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5F544F210F698D00D973D3 /* libB2Kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libB2Kit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5F54AD210F699900D973D3 /* libB2Kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libB2Kit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1296,14 +1287,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA54E0F5210F9D9F00ADFAE2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA54E116210FA0A000ADFAE2 /* B2Kit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CA5F53CD210F695A00D973D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1367,7 +1350,6 @@
 				CA5F53F1210F695A00D973D3 /* libB2Kit.a */,
 				CA5F544F210F698D00D973D3 /* libB2Kit.a */,
 				CA5F54AD210F699900D973D3 /* libB2Kit.a */,
-				CA54E0F8210F9D9F00ADFAE2 /* B2KitCLIUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2300,24 +2282,6 @@
 			productReference = CA4C4DB42104753C00209D0C /* B2KitUnitTests (iOS Framework).xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CA54E0F7210F9D9F00ADFAE2 /* B2KitCLIUnitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CA54E102210F9D9F00ADFAE2 /* Build configuration list for PBXNativeTarget "B2KitCLIUnitTests" */;
-			buildPhases = (
-				CA54E0F4210F9D9F00ADFAE2 /* Sources */,
-				CA54E0F5210F9D9F00ADFAE2 /* Frameworks */,
-				CA54E0F6210F9D9F00ADFAE2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CA54E115210FA09B00ADFAE2 /* PBXTargetDependency */,
-			);
-			name = B2KitCLIUnitTests;
-			productName = B2KitCLIUnitTests;
-			productReference = CA54E0F8210F9D9F00ADFAE2 /* B2KitCLIUnitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		CA5F5394210F695A00D973D3 /* B2Kit (iOS Static Library) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA5F53EE210F695A00D973D3 /* Build configuration list for PBXNativeTarget "B2Kit (iOS Static Library)" */;
@@ -2407,10 +2371,6 @@
 					CA269CB2210F6323001E9DA3 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					CA54E0F7210F9D9F00ADFAE2 = {
-						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1000;
-					};
 				};
 			};
 			buildConfigurationList = CA1CAA992075524E00354FD4 /* Build configuration list for PBXProject "B2Kit" */;
@@ -2442,7 +2402,6 @@
 				CA48558A2104D42B00F09656 /* B2KitIntegrationTests (iOS Framework) */,
 				CA4856C52104D9B500F09656 /* B2KitIntegrationTests (watchOS Framework) */,
 				CA4856282104D83800F09656 /* B2KitIntegrationTests (tvOS Framework) */,
-				CA54E0F7210F9D9F00ADFAE2 /* B2KitCLIUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -2543,13 +2502,6 @@
 				CA4C4DAE2104753C00209D0C /* Blib.bin in Resources */,
 				CA4C4DAF2104753C00209D0C /* Blob.bin in Resources */,
 				CA4C4DB02104753C00209D0C /* Secrets.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CA54E0F6210F9D9F00ADFAE2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3085,13 +3037,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA54E0F4210F9D9F00ADFAE2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CA5F5395210F695A00D973D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3351,11 +3296,6 @@
 			target = CA4C4D322104746900209D0C /* B2Kit (iOS Framework) */;
 			targetProxy = CA4C4DB92104781600209D0C /* PBXContainerItemProxy */;
 		};
-		CA54E115210FA09B00ADFAE2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CA1CAA9E2075524E00354FD4 /* B2Kit (macOS Framework) */;
-			targetProxy = CA54E114210FA09B00ADFAE2 /* PBXContainerItemProxy */;
-		};
 		CA9BEB1A2092F95300A3B70E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CA1CAA9E2075524E00354FD4 /* B2Kit (macOS Framework) */;
@@ -3419,6 +3359,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -3470,8 +3411,10 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -3530,6 +3473,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -3576,9 +3520,11 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 4.2;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -3695,7 +3641,6 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -3714,7 +3659,6 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -3726,7 +3670,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitUnitTests;
 				PRODUCT_NAME = "B2KitUnitTests (tvOS Framework)";
 				SDKROOT = appletvos;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -3738,7 +3681,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitUnitTests;
 				PRODUCT_NAME = "B2KitUnitTests (tvOS Framework)";
 				SDKROOT = appletvos;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -3750,7 +3692,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -3762,7 +3703,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -3781,7 +3721,6 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "watchsimulator watchos";
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -3800,7 +3739,6 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "watchsimulator watchos";
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -3812,7 +3750,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -3824,7 +3761,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -3836,7 +3772,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -3848,7 +3783,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -3908,32 +3842,6 @@
 			};
 			name = Release;
 		};
-		CA54E100210F9D9F00ADFAE2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				INFOPLIST_FILE = Resources/B2KitUnitTests.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitCLIUnitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		CA54E101210F9D9F00ADFAE2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				INFOPLIST_FILE = Resources/B2KitUnitTests.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.B2KitCLIUnitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
 		CA5F53EF210F695A00D973D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3967,7 +3875,6 @@
 				PRODUCT_NAME = B2Kit;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -3980,7 +3887,6 @@
 				PRODUCT_NAME = B2Kit;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -3993,7 +3899,6 @@
 				PRODUCT_NAME = B2Kit;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -4006,7 +3911,6 @@
 				PRODUCT_NAME = B2Kit;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -4146,15 +4050,6 @@
 			buildConfigurations = (
 				CA4C4DB22104753C00209D0C /* Debug */,
 				CA4C4DB32104753C00209D0C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CA54E102210F9D9F00ADFAE2 /* Build configuration list for PBXNativeTarget "B2KitCLIUnitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CA54E100210F9D9F00ADFAE2 /* Debug */,
-				CA54E101210F9D9F00ADFAE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
