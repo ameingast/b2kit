@@ -25,6 +25,7 @@ Pods/
 
 # Files
 .DS_Store
+*.swp
 
 # AppCode
 .idea
