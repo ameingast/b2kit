@@ -6,7 +6,7 @@
 //  Copyright © 2018 Andreas Meingast. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 @class B2Account;
 @protocol B2Client;

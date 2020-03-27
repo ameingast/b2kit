@@ -6,7 +6,7 @@
 //  Copyright © 2018 Andreas Meingast. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 FOUNDATION_EXPORT double B2KitVersionNumber;
 FOUNDATION_EXPORT const unsigned char B2KitVersionString[];
