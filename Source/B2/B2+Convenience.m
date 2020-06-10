@@ -14,11 +14,13 @@
 - (BOOL)downloadFileWithFileId:(NSString *)fileId
                        account:(B2Account *)account
                    locationURL:(NSURL *)locationURL
+                      progress:(void (^)(NSNumber *))callback
                          error:(out NSError *__autoreleasing *)error
 {
     return [[[self fileManager] initWithClient:[self client]] downloadFileWithFileId:fileId
                                                                              account:account
                                                                          locationURL:locationURL
+                                                                            progress:callback
                                                                                error:error];
 }
 

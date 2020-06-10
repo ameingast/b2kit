@@ -607,6 +607,7 @@ NSInteger B2KitDownloadRetries = 5;
 - (BOOL)downloadFileWithFileId:(NSString *)fileId
                        account:(B2Account *)account
                    locationURL:(NSURL *)locationURL
+                      progress:(void (^)(NSNumber *))callback
                          error:(out NSError *__autoreleasing *)error
 {
     NSMutableDictionary<NSNumber *, NSURL *> *chunkUrls = [NSMutableDictionary new];
@@ -664,6 +665,9 @@ NSInteger B2KitDownloadRetries = 5;
                     }
                 } else {
                     stopExecution = YES;
+                }
+                if (callback) {
+                    callback([NSNumber numberWithLongLong:B2DownloadChunkSize]);
                 }
                 (void)dispatch_semaphore_signal(sem);
                 dispatch_group_leave(group);

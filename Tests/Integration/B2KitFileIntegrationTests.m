@@ -235,6 +235,7 @@
     BOOL downloadResult = [[self b2] downloadFileWithFileId:[file fileId]
                                                     account:[self account]
                                                 locationURL:[self targetURL]
+                                                   progress: nil
                                                       error:&error];
     if (!downloadResult) {
         XCTFail(@"File download failed: %@", error);

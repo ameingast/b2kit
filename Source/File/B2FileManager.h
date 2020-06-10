@@ -139,6 +139,7 @@ extern NSInteger B2KitDownloadRetries;
 - (BOOL)downloadFileWithFileId:(NSString *)fileId
                        account:(B2Account *)account
                    locationURL:(NSURL *)locationURL
+                      progress:(nullable void (^)(NSNumber *))callback
                          error:(out NSError **)error;
 
 - (nullable B2File *)uploadLargeFileAtURL:(NSURL *)localFileURL
