@@ -38,6 +38,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern long long B2UploadChunkSize;
+extern long long B2DownloadChunkSize;
+extern NSInteger B2KitUploadConcurrency;
+extern NSInteger B2KitDownloadConcurrency;
+extern NSInteger B2KitUploadRetries;
+extern NSInteger B2KitDownloadRetries;
+
 @class B2AccountManager;
 @class B2BucketManager;
 @class B2FileManager;
