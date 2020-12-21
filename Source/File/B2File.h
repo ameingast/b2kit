@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "B2FileInfoAction.h"
+#import <B2Kit/B2FileInfoAction.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

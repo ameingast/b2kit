@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "B2BucketType.h"
+#import <B2Kit/B2BucketType.h>
 
 @class B2BucketLifeCycleRule;
 

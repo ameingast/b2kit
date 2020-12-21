@@ -754,8 +754,8 @@ NSInteger B2KitDownloadRetries = 5;
         B2LogDebug(@"Set chunkSize: %@", @(chunkSize));
         [resumeContext setChunkSize:@(chunkSize)];
     }
-    long long fileSize = fileSize = [[NSFileManager defaultManager] fileSize:localFileURL
-                                                                       error:error];
+    long long fileSize = [[NSFileManager defaultManager] fileSize:localFileURL
+                                                            error:error];
     if (fileSize < 0) {
         return nil;
     }

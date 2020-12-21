@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "B2AccountCapability.h"
+#import <B2Kit/B2AccountCapability.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
